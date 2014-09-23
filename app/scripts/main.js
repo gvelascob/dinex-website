@@ -1,21 +1,24 @@
 //Custom Theme JavaScript
 
     // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
+    $('#menu-close').click(function(e) {
+        'use strict';
+		e.preventDefault();
+        $('#sidebar-wrapper').toggleClass('active');
     });
 
     // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
+    $('#menu-toggle').click(function(e) {
+        'use strict';
+		e.preventDefault();
+        $('#sidebar-wrapper').toggleClass('active');
     });
 
     // Scrolls to the selected menu item on the page
     $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+        'use strict';
+		$('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') || location.hostname === this.hostname) {
 
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
