@@ -237,7 +237,7 @@ a:focus {
     width: 100%;
     height: 400px;
     color: #ed427f;
-    background: url(../img/clientes.jpg) no-repeat center center scroll;
+    background: url(../images/clientes.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
