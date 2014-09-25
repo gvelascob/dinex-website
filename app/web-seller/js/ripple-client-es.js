@@ -1,5 +1,5 @@
 /*!
- * Ripple Client vab86f01-dirty
+ * Ripple Client vf890731
  * Copyright (c) 2014 Ripple Labs, Inc.
  * Licensed under the ISC license.
  */
@@ -125,19 +125,19 @@
 	  __webpack_require__(41),
 	  __webpack_require__(42),
 	  __webpack_require__(43),
-	//  require('../tabs/contacts'),
-	//  require('../tabs/exchange'),
 	  __webpack_require__(44),
+	//  require('../tabs/exchange'),
+	  __webpack_require__(45),
 	//  require('../tabs/trust'),
-	//  require('../tabs/send'),
+	  __webpack_require__(46),
 	//  require('../tabs/trade'),
 	//  require('../tabs/advanced'),
-	  __webpack_require__(45),
-	  __webpack_require__(46),
 	  __webpack_require__(47),
 	  __webpack_require__(48),
 	  __webpack_require__(49),
-	  __webpack_require__(50)
+	  __webpack_require__(50),
+	  __webpack_require__(51),
+	  __webpack_require__(52)
 
 	  // Hidden tabs
 	//  require('../tabs/apps'),
@@ -165,7 +165,7 @@
 	rippleclient.types = types;
 
 	// Install basic page template
-	angular.element('body').prepend(__webpack_require__(54)());
+	angular.element('body').prepend(__webpack_require__(56)());
 
 	app.config(['$routeProvider', '$injector', function ($routeProvider, $injector) {
 	  // Set up routing for tabs
@@ -285,7 +285,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Base58Utils = __webpack_require__(51);
+	var Base58Utils = __webpack_require__(53);
 
 	var RippleAddress = (function () {
 	  function append_int(a, i) {
@@ -349,10 +349,10 @@
 	 * The app controller manages the global scope.
 	 */
 
-	var util = __webpack_require__(76),
-	    events = __webpack_require__(77),
-	    rewriter = __webpack_require__(55),
-	    genericUtils = __webpack_require__(56),
+	var util = __webpack_require__(80),
+	    events = __webpack_require__(81),
+	    rewriter = __webpack_require__(57),
+	    genericUtils = __webpack_require__(58),
 	    Amount = ripple.Amount;
 
 	var module = angular.module('app', []);
@@ -895,7 +895,7 @@
 	    }
 	  }
 
-	  $scope.currencies_all = __webpack_require__(57);
+	  $scope.currencies_all = __webpack_require__(59);
 
 	  // prefer currency full_names over whatever the local storage has saved
 	  var storeCurrenciesAll = store.get('ripple_currencies_all') || [];
@@ -919,11 +919,11 @@
 
 	  // Personalized default pair set
 	  if (!store.disabled && !store.get('ripple_pairs_all')) {
-	    store.set('ripple_pairs_all',__webpack_require__(58));
+	    store.set('ripple_pairs_all',__webpack_require__(60));
 	  }
 
 	  var pairs_all = store.get('ripple_pairs_all');
-	  var pairs_default = __webpack_require__(58);
+	  var pairs_default = __webpack_require__(60);
 	  $scope.pairs_all = genericUtils.uniqueObjArray(pairs_all, pairs_default, 'name');
 
 	  function compare(a, b) {
@@ -1043,7 +1043,7 @@
 	 */
 
 	var Amount = ripple.Amount,
-	    rewriter = __webpack_require__(55);
+	    rewriter = __webpack_require__(57);
 
 	var module = angular.module('navbar', []);
 
@@ -1056,7 +1056,7 @@
 	  var tickInterval = 4000;
 	  var tickUpcoming = false;
 
-	  var tplAccount = __webpack_require__(59);
+	  var tplAccount = __webpack_require__(61);
 
 	  // Activate #status panel
 	  $scope.toggle_secondary = function () {
@@ -1833,7 +1833,7 @@
 	 * Angular-powered input components go into this file.
 	 */
 
-	var webutil = __webpack_require__(52);
+	var webutil = __webpack_require__(54);
 
 	var module = angular.module('fields', []);
 
@@ -2192,7 +2192,7 @@
 	 * Form validation directives go into this file.
 	 */
 
-	var webutil = __webpack_require__(52),
+	var webutil = __webpack_require__(54),
 	    Base = ripple.Base,
 	    Amount = ripple.Amount,
 	    Currency = ripple.Currency;
@@ -3073,7 +3073,7 @@
 	 * better to use a directive.
 	 */
 
-	var webutil = __webpack_require__(52),
+	var webutil = __webpack_require__(54),
 	    Amount = ripple.Amount,
 	    Currency = ripple.Currency;
 
@@ -3955,7 +3955,7 @@
 	module.directive('rpTransactionStatus', function() {
 	  return {
 	    restrict: 'E',
-	    template: __webpack_require__(61),
+	    template: __webpack_require__(63),
 	    scope: {
 	      engine_result: '@rpEngineResult',
 	      engine_result_message: '@rpEngineResultMessage',
@@ -4126,12 +4126,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var module = angular.module('filters', []),
-	    webutil = __webpack_require__(52),
+	    webutil = __webpack_require__(54),
 	    Amount = ripple.Amount,
 	    Currency = ripple.Currency,
 	    Base = ripple.Base;
 
-	var iso4217 = __webpack_require__(60);
+	var iso4217 = __webpack_require__(62);
 
 	/**
 	 * Format a ripple.Amount.
@@ -4564,8 +4564,8 @@
 	 * The id service is used for user identification and authorization.
 	 */
 
-	var util = __webpack_require__(76),
-	    Base58Utils = __webpack_require__(51),
+	var util = __webpack_require__(80),
+	    Base58Utils = __webpack_require__(53),
 	    RippleAddress = __webpack_require__(1).RippleAddress;
 
 	var module = angular.module('id', ['authflow', 'blob', 'oldblob']);
@@ -5175,7 +5175,7 @@
 	// TODO build a blobPrototype.
 	// There's currently a code repetition between blobLocal and blobRemote..
 
-	var webutil = __webpack_require__(52);
+	var webutil = __webpack_require__(54);
 
 	var module = angular.module('blob', []);
 
@@ -5946,8 +5946,8 @@
 	 * The old blob service that used to manage the user's private information.
 	 */
 
-	var webutil = __webpack_require__(52),
-	    log = __webpack_require__(53);
+	var webutil = __webpack_require__(54),
+	    log = __webpack_require__(55);
 
 	var module = angular.module('oldblob', []);
 
@@ -6272,8 +6272,8 @@
 	 * The auth flow service manages the login, unlock and registration procedures.
 	 */
 
-	var webutil     = __webpack_require__(52);
-	var log         = __webpack_require__(53);
+	var webutil     = __webpack_require__(54);
+	var log         = __webpack_require__(55);
 
 	var module = angular.module('authflow', []);
 
@@ -6516,8 +6516,8 @@
 	 * successfully.
 	 */
 
-	var webutil = __webpack_require__(52),
-	    log = __webpack_require__(53);
+	var webutil = __webpack_require__(54),
+	    log = __webpack_require__(55);
 
 	var module = angular.module('authinfo', []);
 
@@ -6598,8 +6598,8 @@
 	 * processes or peer-assisted key derivation (PAKDF).
 	 */
 
-	var webutil = __webpack_require__(52),
-	    log = __webpack_require__(53);
+	var webutil = __webpack_require__(54),
+	    log = __webpack_require__(55);
 
 	var module = angular.module('kdf', []);
 
@@ -6708,8 +6708,8 @@
 	 * time. This class manages the timeout when the account will be re-locked.
 	 */
 
-	var webutil = __webpack_require__(52),
-	    log = __webpack_require__(53);
+	var webutil = __webpack_require__(54),
+	    log = __webpack_require__(55);
 
 	var module = angular.module('keychain', ['popup']);
 
@@ -6800,7 +6800,7 @@
 	      callback("canceled"); //need this for setting password protection
 	      popup.close();
 	    };
-	    popup.blank(__webpack_require__(62)(), popupScope);
+	    popup.blank(__webpack_require__(64)(), popupScope);
 	  };
 
 	  /**
@@ -7509,9 +7509,8 @@
 	    var txtPromise = $q.defer();
 
 	    var urls = [
-	      'https://ripple.'+domain+'/ripple.txt',
-	      'https://www.'+domain+'/ripple.txt',
-	      'https://'+domain+'/ripple.txt'
+	      'http://www.'+domain+'/ripple.txt',
+	      'http://'+domain+'/ripple.txt'
 	    ].reverse();
 	    var next = function (xhr, status) {
 	      if (!urls.length) {
@@ -8408,8 +8407,8 @@
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab  = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80);
+	var Tab  = __webpack_require__(65).Tab;
 
 	var RegisterTab = function ()
 	{
@@ -8424,7 +8423,7 @@
 
 	RegisterTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(64)();
+	  return __webpack_require__(66)();
 	};
 
 	RegisterTab.prototype.extraRoutes = [
@@ -8669,8 +8668,8 @@
 /* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80);
+	var Tab = __webpack_require__(65).Tab;
 
 	var LoginTab = function ()
 	{
@@ -8685,7 +8684,7 @@
 
 	LoginTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(65)();
+	  return __webpack_require__(67)();
 	};
 
 	LoginTab.prototype.angular = function (module) {
@@ -8816,7 +8815,7 @@
 
 	      $scope.ajax_loading = true;
 	      $scope.error  = '';
-	      $scope.status = 'Cargando...';
+	      $scope.status = 'Conectando...';
 	    };
 	    
 	    //initiate the login
@@ -8955,8 +8954,8 @@
 /* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util     = __webpack_require__(76);
-	var Tab      = __webpack_require__(63).Tab;
+	var util     = __webpack_require__(80);
+	var Tab      = __webpack_require__(65).Tab;
 
 	var RecoverTab = function ()
 	{
@@ -8971,7 +8970,7 @@
 
 	RecoverTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(66)();
+	  return __webpack_require__(68)();
 	};
 
 	RecoverTab.prototype.extraRoutes = [
@@ -9080,8 +9079,8 @@
 /* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76),
-	    Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80),
+	    Tab = __webpack_require__(65).Tab;
 
 	var BalanceTab = function ()
 	{
@@ -9097,7 +9096,7 @@
 
 	BalanceTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(67)();
+	  return __webpack_require__(69)();
 	};
 
 	BalanceTab.prototype.angular = function (module)
@@ -9251,9 +9250,9 @@
 /* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76),
-	    Tab = __webpack_require__(63).Tab,
-	    rewriter = __webpack_require__(55);
+	var util = __webpack_require__(80),
+	    Tab = __webpack_require__(65).Tab,
+	    rewriter = __webpack_require__(57);
 
 	var HistoryTab = function ()
 	{
@@ -9267,7 +9266,7 @@
 
 	HistoryTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(68)();
+	  return __webpack_require__(70)();
 	};
 
 	HistoryTab.prototype.angular = function (module) {
@@ -9708,8 +9707,171 @@
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab = __webpack_require__(63).Tab;
+	var util      = __webpack_require__(80);
+	var webutil   = __webpack_require__(54);
+	var Tab       = __webpack_require__(65).Tab;
+
+	var ContactsTab = function ()
+	{
+	  Tab.call(this);
+	};
+
+	util.inherits(ContactsTab, Tab);
+
+	ContactsTab.prototype.tabName = 'contacts';
+	ContactsTab.prototype.mainMenu = 'wallet';
+
+	// /contact is the way it appears in Ripple URIs
+	ContactsTab.prototype.aliases = ['contact'];
+
+	ContactsTab.prototype.generateHtml = function ()
+	{
+	  return __webpack_require__(71)();
+	};
+
+	ContactsTab.prototype.angular = function (module) {
+	  module.controller('ContactsCtrl', ['$scope', 'rpId', 'rpTracker',
+	    function ($scope, $id, $rpTracker)
+	  {
+	    if (!$id.loginStatus) return $id.goId();
+
+	    $scope.reset_form = function ()
+	    {
+	      $scope.contact = {
+	        name: '',
+	        view: '',
+	        address: ''
+	      };
+	      if ($scope.addForm) $scope.addForm.$setPristine();
+	    };
+
+	    $scope.reset_form();
+
+	    /**
+	     * Toggle "add contact" form
+	     */
+	    $scope.toggle_form = function ()
+	    {
+	      $scope.addform_visible = !$scope.addform_visible;
+	      $scope.reset_form();
+	    };
+
+	    /**
+	     * Create contact
+	     */
+	    $scope.create = function ()
+	    {
+	      var contact = {
+	        name: $scope.contact.name,
+	        view: $scope.contact.view,
+	        address: $scope.contact.address
+	      };
+
+	      if ($scope.contact.dt) {
+	        contact.dt = $scope.contact.dt;
+	      }
+
+	      // Enable the animation
+	      $scope.enable_highlight = true;
+
+	      // Add an element
+	      //$scope.userBlob.unshift("/contacts", contact);
+
+	      // Hide the form
+	      $scope.toggle_form();
+
+	      // Clear form
+	      $scope.reset_form();
+	    };
+	  }]);
+
+	  module.controller('ContactRowCtrl', ['$scope', '$location',
+	    function ($scope, $location) {
+	      $scope.editing = false;
+
+	      /**
+	       * Switch to edit mode
+	       *
+	       * @param index
+	       */
+	      $scope.edit = function (index)
+	      {
+	        $scope.editing = true;
+	        $scope.editname = $scope.entry.name;
+	        $scope.editaddress = $scope.entry.address;
+	        $scope.editview = $scope.entry.view;
+	        $scope.editdt = $scope.entry.dt;
+	      };
+
+	      /**
+	       * Update contact
+	       *
+	       * @param index
+	       */
+	      $scope.update = function (index)
+	      {
+	        if (!$scope.inlineAddress.editaddress.$error.rpUnique
+	            && !$scope.inlineAddress.editaddress.$error.rpDest
+	            && !$scope.inlineName.editname.$error.rpUnique) {
+
+	          var entry = {
+	            name: $scope.editname,
+	            view: $scope.editview,
+	            address: $scope.editaddress
+	          };
+
+	          if ($scope.editdt) {
+	            entry.dt = $scope.editdt;
+	          }
+
+	          // Update blob
+	          $scope.userBlob.filter('/contacts', 'name', $scope.entry.name,
+	                                 'extend', '', entry);
+
+	          $scope.editing = false;
+	        }
+	      };
+
+	      /**
+	       * Remove contact
+	       *
+	       * @param index
+	       */
+	      $scope.remove = function (name) {
+	        // Update blob
+	        $scope.userBlob.filter('/contacts', 'name', $scope.entry.name,
+	                               'unset', '');
+	      };
+
+	      /**
+	       * Cancel contact edit
+	       *
+	       * @param index
+	       */
+	      $scope.cancel = function (index)
+	      {
+	        $scope.editing = false;
+	      };
+
+	      $scope.send = function (index)
+	      {
+	        var search = {to: $scope.entry.name};
+
+	        $location.path('/send');
+	        $location.search(search);
+	      };
+	    }]);
+	};
+
+	module.exports = ContactsTab;
+
+
+/***/ },
+/* 45 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var util = __webpack_require__(80);
+	var Tab = __webpack_require__(65).Tab;
 
 	var AccountTab = function ()
 	{
@@ -9723,7 +9885,7 @@
 
 	AccountTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(69)();
+	  return __webpack_require__(72)();
 	};
 
 	AccountTab.prototype.angular = function(module)
@@ -9813,11 +9975,1127 @@
 
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab  = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80),
+	    webutil = __webpack_require__(54),
+	    Tab = __webpack_require__(65).Tab,
+	    Amount = ripple.Amount,
+	    Currency = ripple.Currency,
+	    Base = ripple.Base,
+	    RippleError = ripple.RippleError;
+
+	var SendTab = function ()
+	{
+	  Tab.call(this);
+	};
+
+	util.inherits(SendTab, Tab);
+
+	SendTab.prototype.tabName = 'send';
+	SendTab.prototype.mainMenu = 'send';
+
+	SendTab.prototype.angularDeps = Tab.prototype.angularDeps.concat(['federation', 'keychain']);
+
+	SendTab.prototype.generateHtml = function ()
+	{
+	  return __webpack_require__(73)();
+	};
+
+	SendTab.prototype.angular = function (module)
+	{
+	  module.controller('SendCtrl', ['$scope', '$timeout', '$routeParams', 'rpId',
+	                                 'rpNetwork', 'rpFederation', 'rpTracker',
+	                                 'rpKeychain',
+	                                 function ($scope, $timeout, $routeParams, $id,
+	                                           $network, $federation, $rpTracker,
+	                                           keychain)
+	  {
+	    if (!$id.loginStatus) return $id.goId();
+
+	    var timer;
+
+	    // XRP currency object.
+	    // {name: "XRP - Ripples", order: 146, value: "XRP"}
+	    var xrpCurrency = Currency.from_json("XRP");
+
+	    $scope.xrp = {
+	      name: xrpCurrency.to_human({full_name:$scope.currencies_all_keyed["XRP"].name}),
+	      code: xrpCurrency.get_iso(),
+	      currency: xrpCurrency
+	    };
+
+	    $scope.$watch('send.recipient', function(){
+	      // raw address without any parameters
+	      var address = webutil.stripRippleAddress($scope.send.recipient);
+
+	      $scope.contact = webutil.getContact($scope.userBlob.data.contacts, address);
+
+	      // Sets
+	      // send.recipient, send.recipient_name, send.recipient_address, send.dt.
+	      if ($scope.contact) {
+	        if ($scope.send.recipient === $scope.contact.address) {
+	          $scope.send.recipient = $scope.contact.name;
+	        }
+	        $scope.send.recipient_name = $scope.contact.name;
+	        $scope.send.recipient_address = $scope.contact.address;
+
+	        if ($scope.contact.dt) {
+	          $scope.send.dt = $scope.contact.dt;
+	        }
+	      }
+	      else {
+	        $scope.send.recipient_name = '';
+	        $scope.send.recipient_address = address;
+	      }
+
+	      $scope.update_destination();
+	    }, true);
+
+	    $scope.$watch('send.currency', function () {
+	      var currency = ripple.Currency.from_json($scope.send.currency);
+	      if ($scope.send.currency !== '' && currency.is_valid()) {
+	        $scope.send.currency_code = currency.to_human().toUpperCase();
+	      } else {
+	        $scope.send.currency_code = '';
+	      }
+	      $scope.update_currency();
+	    }, true);
+
+	    $scope.$watch('send.amount', function () {
+	      $scope.update_amount();
+	    }, true);
+
+	    $scope.$watch('send.extra_fields', function () {
+	      $scope.update_amount();
+	    }, true);
+
+	    // When the send form is invalid, path finding won't trigger. So if the form
+	    // is changed by one of the update_* handlers and becomes valid during the
+	    // next digest, we need to manually trigger another update_amount.
+	    $scope.$watch('sendForm.$valid', function () {
+	      $scope.update_amount();
+	    });
+
+	    var destUpdateTimeout;
+
+	    // Reset everything that depends on the destination
+	    $scope.reset_destination_deps = function() {
+	      var send = $scope.send;
+	      send.self = false;
+	      send.quote_url = false;
+	      send.federation = false;
+	      send.fund_status = "none";
+	      send.extra_fields = [];
+
+	      // Reset federation address validity status
+	      if ($scope.sendForm && $scope.sendForm.send_destination)
+	        $scope.sendForm.send_destination.$setValidity("federation", true);
+
+	      // Now starting to work on resolving the recipient
+	      send.recipient_resolved = false;
+	      send.recipient_actual = void(0);
+	      send.amount_actual = void(0);
+
+	      $scope.reset_currency_deps();
+	    };
+
+	    $scope.check_dt_visibility = function () {
+	      var send = $scope.send;
+
+	      send.show_dt_field =
+	        ($routeParams.dt
+	         || send.dt
+	         || ('object' === typeof send.recipient_info &&
+	             send.recipient_info.dest_tag_required))
+	        && !send.federation;
+	    };
+
+	    $scope.update_destination = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_address;
+
+	      if (recipient === send.last_recipient) return;
+
+	      // Trying to send to a Bitcoin address
+	      if (!isNaN(Base.decode_check([0, 5], recipient, 'bitcoin'))) {
+	        if (Options.bridge.out.bitcoin) { // And there is a default bridge
+	          recipient += '@' + Options.bridge.out.bitcoin
+	          send.recipient_address = recipient
+	        }
+	      }
+
+	      send.last_recipient = recipient;
+
+	      $scope.reset_destination_deps();
+
+	      // Trying to send XRP to self.
+	      // This is used to disable 'Send XRP' button
+	      send.self = recipient === $scope.address;
+
+	      // Trying to send to a Ripple name
+	      send.rippleName = webutil.isRippleName(recipient);
+
+	      // Trying to send to an email/federation address
+	      send.federation = ("string" === typeof recipient) && ~recipient.indexOf('@');
+
+	      // Check destination tag visibility
+	      $scope.check_dt_visibility();
+
+	      if (destUpdateTimeout) $timeout.cancel(destUpdateTimeout);
+	      destUpdateTimeout = $timeout($scope.update_destination_remote, 500);
+	    };
+
+	    $scope.update_destination_remote = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_address;
+
+	      // Reset federation address validity status
+	      if ($scope.sendForm && $scope.sendForm.send_destination)
+	        $scope.sendForm.send_destination.$setValidity("federation", true);
+
+	      // If there was a previous federation request, we need to clean it up here.
+	      if (send.federation_record) {
+	        send.federation_record = null;
+	        send.dt = null;
+	      }
+
+	      if (send.federation) {
+	        send.path_status = "fed-check";
+	        $federation.check_email(recipient)
+	          .then(function (result) {
+	            // Check if this request is still current, exit if not
+	            var now_recipient = send.recipient_address;
+	            if (recipient !== now_recipient) return;
+
+	            send.federation_record = result;
+
+	            if (result.extra_fields) {
+	              send.extra_fields = result.extra_fields;
+	            }
+
+	            send.dt = ("number" === typeof result.dt) ? result.dt : undefined;
+
+	            if (result.destination_address) {
+	              // Federation record specifies destination
+	              send.recipient_name = recipient;
+	              send.recipient_address = result.destination_address;
+
+	              $scope.check_destination();
+	            } else if (result.quote_url) {
+	              // Federation destination requires us to request a quote
+	              send.quote_url = result.quote_url;
+	              send.quote_destination = result.destination;
+	              send.path_status = "waiting";
+	              $scope.update_currency_constraints();
+	            } else {
+	              // Invalid federation result
+	              send.path_status = "waiting";
+	              $scope.sendForm.send_destination.$setValidity("federation", false);
+	              // XXX Show specific error message
+	            }
+	          }, function () {
+	            // Check if this request is still current, exit if not
+	            var now_recipient = send.recipient_actual || send.recipient_address;
+	            if (recipient !== now_recipient) return;
+
+	            send.path_status = "waiting";
+	            $scope.sendForm.send_destination.$setValidity("federation", false);
+	          })
+	        ;
+	      }
+	      else if (send.rippleName) {
+	        ripple.AuthInfo.get(Options.domain,send.recipient,function(err, response) {
+	          $scope.$apply(function(){
+	            send.recipient_name = '~' + response.username;
+	            send.recipient_address = response.address;
+	          });
+
+	          $scope.check_destination();
+	        })
+	      }
+	      else {
+	        $scope.check_destination();
+	      }
+	    };
+
+	    // Check destination for XRP sufficiency and flags
+	    $scope.check_destination = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_actual || send.recipient_address;
+
+	      if (!ripple.UInt160.is_valid(recipient)) return;
+
+	      var account = $network.remote.account(recipient);
+
+	      send.path_status = 'checking';
+	      send.recipient_info = null;
+	      account.entry(function (e, data) {
+	        $scope.$apply(function () {
+	          // Check if this request is still current, exit if not
+	          var now_recipient = send.recipient_actual || send.recipient_address;
+	          if (recipient !== now_recipient) return;
+
+	          // If we get this far, we have a Ripple address resolved
+	          send.recipient_resolved = true;
+
+	          if (e) {
+	            if (e.remote.error === "actNotFound") {
+	              send.recipient_info = {
+	                'loaded': true,
+	                'exists': false,
+	                'Balance': "0"
+	              };
+	              $scope.update_currency_constraints();
+	            } else {
+	              // XXX Actual error
+	            }
+	          } else {
+	            send.recipient_info = {
+	              'loaded': true,
+	              'exists': true,
+	              'Balance': data.account_data.Balance,
+
+	              // Flags
+	              'disallow_xrp': data.account_data.Flags & ripple.Remote.flags.account_root.DisallowXRP,
+	              'dest_tag_required': data.account_data.Flags & ripple.Remote.flags.account_root.RequireDestTag
+	            };
+
+	            // Check destination tag visibility
+	            $scope.check_dt_visibility();
+
+	            if (!$scope.account || !$scope.account.reserve_base) return;
+
+	            var reserve_base = $scope.account.reserve_base;
+	            send.xrp_deficiency = reserve_base.subtract(data.account_data.Balance);
+
+	            send.recipient_lines = false;
+	            $scope.update_currency_constraints();
+	          }
+	        });
+	      });
+	    };
+
+	    /**
+	     * Update any constraints on what currencies the user can select.
+	     *
+	     * In many modes, the user is restricted in terms of what they can send.
+	     * For example, when sending to a Bitcoin address, they can only send BTC.
+	     *
+	     * This function checks those conditions and updates the UI.
+	     */
+	    $scope.update_currency_constraints = function () {
+	      var send = $scope.send;
+
+	      // Reset constraints
+	      send.currency_choices = $scope.currencies_all;
+	      send.currency_force = false;
+
+		send.currency_choices_constraints = {};
+
+	      // Federation response can specific a fixed amount
+	      if (send.federation_record &&
+	          "undefined" !== typeof send.federation_record.amount) {
+	        send.force_amount = Amount.from_json(send.federation_record.amount);
+	        send.amount = send.force_amount.to_text();
+	        send.currency_choices_constraints.federation = [send.force_amount.currency().to_json()];
+
+	      // Apply federation currency restrictions
+	      } else if (send.federation_record &&
+	          $.isArray(send.federation_record.currencies) &&
+	          send.federation_record.currencies.length >= 1 &&
+	          "object" === typeof send.federation_record.currencies[0] &&
+	          "string" === typeof send.federation_record.currencies[0].currency) {
+	        // XXX Do some validation on this
+	        send.currency_choices_constraints.federation = [];
+	        $.each(send.federation_record.currencies, function () {
+	          send.currency_choices_constraints.federation.push(this.currency);
+	        });
+	      }
+
+	      // If this a bridge where we need a quote, we need to enter an
+	      // amount first, before we can even find out who the recipient is. So
+	      // if there is a quote_url, we want to bypass the recipient-based
+	      // constraints.
+	      if (send.quote_url) {
+	        $scope.update_currency_choices();
+	        return;
+	      }
+
+	      // If we don't have information about the recipient Ripple account yet,
+	      // we'll just return. We'll get back here once we have that information.
+	      if (!send.recipient_info.loaded) return;
+
+	      if (send.recipient_info.exists) {
+	        // Check allowed currencies for this address
+	        var requestedRecipientAddress = send.recipient_address;
+	        send.currency_choices_constraints.accountLines = 'pending';
+	        $network.remote.request_account_currencies(requestedRecipientAddress)
+	          .on('success', function (data) {
+	            $scope.$apply(function () {
+	              if (data.receive_currencies &&
+	                  // We need to make sure the destination account hasn't changed
+	                  send.recipient_address === requestedRecipientAddress) {
+	                send.currency_choices_constraints.accountLines = data.receive_currencies;
+
+	                // add XRP if it's allowed
+	                if (!$scope.send.recipient_info.disallow_xrp) {
+	                  send.currency_choices_constraints.accountLines.unshift('XRP');
+	                }
+
+	                $scope.update_currency_choices();
+	              }
+	            });
+	          })
+	          .on('error', function () {})
+	          .request();
+	      } else {
+	        // If the account doesn't exist, we can only send XRP
+	        send.currency_choices_constraints.accountLines = ["XRP"];
+	      }
+	      send.currency_choices_constraints.accountLines = ["CLP"];
+	      $scope.update_currency_choices();
+	    };
+
+	    // Generate list of accepted currencies
+	    $scope.update_currency_choices = function() {
+	      var send = $scope.send;
+
+	      var currencies = [];
+
+	      // Make sure none of the currency_choices_constraints are pending
+	      if (_.values(send.currency_choices_constraints).indexOf('pending') !== -1) {
+	        send.path_status = 'account-currencies';
+	        send.currency_choices = [];
+	        return;
+	      } else {
+	        // The possible currencies are the intersection of all provided currency
+	        // constraints.
+	        currencies = _.intersection.apply(_, _.values(send.currency_choices_constraints));
+	        currencies = _.uniq(_.compact(currencies));
+
+	        // create the display version of the currencies
+	        currencies = _.map(currencies, function (currency) {
+	         // create a currency object for each of the currency codes
+	          var currencyObj = ripple.Currency.from_json(currency);
+	          if ($scope.currencies_all_keyed[currencyObj.get_iso()]) {
+	            return currencyObj.to_human({full_name:$scope.currencies_all_keyed[currencyObj.get_iso()].name});
+	          } else {
+	            return currencyObj.to_human();
+	          }
+	        });
+	      }
+
+	      if (currencies.length === 1) {
+	        send.currency = send.currency_force = currencies[0];
+	      } else if (currencies.length === 0) {
+	        send.path_status = 'error-no-currency';
+	        send.currency = '';
+	      } else {
+	        send.currency_force = false;
+
+	        if (currencies.indexOf(send.currency) === -1) {
+	          send.currency = currencies[0];
+	        }
+	      }
+	      
+	      $scope.send.currency_choices = currencies[1];
+	      $scope.update_currency();
+	    };
+
+	    // Reset anything that depends on the currency
+	    $scope.reset_currency_deps = function () {
+	      // XXX Reset
+
+	      $scope.reset_amount_deps();
+	    };
+
+	    $scope.update_currency = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_actual || send.recipient_address;
+	      var currency = send.currency;
+
+	      $scope.reset_currency_deps();
+
+	      // We should have a valid recipient unless it's a quoting bridge, in
+	      // which case we should continue so we can request a quote.
+	      if (!ripple.UInt160.is_valid(recipient) && !send.quote_url) {
+	        return;
+	      }
+
+	      if (!send.currency_choices ||
+	          send.currency_choices.length === 0) {
+	        return;
+	      }
+
+	      $scope.update_amount();
+	    };
+
+	    var pathUpdateTimeout;
+
+	    $scope.reset_amount_deps = function () {
+	      var send = $scope.send;
+	      send.sender_insufficient_xrp = false;
+	      send.quote = false;
+
+	      $scope.reset_paths();
+	    };
+
+	    $scope.update_amount = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_actual || send.recipient_address;
+
+	      if (!send.currency_choices ||
+	          send.currency_choices.length === 0) {
+	        return;
+	      }
+
+	      var currency = ripple.Currency.from_human(send.currency);
+
+	      var matchedCurrency = currency.has_interest() ? currency.to_hex() : currency.get_iso();
+	      var match = /^([a-zA-Z0-9]{3}|[A-Fa-f0-9]{40})\b/.exec(matchedCurrency);
+
+	      if (!match) {
+	        // Currency code not recognized, should have been caught by
+	        // form validator.
+	        return;
+	      }
+
+	      // Demurrage: Get a reference date five minutes in the future
+	      //
+	      // Normally, when using demurrage currencies, we would immediately round
+	      // down (e.g. 0.99999 instead of 1) as demurrage occurs continuously. Not
+	      // a good user experience.
+	      //
+	      // By choosing a date in the future, this gives us a time window before
+	      // this rounding down occurs. Note that for positive interest currencies
+	      // this actually *causes* the same odd rounding problem, so in the future
+	      // we'll want a better solution, but for right now this does what we need.
+	      var refDate = new Date(new Date().getTime() + 5 * 60000);
+	      var amount = send.amount_feedback = ripple.Amount.from_human('' + send.amount + ' ' + matchedCurrency, { reference_date: refDate });
+
+	      $scope.reset_amount_deps();
+	      send.path_status = 'waiting';
+
+	      // If there is a timeout in progress, we want to cancel it, since the
+	      // inputs have changed.
+	      if (pathUpdateTimeout) $timeout.cancel(pathUpdateTimeout);
+
+	      // If the form is invalid, we won't be able to submit anyway, so no point
+	      // in calculating paths.
+	      if ($scope.sendForm.$invalid) return;
+
+	      if (send.quote_url) {
+	        if (!send.amount_feedback.is_valid())
+	          return;
+
+	        // Dummy issuer
+	        send.amount_feedback.set_issuer(1);
+	        pathUpdateTimeout = $timeout($scope.update_quote, 500);
+	      } else {
+	        if (!ripple.UInt160.is_valid(recipient) || !ripple.Amount.is_valid(amount)) {
+	          // XXX Error?
+	          return;
+	        }
+
+	        // Create Amount object
+	        if (!send.amount_feedback.is_native()) {
+	          send.amount_feedback.set_issuer(recipient);
+	        }
+
+	        // If we don't have recipient info yet, then don't search for paths
+	        if (!send.recipient_info) {
+	          return;
+	        }
+
+	        // Cannot make XRP payment if the sender does not have enough XRP
+	        send.sender_insufficient_xrp = send.amount_feedback.is_native()
+	          && $scope.account.max_spend
+	          && $scope.account.max_spend.to_number() > 1
+	          && $scope.account.max_spend.compareTo(send.amount_feedback) < 0;
+
+	        var total = send.amount_feedback.add(send.recipient_info.Balance);
+	        var reserve_base = $scope.account.reserve_base;
+	        if (total.compareTo(reserve_base) < 0) {
+	          send.fund_status = "insufficient-xrp";
+	          send.xrp_deficiency = reserve_base.subtract(send.recipient_info.Balance);
+	        }
+
+	        // If the destination doesn't exist, then don't search for paths.
+	        if (!send.recipient_info.exists) {
+	          send.path_status = 'none';
+	          return;
+	        }
+
+	        send.path_status = 'pending';
+	        pathUpdateTimeout = $timeout($scope.update_paths, 500);
+	      }
+	    };
+
+	    /**
+	     * Query the bridge for a quote.
+	     *
+	     * This will set send.amount_actual and send.recipient_actual based on the
+	     * quote that the bridge returns.
+	     */
+	    $scope.update_quote = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_actual || send.recipient_address;
+
+	      $scope.reset_paths();
+
+	      try {
+	        // Get a quote
+	        send.path_status = "bridge-quote";
+
+	        var data = {
+	          type: "quote",
+	          amount: send.amount_feedback.to_text()+"/"+send.amount_feedback.currency().to_json(),
+	          destination: send.quote_destination,
+	          address: $scope.address
+	        };
+
+	        if ($.isArray(send.extra_fields)) {
+	          $.each(send.extra_fields, function () {
+	            data[this.name] = this.value;
+	          });
+	        }
+
+	        $.ajax({
+	          url: send.quote_url,
+	          dataType: 'json',
+	          data: data,
+	          error: function () {
+	            setImmediate(function () {
+	              $scope.$apply(function () {
+	                $scope.send.path_status = "error-quote";
+	              });
+	            });
+	          },
+	          success: function (data) {
+	            $scope.$apply(function () {
+	              // Check if this request is still current, exit if not
+	              var now_recipient = send.recipient_actual || send.recipient_address;
+	              if (recipient !== now_recipient) return;
+
+	              var now_amount = send.amount_feedback;
+	              if (!now_amount.equals(send.amount_feedback)) return;
+
+	              if (!data || !data.quote ||
+	                  !(data.result === "success" || data.status === "success") ||
+	                  !Array.isArray(data.quote.send) ||
+	                  !data.quote.send.length || !data.quote.address) {
+	                $scope.send.path_status = "error-quote";
+	                $scope.send.quote_error = "";
+	                if (data && data.result === "error" &&
+	                    "string" === typeof data.error_message) {
+	                  $scope.send.quote_error = data.error_message;
+	                }
+	                return;
+	              }
+
+	              var amount = Amount.from_json(data.quote.send[0]);
+
+	              send.quote = data.quote;
+
+	              // We have a quote, now calculate a path
+	              send.recipient_actual = data.quote.address;
+	              send.amount_actual = amount;
+
+	              $scope.update_paths();
+	            });
+	          }
+	        });
+	      } catch (e) {
+	        console.error(e.stack ? e.stack : e);
+	        $scope.send.path_status = "error-quote";
+	      }
+	    };
+
+	    $scope.reset_paths = function () {
+	      var send = $scope.send;
+
+	      send.alternatives = [];
+	    };
+
+	    $scope.update_paths = function () {
+	      var send = $scope.send;
+	      var recipient = send.recipient_actual || send.recipient_address;
+	      var amount = send.amount_actual || send.amount_feedback;
+	      var tracked;
+
+	      $scope.reset_paths();
+
+	      send.path_status = 'pending';
+
+	      // Determine if we need to update the paths.
+	      if (send.pathfind &&
+	          send.pathfind.src_account === $id.account &&
+	          send.pathfind.dst_account === recipient &&
+	          send.pathfind.dst_amount.equals(amount))
+	        return;
+
+	      // Start path find
+	      var pf = $network.remote.path_find($id.account,
+	                                         recipient,
+	                                         amount);
+
+	      send.pathfind = pf;
+
+	      var lastUpdate;
+
+	      pf.on('update', function (upd) {
+	        $scope.$apply(function () {
+	          lastUpdate = new Date();
+
+	          clearInterval(timer);
+	          timer = setInterval(function(){
+	            $scope.$apply(function(){
+	              var seconds = Math.round((new Date() - lastUpdate)/1000);
+	              $scope.lastUpdate = seconds ? seconds : 0;
+	            })
+	          }, 1000);
+
+	          // Check if this request is still current, exit if not
+	          var now_recipient = send.recipient_actual || send.recipient_address;
+	          if (recipient !== now_recipient) return;
+
+	          var now_amount = send.amount_actual || send.amount_feedback;
+	          if (!now_amount.equals(amount)) return;
+
+	          if (!upd.alternatives || !upd.alternatives.length) {
+	            $scope.send.path_status  = "no-path";
+	            $scope.send.alternatives = [];
+	          } else {
+	            var currentKey;
+	            $scope.send.path_status  = "done";
+	            $scope.send.alternatives = _.map(upd.alternatives, function (raw,key) {
+	              var alt = {};
+	              alt.amount   = Amount.from_json(raw.source_amount);
+
+	              // Compensate for demurrage
+	              //
+	              // In the case of demurrage, the amount would immediately drop
+	              // below where it is and because we currently always round down it
+	              // would immediately show up as something like 0.99999.
+	              var slightlyInFuture = new Date(+new Date() + 5 * 60000);
+
+	              alt.rate     = alt.amount.ratio_human(amount, {reference_date: slightlyInFuture});
+	              alt.send_max = alt.amount.product_human(Amount.from_json('1.01'));
+	              alt.paths    = raw.paths_computed
+	                ? raw.paths_computed
+	                : raw.paths_canonical;
+
+	              // Selected currency should be the first option
+	              if (raw.source_amount.currency) {
+	                if (raw.source_amount.currency === $scope.send.currency_code)
+	                  currentKey = key;
+	              } else if ($scope.send.currency_code === 'XRP') {
+	                currentKey = key;
+	              }
+
+	              return alt;
+	            });
+
+	            if (currentKey)
+	              $scope.send.alternatives.splice(0, 0, $scope.send.alternatives.splice(currentKey, 1)[0]);
+	          }
+
+	          if (!tracked) {
+	            $rpTracker.track('Send pathfind', {
+	              'Status': 'success',
+	              'Currency': $scope.send.currency_code,
+	              'Address Type': $scope.send.federation ? 'federation' : 'ripple',
+	              'Destination Tag': !!$scope.send.dt,
+	              'Paths': upd.alternatives.length,
+	              'Time': (+new Date() - +pathFindTime) / 1000
+	            });
+
+	            tracked = true;
+	          }
+	        });
+	      });
+
+	      pf.on('error', function (res) {
+	        setImmediate(function () {
+	          $scope.$apply(function () {
+	            send.path_status = "error";
+	          });
+	        });
+
+	        $rpTracker.track('Send pathfind', {
+	          'Status': 'error',
+	          'Message': res.engine_result,
+	          'Currency': $scope.send.currency_code,
+	          'Address Type': $scope.send.federation ? 'federation' : 'ripple',
+	          'Destination Tag': !!$scope.send.dt
+	        })
+	      });
+
+	      var pathFindTime = new Date();
+	    };
+
+	    $scope.$watch('userBlob.data.contacts', function (contacts) {
+	      $scope.recipient_query = webutil.queryFromContacts(contacts);
+	    }, true);
+
+	    $scope.$watch('account.max_spend', function () {
+	      $scope.update_amount();
+	    }, true);
+
+	    $scope.reset = function () {
+	      $scope.mode = "form";
+
+	      // XXX Most of these variables should be properties of $scope.send.
+	      //     The Angular devs recommend that models be objects due to the way
+	      //     scope inheritance works.
+	      $scope.send = {
+	        recipient: '',
+	        recipient_name: '',
+	        recipient_address: '',
+	        recipient_prev: '',
+	        recipient_info: {},
+	        amount: '',
+	        amount_prev: new Amount(),
+	        currency: $scope.xrp.name,
+	        currency_choices: [],
+	        currency_code: "XRP",
+	        path_status: 'waiting',
+	        fund_status: 'none',
+	        sender_insufficient_xrp: false
+	      };
+	      $scope.nickname = '';
+	      $scope.error_type = '';
+	      $scope.resetAddressForm();
+	      if ($scope.sendForm) $scope.sendForm.$setPristine(true);
+	    };
+
+	    $scope.cancelConfirm = function () {
+	      $scope.mode = "form";
+	      $scope.send.alt = null;
+
+	      // Force pathfinding reset
+	      $scope.update_paths();
+	    };
+
+	    $scope.resetAddressForm = function() {
+	      $scope.show_save_address_form = false;
+	      $scope.addressSaved = false;
+	      $scope.saveAddressName = '';
+	      $scope.addressSaving = false;
+	      if ($scope.saveAddressForm) $scope.saveAddressForm.$setPristine(true);
+	    };
+
+	    $scope.reset_goto = function (tabName) {
+	      $scope.reset();
+
+	      // TODO do something clever instead of document.location
+	      // because goToTab does $scope.$digest() which we don't need
+	      document.location = '#' + tabName;
+	    };
+
+	    /**
+	     * N3. Confirmation page
+	     */
+	    $scope.send_prepared = function () {
+	      // check if paths are available, if not then it is a direct send
+	      $scope.send.indirect = $scope.send.alt ? $scope.send.alt.paths.length : false;
+
+	      $scope.confirm_wait = true;
+	      $timeout(function () {
+	        $scope.confirm_wait = false;
+	      }, 1000, true);
+
+	      // Stop the pathfind - once we're on the confirmation page, we'll freeze
+	      // the last state we had so the user doesn't get surprises when
+	      // submitting.
+	      // XXX ST: The confirmation page should warn you somehow once it becomes
+	      //         outdated.
+	      if ($scope.send.pathfind) {
+	        $scope.send.pathfind.close();
+	        delete $scope.send.pathfind;
+	      }
+
+	      $scope.mode = "confirm";
+
+	      if (keychain.isUnlocked($id.account)) {
+	        $scope.send.secret = keychain.getUnlockedSecret($id.account);
+	      }
+
+	      $rpTracker.track('Send confirmation page', {
+	        'Currency': $scope.send.currency_code,
+	        'Address Type': $scope.send.federation ? 'federation' : 'ripple',
+	        'Destination Tag': !!$scope.send.dt
+	      })
+	    };
+
+	    /**
+	     * N4. Waiting for transaction result page
+	     */
+
+	    $scope.onTransactionProposed = function (res, tx) {
+	      $scope.$apply(function () {
+	        $scope.setEngineStatus(res, false);
+	        $scope.sent(tx.hash);
+
+	        // Remember currency and increase order
+	        var found;
+
+	        for (var i = 0; i < $scope.currencies_all.length; i++) {
+	          if ($scope.currencies_all[i].value.toLowerCase() === $scope.send.amount_feedback.currency().get_iso().toLowerCase()) {
+	            $scope.currencies_all[i].order++;
+	            found = true;
+	            break;
+	          }
+	        }
+
+	        // // Removed feature until a permanent fix
+	        // if (!found) {
+	        //   $scope.currencies_all.push({
+	        //     "name": $scope.send.amount_feedback.currency().to_human().toUpperCase(),
+	        //     "value": $scope.send.amount_feedback.currency().to_human().toUpperCase(),
+	        //     "order": 1
+	        //   });
+	        // }
+	      });
+	    };
+
+	    $scope.onTransactionSuccess = function (res, tx) {
+	      $scope.$apply(function () {
+	        $scope.setEngineStatus(res, true);
+	      });
+	    };
+
+	    $scope.onTransactionError = function (res, tx) {
+	      setImmediate(function () {
+	        $scope.$apply(function () {
+	          $scope.mode = "error";
+
+	          if (res.engine_result) {
+	            $scope.setEngineStatus(res);
+	          } else if (res.error === 'remoteError') {
+	            $scope.error_type = res.remote.error;
+	          } else {
+	            $scope.error_type = "unknown";
+	          }
+	        });
+	      });
+	    };
+
+	    $scope.send_confirmed = function () {
+	      var send = $scope.send;
+	      var currency = $scope.send.currency.slice(0, 3).toUpperCase();
+	      var amount = send.amount_feedback;
+	      var address = $scope.send.recipient_address;
+
+	      $scope.mode = "sending";
+
+	      amount.set_issuer(address);
+
+	      var tx = $network.remote.transaction();
+	      // Source tag
+	      if ($scope.send.st) {
+	        tx.source_tag($scope.send.st);
+	      }
+
+	      if (send.secret) {
+	        tx.secret(send.secret);
+	      } else {
+	        // Get secret asynchronously
+	        keychain.getSecret($id.account, $id.username, send.unlock_password,
+	                           function (err, secret) {
+	                             if (err) {
+	                               console.log("client: send tab: error while " +
+	                                           "unlocking wallet: ", err);
+	                               $scope.mode = "error";
+	                               $scope.error_type = "unlockFailed";
+	                               return;
+	                             }
+
+	                             send.secret = secret;
+	                             $scope.send_confirmed();
+	                           });
+	        return;
+	      }
+
+	      if ($scope.send.quote) {
+	        if ("number" === typeof $scope.send.quote.destination_tag) {
+	          tx.destination_tag($scope.send.quote.destination_tag);
+	        }
+
+	        if ("string" === typeof $scope.send.quote.invoice_id) {
+	          tx.tx_json.InvoiceID = $scope.send.quote.invoice_id.toUpperCase();
+	        }
+
+	        tx.payment($id.account,
+	                   $scope.send.quote.address,
+	                   $scope.send.quote.send[0]);
+	      } else {
+	        // Destination tag
+	        var dt;
+	        if ($scope.send.dt) {
+	          dt = $scope.send.dt;
+	        } else {
+	          dt = webutil.getDestTagFromAddress($scope.send.recipient);
+	        }
+
+	        tx.destination_tag(dt ? +dt : undefined); // 'cause +dt is NaN when dt is undefined
+
+	        tx.payment($id.account, address, amount.to_json());
+	      }
+
+	      if ($scope.send.alt) {
+	        tx.send_max($scope.send.alt.send_max);
+	        tx.paths($scope.send.alt.paths);
+	      } else {
+	        if (!amount.is_native()) {
+	          tx.build_path(true);
+	        }
+	      }
+
+	      var maxLedger = Options.tx_last_ledger || 3;
+	      tx.lastLedger($network.remote._ledger_current_index + maxLedger);
+
+	      tx.on('success', function (res) {
+	        $scope.onTransactionSuccess(res, tx);
+
+	        $rpTracker.track('Send result', {
+	          'Status': 'success',
+	          'Currency': $scope.send.currency_code,
+	          'Address Type': $scope.send.federation ? 'federation' : 'ripple',
+	          'Destination Tag': !!$scope.send.dt,
+	          'Time': (+new Date() - +$scope.confirmedTime) / 1000
+	        })
+	      });
+
+	      tx.on('proposed', function (res) {
+	        $scope.onTransactionProposed(res, tx);
+	      });
+
+	      tx.on('error', function (res) {
+	        $scope.onTransactionError(res, tx);
+
+	        $rpTracker.track('Send result', {
+	          'Status': 'error',
+	          'Message': res.engine_result,
+	          'Currency': $scope.send.currency_code,
+	          'Address Type': $scope.send.federation ? 'federation' : 'ripple',
+	          'Destination Tag': !!$scope.send.dt,
+	          'Time': (+new Date() - +$scope.confirmedTime) / 1000
+	        });
+	      });
+
+	      tx.submit();
+
+	      $scope.confirmedTime = new Date();
+	    };
+
+	    /**
+	     * N5. Sent page
+	     */
+	    $scope.sent = function (hash) {
+	      $scope.mode = "status";
+	      $network.remote.on('transaction', handleAccountEvent);
+
+	      function handleAccountEvent(e) {
+	        $scope.$apply(function () {
+	          if (e.transaction.hash === hash) {
+	            $scope.setEngineStatus(e, true);
+	            $network.remote.removeListener('transaction', handleAccountEvent);
+	          }
+	        });
+	      }
+	    };
+
+	    $scope.setEngineStatus = function(res, accepted) {
+	      $scope.engine_result = res.engine_result;
+	      $scope.engine_result_message = res.engine_result_message;
+	      $scope.engine_status_accepted = !!accepted;
+	      $scope.mode = "status";
+	      $scope.tx_result = "partial";
+	      switch (res.engine_result.slice(0, 3)) {
+	        case 'tes':
+	          $scope.mode = "status";
+	          $scope.tx_result = accepted ? "cleared" : "pending";
+	          break;
+	        case 'tep':
+	          $scope.mode = "status";
+	          $scope.tx_result = "partial";
+	          break;
+	        default:
+	          $scope.mode = "rippleerror";
+	      }
+	    };
+
+	    $scope.saveAddress = function () {
+	      $scope.addressSaving = true;
+
+	      var contact = {
+	        name: $scope.saveAddressName,
+	        view: $scope.send.recipient,
+	        address: $scope.send.recipient_address
+	      };
+
+	      $scope.userBlob.unshift('/contacts', contact, function(err, data){
+	        if (err) {
+	          console.log("Can't save the contact. ", err);
+	          return;
+	        }
+
+	        $scope.contact = data;
+	        $scope.addressSaved = true;
+	      });
+	    };
+
+	    $scope.$on("$destroy", function () {
+	      // Stop pathfinding if the user leaves the tab
+	      if ($scope.send.pathfind) {
+	        $scope.send.pathfind.close();
+	        delete $scope.send.pathfind;
+	      }
+	    });
+
+	    $scope.reset();
+	  }]);
+
+	  /**
+	   * Contact name and address uniqueness validator
+	   */
+	  // TODO move to global directives
+	  module.directive('unique', function() {
+	    return {
+	      restrict: 'A',
+	      require: '?ngModel',
+	      link: function ($scope, elm, attr, ctrl) {
+	        if (!ctrl) return;
+
+	        var validator = function(value) {
+	          var unique = !webutil.getContact($scope.userBlob.data.contacts,value);
+	          ctrl.$setValidity('unique', unique);
+	          if (unique) return value;
+	        };
+
+	        ctrl.$formatters.push(validator);
+	        ctrl.$parsers.unshift(validator);
+
+	        attr.$observe('unique', function() {
+	          validator(ctrl.$viewValue);
+	        });
+	      }
+	    };
+	  });
+	};
+
+	module.exports = SendTab;
+
+
+/***/ },
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var util = __webpack_require__(80);
+	var Tab  = __webpack_require__(65).Tab;
 
 	var SecurityTab = function ()
 	{
@@ -9831,7 +11109,7 @@
 
 	SecurityTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(70)();
+	  return __webpack_require__(74)();
 	};
 
 	SecurityTab.prototype.angular = function (module) {
@@ -10177,11 +11455,11 @@
 
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80);
+	var Tab = __webpack_require__(65).Tab;
 
 	var TxTab = function ()
 	{
@@ -10194,7 +11472,7 @@
 
 	TxTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(71)();
+	  return __webpack_require__(75)();
 	};
 
 	TxTab.prototype.angular = function (module)
@@ -10306,11 +11584,11 @@
 
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76),
-	    Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80),
+	    Tab = __webpack_require__(65).Tab;
 
 	var FundTab = function ()
 	{
@@ -10326,7 +11604,7 @@
 
 	FundTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(72)();
+	  return __webpack_require__(76)();
 	};
 
 	FundTab.prototype.extraRoutes = [
@@ -10397,15 +11675,15 @@
 
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76),
-	    Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80),
+	Tab = __webpack_require__(65).Tab;
 
 	var WithdrawTab = function ()
 	{
-	  Tab.call(this);
+	    Tab.call(this);
 	};
 
 	util.inherits(WithdrawTab, Tab);
@@ -10417,7 +11695,7 @@
 
 	WithdrawTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(73)();
+	    return __webpack_require__(77)();
 	};
 
 	WithdrawTab.prototype.extraRoutes = [
@@ -10445,11 +11723,11 @@
 
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80);
+	var Tab = __webpack_require__(65).Tab;
 
 	var EulaTab = function ()
 	{
@@ -10464,7 +11742,7 @@
 
 	EulaTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(74)();
+	  return __webpack_require__(78)();
 	};
 
 	EulaTab.prototype.angular = function (module) {
@@ -10484,11 +11762,11 @@
 
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76);
-	var Tab = __webpack_require__(63).Tab;
+	var util = __webpack_require__(80);
+	var Tab = __webpack_require__(65).Tab;
 
 	var PrivacyTab = function ()
 	{
@@ -10503,7 +11781,7 @@
 
 	PrivacyTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(75)();
+	  return __webpack_require__(79)();
 	};
 
 	PrivacyTab.prototype.angular = function (module) {
@@ -10523,7 +11801,7 @@
 
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -10634,7 +11912,7 @@
 
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// returns the raw address after removing any parameters 
@@ -10914,7 +12192,7 @@
 
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10929,18 +12207,18 @@
 
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<div rp-snapper="rp-snapper" class="mobile-nav"><a href="#/balance" ng-class="{active: $route.current.tabName == \'balance\'}" class="wallet"><span class="nav-icon nav-icon-wallet"></span><span>Balance</span></a><a href="#/history" ng-class="{active: $route.current.tabName == \'history\'}" class="sub">Historial</a><a href="#/withdraw" ng-class="{active: $route.current.tabName == \'withdraw\'}" class="sub">Retirar</a><a href="#/account" ng-class="{active: $route.current.tabName == \'account\'}" class="advanced"><img src="img/profile-gray.png"/><span>Cuenta</span></a><a href="#/security" ng-class="{active: $route.current.tabName == \'security\'}" class="advanced"><img src="img/settings-gray.png"/><span>Configuración</span></a><a href="#" ng-click="logout()" class="advanced"><img src="img/logout-gray.png"/><span>Salir</span></a></div><!-- Wrapper--><div id="wrapper"><!-- Header--><header><h1 ng-show="[\'t-login\',\'t-recover\',\'t-register\',\'t-migrate\'].indexOf($route.current.tabClass) !== -1">Bienvenido a {{productName}} la cuenta móvil para el pago de servicios de transporte</h1>');
-	var __val__ = __webpack_require__(78)()
+	buf.push('<div rp-snapper="rp-snapper" class="mobile-nav"><a href="#/balance" ng-class="{active: $route.current.tabName == \'balance\'}" class="wallet"><span class="nav-icon nav-icon-wallet"></span><span>Balance</span></a><a href="#/history" ng-class="{active: $route.current.tabName == \'history\'}" class="sub">Historial</a><a href="#/contacts" ng-class="{active: $route.current.tabName == \'contacts\'}" class="sub">Contactos</a><a href="#/send" ng-class="{active: $route.current.tabName == \'send\'}" class="send"><span class="nav-icon nav-icon-send"></span><span>Pagar</span></a><a href="#/fund" ng-class="{active: $route.current.tabName == \'fund\'}" class="fund"><span class="nav-icon nav-icon-advanced"></span><span>Financiar</span></a><a href="#/withdraw" ng-class="{active: $route.current.tabName == \'withdraw\'}" class="sub">Retirar</a><a href="#/account" ng-class="{active: $route.current.tabName == \'account\'}" class="advanced"><img src="img/profile-gray.png"/><span>Cuenta</span></a><a href="#/security" ng-class="{active: $route.current.tabName == \'security\'}" class="advanced"><img src="img/settings-gray.png"/><span>Configuración</span></a><a href="#" ng-click="logout()" class="advanced"><img src="img/logout-gray.png"/><span>Salir</span></a></div><!-- Wrapper--><div id="wrapper"><!-- Header--><header><h1 ng-show="[\'t-login\',\'t-recover\',\'t-register\',\'t-migrate\'].indexOf($route.current.tabClass) !== -1">Bienvenido a {{productName}} la cuenta móvil para el pago de servicios de transporte</h1>');
+	var __val__ = __webpack_require__(82)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</header><div class="container"><!-- Main--><div role="main" id="{{$route.current.tabClass}}" ng-view="ng-view" class="row main"></div><!-- Footer--><footer class="row"><div class="col-xs-12 col-sm-1"><a href="http://dinex.cl" target="_blank">www.dinex.cl</a></div><!--.col-xs-12.col-sm-9.right-links<a href="http://ripple.com/terms" target="_blank">Condiciones de servicio (actualizar url)</a><a href="https://support.ripplelabs.com" target="_blank">Soporte (actualizar url)</a><a href="https://ripplelabs.atlassian.net/browse/WC" target="_blank">Reporte de errores (actualizar url)</a><a href="#/lang/en">English</a>--></footer></div></div>');
 	}
@@ -10948,10 +12226,10 @@
 	}
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pairs = __webpack_require__(58);
+	var pairs = __webpack_require__(60);
 
 	/**
 	 * Calculate executed order price
@@ -11470,7 +12748,7 @@
 
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11498,7 +12776,7 @@
 
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11518,7 +12796,7 @@
 
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -11556,10 +12834,10 @@
 	module.exports = DEFAULT_PAIRS;
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -11585,7 +12863,7 @@
 	}
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -11765,10 +13043,10 @@
 
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -11781,10 +13059,10 @@
 	}
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -11797,12 +13075,12 @@
 	}
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(76),
-	    webutil = __webpack_require__(52),
-	    log = __webpack_require__(53);
+	var util = __webpack_require__(80),
+	    webutil = __webpack_require__(54),
+	    log = __webpack_require__(55);
 
 	var Tab = function (config)
 	{
@@ -11840,42 +13118,42 @@
 
 
 /***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var jade = __webpack_require__(80);
-
-	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
-	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-	var buf = [];
-	with (locals || {}) {
-	var interp;
-	buf.push('<section ng-controller="RegisterCtrl" class="col-xs-12 content"><div class="row col-md-12"><div class="welcome-wrapper"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Registro de nuevos usuarios desactivado en demo.</h4></div><h3 class="platform">DineX es la primera cuenta móvil para el pago de transporte. Segura y confiable, en todas partes.</h3><h4 class="new"></h4></div></div><div ng-show="mode==&quot;form&quot;" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><form name="registerForm" ng-submit="submitForm()"><h2 ng-hide="oldUserBlob">Registrarse</h2><div class="sign-up-steps-list"><li class="active">Paso <span> 1</span></li><li>Paso <span> 2</span></li><li>Paso <span> 3</span></li></div><div class="form-group"><label for="register_username" ng-hide="oldUserBlob">Crear un nombre DineX</label><div ng-show="oldUserBlob" class="auth-attention">Por favor elija un nombre Dinex a continuación. Este será su nombre de usuario para ingresar a Dinex, así que recuerdelo! Los nombres Dinex son únicos. <a href="https://support.ripplelabs.com/hc/en-us/articles/202507548-Understanding-Ripple-Names">Saber más</a></div><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="register_username" name="register_username" type="text" ng-model="username" required="required" rp-focus="rp-focus" autocomplete="off" maxlength="20" rpDest="rpDest" rp-available-name="rp-available-name" rp-available-name-invalid-reason="usernameInvalidReason" rp-available-name-reserved-for="usernameReservedFor" rp-loading="usernameLoading" class="form-control"/></div><div rp-errors="register_username" ng-hide="usernameLoading" class="errorGroup"><div rp-error-valid="rp-error-valid" class="success">Available</div><div rp-error-on="rpAvailableName" class="error"><span ng-switch on="usernameInvalidReason"><span ng-switch-when="exists">Ya registrado!</span><span ng-switch-when="reserved">Reservado para {{usernameReservedFor}}<span>&#32;</span><i rp-popover="rp-popover" rp-popover-placement="bottom" rp-popover-title="Reserved domain" rp-popover-trigger="click" ng-switch-when="reserved" data-content="This name belongs to a high-traffic website and has been reserved to prevent phishing." class="fa fa-question-circle"></i></span><span ng-switch-when="tooshort">Debe tener al menos dos caracteres</span><span ng-switch-when="toolong">Debe tener como máximo 20 caracteres</span><span ng-switch-when="charset">Puede usar sólo los siguientes caracteres: a-z, 0-9 y guión (-)</span><span ng-switch-when="starthyphen">No puede empezar por guión (-)</span><span ng-switch-when="endhyphen">No puede terminar en guión (-)</span><span ng-switch-when="multhyphen">No puede usar guiones seguidos (--)</span></span></div></div><span ng-show="usernameLoading">Comprobando...</span></div><div ng-class="{\'field-error\': \'weak\' === strength || \'match\' === strength}" class="form-group"><label for="register_password">Contraseña</label><input id="register_password" name="register_password1" type="password" autocomplete="off" ng-model="password1" rp-strong-password="rp-strong-password" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="strength==\'weak\'"><span>Su contraseña es débil. No contiene números y símbolos o es muy corta.</span></p><p ng-show="strength==\'match\'"><span>Su nombre Dinex y contraseña no pueden coincidir. Por favor cree una nueva contraseña.</span></p></div><div ng-class="{\'field-error\': registerForm.register_password1.$error.rpSameInSet &amp;&amp; registerForm.register_password2.$dirty}" class="form-group"><label for="register_password2">Confirmar contraseña</label><input id="register_password2" name="register_password2" autocomplete="off" type="password" ng-model="password2" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="registerForm.register_password1.$error.rpSameInSet &amp;&amp; registerForm.register_password2.$dirty"><span>Contraseñas no coinciden</span></p></div><div ng-show=""><div class="form-group"><div class="strength {{strength}}">{{strength}}</div></div></div><div ng-class="{\'field-error\': registerForm.register_email.$error.email &amp;&amp; registerForm.register_email.$dirty}" class="form-group"><label for="register_email">Email</label><input type="email" name="register_email" id="register_email" placeholder="" ng-model="email" required="required" class="form-control"/><p ng-show="registerForm.register_email.$error.email &amp;&amp; registerForm.register_email.$dirty"><span>Dirección de correo no válida</span></p></div><div ng-show="showMasterKeyInput" ng-class="{\'field-error\': (registerForm.register_masterkey.$error.rpMasterKey || registerForm.register_masterkey.$error.rpMasterAddressExists)  &amp;&amp; registerForm.register_masterkey.$dirty}" class="form-group"><label for="register_masterkey">Clave secreta</label><a href="" ng-click="showMasterKeyInput=false">ocultar</a><div class="register_masterkey"><input id="register_masterkey" name="register_masterkey" type="text" autocomplete="off" ng-model="masterkey" rp-master-key="rp-master-key" rp-master-address-exists="rp-master-address-exists" rp-focus="rp-focus" rp-spinner="{{checkingMasterkey ? 4 : null}}" class="form-control"/><p ng-show="registerForm.register_masterkey.$error.rpMasterKey"><span>Clave secreta de la cuenta no es válida</span></p><div ng-show="registerForm.register_masterkey.$error.rpMasterAddressExists &amp;&amp; masterkeyAddress" class="auth-attention"> <div>La cuenta ~<span>{{ masterkeyUsername }} </span><span>({{ masterkeyAddress }})</span> ya ha sido creada usando esta clave secreta.</div><a ng-href="#/recover/{{masterkeyUsername}}" class="btn btn-primary recovery">Recuperar cuenta</a></div></div></div><div ng-hide="showMasterKeyInput || oldUserBlob">¿Necesita usar su clave secreta? <a href="" ng-click="showMasterKeyInput=true">Usar clave secreta</a></div><div class="form-group"><div class="checkbox"><label for="terms">Acepto el <a href="#eula" target="_blank" l10n-inc="l10n-inc">acuerdo de licencia</a> {{productName}}</label><input id="terms" type="checkbox" name="terms" ng-model="terms" required="required"/></div></div><div class="see-privacy-text">Por favor lea nuestro <a href="#privacy" target="_blank">politica de privacidad</a> para ver como recolectamos y usamos su información.</div><!--.submit-btn-container<button type="submit" ng-disabled="registerForm.$invalid || submitLoading" rp-spinner="{{submitLoading ? 4 : null}}" class="btn btn-block btn-success"><span ng-hide="oldUserBlob">Registrarse</span></button>--></form></div><div class="switch-mode-link-container">Ya tiene cuenta? <a href="#login" l10n-inc="l10n-inc"> Ingresar</a></div></div><div ng-show="mode==&quot;failed&quot;" class="row mode-masterkeyerror"><div class="col-xs-12 col-md-10 col-md-offset-1"><p class="literal">Ocurrio un error durante el registro. Por favor intente nuevamente más tarde.</p><p class="literal">El error reportado fue: <span ng-bind="error_detail"></span></p><p><button ng-click="mode=&quot;form&quot;" class="btn btn-primary">Volver</button></p></div></div><div ng-show="mode==&quot;alreadyexists&quot;" class="row mode-masterkeyerror"><div class="col-xs-12 col-md-10 col-md-offset-1"><p class="literal">Ya hay una cuenta con ese nombre, por favor elija otro nombre e intente nuevamente.</p><p><button ng-click="mode=&quot;form&quot;" class="btn btn-primary">Volver</button></p></div></div><div ng-show="mode==&quot;secret&quot;" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><h2 ng-hide="oldUserBlob">Registrarse</h2><div class="sign-up-steps-list"><li>Step<span> 1</span></li><li class="active">Paso <span> 2</span></li><li>Paso <span> 3</span></li></div><div ng-hide="oldUserBlob" class="alert alert-info">Al continuar, usted entiende que por medidas de seguridad DineX no provee un mecanismo para recuperar la contraseña o la clave secreta. Si usted olvida su contraseña y su clave secreta, no podrá acceder a su cuenta.</div><div class="secret-key-container"><div ng-hide="oldUserBlob">La clave secreta desbloquea el acceso a los fondos de la cuenta aún cuando olvide su nombre de usuario DineX o su contraseña. Por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. <a href="https://support.ripplelabs.com/hc/en-us/articles/201823366-Password-Recovery-and-Your-Secret-Key" target="_blank" l10n-inc="l10n-inc"> Lea más</a> acerca de claves y seguridad de su cuenta.</div><div ng-show="oldUserBlob">Si no ha guardado su clave secreta, por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. En el caso de que olvide su nombre de usuario DineX o su contraseñ, con su clave secreta puede recuperar su cuenta.</div><div class="secret-key"><span class="fa fa-key"></span><span ng-hide="showSecret">•••••••••••••••••••••••••••••</span><span ng-show="showSecret">{{keyOpen}}</span></div><a href="" ng-click="showSecret=!showSecret"><span ng-hide="showSecret">Mostrar clave secreta</span><span ng-show="showSecret">Ocultar clave secreta</span></a></div><div class="submit-btn-container"><button ng-click="mode=&quot;verification&quot;" class="btn btn-block btn-success"><span>Continuar</span></button></div></div></div><div ng-show="mode==&quot;verification&quot;" class="row auth-form-container mode-verification col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><h2 ng-hide="oldUserBlob">Registrarse</h2><ul class="sign-up-steps-list"><li class="completed">Paso <span> 1</span></li><li class="completed">Paso <span> 2</span></li><li class="active">Paso <span> 3</span></li></ul><div class="auth-attention">Hemos enviado un Email a <span> {{userBlob.data.email}}</span>. Para completar su registro, siga el enlace en el Email.</div><div ng-show="resendSuccess" class="auth-attention">El Email de verificación ha sido re-enviado.</div><form name="resendForm" class="row"><div class="col-xs-12"><label>Email:</label></div><div class="col-xs-12 col-sm-8"><div class="change-email-bar"><input type="email" ng-model="newEmail" placeholder="{{userBlob.data.email}}" class="form-control"/></div></div><div class="col-xs-12 col-sm-4"><button ng-click="resendEmail()" type="submit" ng-disabled="resendForm.$invalid || resendLoading" rp-spinner="{{resendLoading ? 4 : null}}" class="btn btn-success btn-block">Re-enviar Email</button></div></form></div></div><div ng-show="mode==&quot;welcome&quot;" class="row mode-welcome"><div class="col-xs-12 col-md-10 col-md-offset-1"><p class="important">Importante:</p><p class="hint">La clave secreta desbloquea el acceso a los fondos de la cuenta aún cuando olvide su nombre de usuario DineX o su contraseña. Por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. <a href="https://support.ripplelabs.com/hc/en-us/articles/201823366-Password-Recovery-and-Your-Secret-Key" target="_blank"> Lea más</a> acerca de claves y seguridad de su cuenta.</p><div class="credentials"><span class="username">Nombre de usuario:<span class="value">{{username}}</span></span><span class="password">Contraseña:<span ng-show="showPassword==true" class="value">{{password1}}&#32;</span><span ng-hide="showPassword==true" class="value">{{password}}</span><rp-confirm action-text="Are you in a safe place where no person or camera can see your screen?" action-button-text="Yes, show me" action-function="showPassword=true" cancel-button-text="no" ng-hide="showPassword==true"><a href="">Mostrar</a></rp-confirm><a href="" ng-click="showPassword=false" ng-show="showPassword==true">Ocultar</a></span></div><div class="secret"><p class="important"> </p><p class="key">{{address}}</p><p class="important">Clave secreta:</p><p ng-show="showSecret==true" class="key">{{keyOpen}}</p><p ng-hide="showSecret==true" class="key">{{key}}</p><p ng-hide="showSecret==true"><rp-confirm action-text="Are you in a safe place where no person or camera can see your screen?" action-button-text="Yes, show me" action-function="showSecret=true" cancel-button-text="no"><button class="btn btn-info btn-sm">Mostrar clave secreta</button></rp-confirm></p><p ng-show="showSecret==true"><button ng-click="showSecret=false" class="btn btn-info btn-sm">Ocultar clave secreta</button></p></div><p class="important">¿Ha guardado su clave secreta en un lugar seguro?</p><div class="row"><div class="col-xs-12 col-sm-5 col-lg-4"><a href="#balance" ng-click="goToFund()" class="btn btn-info btn-block btn-big">Sí, guardé mi clave secreta</a></div></div></div></div></section>');
-	}
-	return buf.join("");
-	}
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var jade = __webpack_require__(80);
-
-	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
-	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-	var buf = [];
-	with (locals || {}) {
-	var interp;
-	buf.push('<section ng-controller="LoginCtrl" class="col-xs-12 content"><div ng-hide="$routeParams.tab" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Bienvenido a DineX! </h4><ul><li> Ingresa a la cuenta de demostración para conductores. Aquí verás lo simple que es recibir pagos con DineX. La aplicación para Smartphones tiene las mismas vistas y funcionalidades.</li><li> Nombre de usuario: conductores</li><li> Contraseña: elmejor777</li><li> Puedes abrir en otra ventana la cuenta de usuario pasajero y hacer un pago de prueba para que la veas en acción!</li><li> Cualquier duda escríbenos a info@dinex.cl o a través de nuestras redes sociales.</li></ul></div><div class="auth-form-wrapper"><form name="loginForm" ng-submit="submitForm()"><h2>Ingresar</h2><div ng-show="verifyStatus" class="auth-attention text-center"><div ng-show="\'verifying\' === verifyStatus" class="status">Verificando...</div><div ng-show="\'verified\' === verifyStatus" class="status">Ha verificado exitosamente su correo</div><div ng-show="\'error\' === verifyStatus" class="status">El mensaje de verificación de correo es inválido. Ha expirado o se ha reenviado. Por favor revise su bandeja de entrada por el correo más reciente.</div></div><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div ng-show="status" class="text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div><div class="submit-btn-container"><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || loginForm.$invalid" ng-hide="twoFactor" class="btn btn-submit btn-block btn-success"><span>Ingresar</span></button><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || !token" ng-show="twoFactor" class="btn btn-submit btn-block btn-success"><span>Verificar</span></button></div><!--.submit-btn-container<a href="#recover/{{username}}" ng-show="showRecover" class="recover-btn"><button ng-click="" class="btn btn-block btn-primary"><span>Recuperar cuenta</span></button></a>--><!--a.recover(ng-href="#/recover/{{username}}", ng-hide="showRecover", l10n) Account Recovery--></form></div><div class="switch-mode-link-container">Nuevo en {{productName}}? <a href="#register" l10n-inc="l10n-inc">Registrarse</a></div></div><!--.row.action-login(ng-show="$routeParams.tab")<div class="col-xs-12 col-sm-6 col-md-6"><div ng-show="\'send\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p ng-show="$routeParams.amount">va a enviar</p><p ng-hide="$routeParams.amount">va a enviar dinero al usuario DineX</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-show="$routeParams.amount">Al usuario DineX</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'trust\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p>va a confiar</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true, no_interest: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-hide="$routeParams.name">Al usuario DineX</p><p ng-show="$routeParams.name">A <b> {{$routeParams.name}}</b> con dirección</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'contacts\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><span><p l10n-inc="l10n-inc">you will add the user</p><div class="address">{{$routeParams.to}}</div><p l10n-inc="l10n-inc">To your ripple contacts</p></span></div></div><div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-lg-offset-1"><form name="loginForm" ng-submit="submitForm()"><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div class="row"><div ng-show="status" class="col-xs-12 text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div></div><div class="row"><div class="col-xs-12"><button type="submit" ng-disabled="loginForm.$invalid || ajax_loading" rp-spinner="{{ajax_loading ? 4 : null}}" class="btn btn-lg btn-submit btn-block btn-primary">Ingresar</button></div></div><p class="literal hint">Puede confirmar esta transacción en la página siguiente.</p><p class="literal">Nuevo en {{productName}}? <a href="#/register" l10n-inc="l10n-inc">Crear cuenta</a></p></form></div>--></section>');
-	}
-	return buf.join("");
-	}
-
-/***/ },
 /* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="RegisterCtrl" class="col-xs-12 content"><div class="row col-md-12"><div class="welcome-wrapper"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Registro de nuevos usuarios está desactivado en la cuenta demo por seguridad.</h4></div><h3 class="platform">DineX es la primera cuenta móvil para el pago de transporte. Segura y confiable, en todas partes.</h3><h4 class="new"></h4></div></div><div ng-show="mode==&quot;form&quot;" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><form name="registerForm" ng-submit="submitForm()"><h2 ng-hide="oldUserBlob">Registrarse</h2><div class="sign-up-steps-list"><li class="active">Paso <span> 1</span></li><li>Paso <span> 2</span></li><li>Paso <span> 3</span></li></div><div class="form-group"><label for="register_username" ng-hide="oldUserBlob">Crear un nombre DineX</label><div ng-show="oldUserBlob" class="auth-attention">Por favor elija un nombre Dinex a continuación. Este será su nombre de usuario para ingresar a Dinex, así que recuerdelo! Los nombres Dinex son únicos. <a href="https://support.ripplelabs.com/hc/en-us/articles/202507548-Understanding-Ripple-Names">Saber más</a></div><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="register_username" name="register_username" type="text" ng-model="username" required="required" rp-focus="rp-focus" autocomplete="off" maxlength="20" rpDest="rpDest" rp-available-name="rp-available-name" rp-available-name-invalid-reason="usernameInvalidReason" rp-available-name-reserved-for="usernameReservedFor" rp-loading="usernameLoading" class="form-control"/></div><div rp-errors="register_username" ng-hide="usernameLoading" class="errorGroup"><div rp-error-valid="rp-error-valid" class="success">Available</div><div rp-error-on="rpAvailableName" class="error"><span ng-switch on="usernameInvalidReason"><span ng-switch-when="exists">Ya registrado!</span><span ng-switch-when="reserved">Reservado para {{usernameReservedFor}}<span>&#32;</span><i rp-popover="rp-popover" rp-popover-placement="bottom" rp-popover-title="Reserved domain" rp-popover-trigger="click" ng-switch-when="reserved" data-content="This name belongs to a high-traffic website and has been reserved to prevent phishing." class="fa fa-question-circle"></i></span><span ng-switch-when="tooshort">Debe tener al menos dos caracteres</span><span ng-switch-when="toolong">Debe tener como máximo 20 caracteres</span><span ng-switch-when="charset">Puede usar sólo los siguientes caracteres: a-z, 0-9 y guión (-)</span><span ng-switch-when="starthyphen">No puede empezar por guión (-)</span><span ng-switch-when="endhyphen">No puede terminar en guión (-)</span><span ng-switch-when="multhyphen">No puede usar guiones seguidos (--)</span></span></div></div><span ng-show="usernameLoading">Comprobando...</span></div><div ng-class="{\'field-error\': \'weak\' === strength || \'match\' === strength}" class="form-group"><label for="register_password">Contraseña</label><input id="register_password" name="register_password1" type="password" autocomplete="off" ng-model="password1" rp-strong-password="rp-strong-password" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="strength==\'weak\'"><span>Su contraseña es débil. No contiene números y símbolos o es muy corta.</span></p><p ng-show="strength==\'match\'"><span>Su nombre Dinex y contraseña no pueden coincidir. Por favor cree una nueva contraseña.</span></p></div><div ng-class="{\'field-error\': registerForm.register_password1.$error.rpSameInSet &amp;&amp; registerForm.register_password2.$dirty}" class="form-group"><label for="register_password2">Confirmar contraseña</label><input id="register_password2" name="register_password2" autocomplete="off" type="password" ng-model="password2" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="registerForm.register_password1.$error.rpSameInSet &amp;&amp; registerForm.register_password2.$dirty"><span>Contraseñas no coinciden</span></p></div><div ng-show=""><div class="form-group"><div class="strength {{strength}}">{{strength}}</div></div></div><div ng-class="{\'field-error\': registerForm.register_email.$error.email &amp;&amp; registerForm.register_email.$dirty}" class="form-group"><label for="register_email">Email</label><input type="email" name="register_email" id="register_email" placeholder="" ng-model="email" required="required" class="form-control"/><p ng-show="registerForm.register_email.$error.email &amp;&amp; registerForm.register_email.$dirty"><span>Dirección de correo no válida</span></p></div><div ng-show="showMasterKeyInput" ng-class="{\'field-error\': (registerForm.register_masterkey.$error.rpMasterKey || registerForm.register_masterkey.$error.rpMasterAddressExists)  &amp;&amp; registerForm.register_masterkey.$dirty}" class="form-group"><label for="register_masterkey">Clave secreta</label><a href="" ng-click="showMasterKeyInput=false">ocultar</a><div class="register_masterkey"><input id="register_masterkey" name="register_masterkey" type="text" autocomplete="off" ng-model="masterkey" rp-master-key="rp-master-key" rp-master-address-exists="rp-master-address-exists" rp-focus="rp-focus" rp-spinner="{{checkingMasterkey ? 4 : null}}" class="form-control"/><p ng-show="registerForm.register_masterkey.$error.rpMasterKey"><span>Clave secreta de la cuenta no es válida</span></p><div ng-show="registerForm.register_masterkey.$error.rpMasterAddressExists &amp;&amp; masterkeyAddress" class="auth-attention"> <div>La cuenta ~<span>{{ masterkeyUsername }} </span><span>({{ masterkeyAddress }})</span> ya ha sido creada usando esta clave secreta.</div><a ng-href="#/recover/{{masterkeyUsername}}" class="btn btn-primary recovery">Recuperar cuenta</a></div></div></div><div ng-hide="showMasterKeyInput || oldUserBlob">¿Necesita usar su clave secreta? <a href="" ng-click="showMasterKeyInput=true">Usar clave secreta</a></div><div class="form-group"><div class="checkbox"><label for="terms">Acepto el <a href="#eula" target="_blank" l10n-inc="l10n-inc">acuerdo de licencia</a> {{productName}}</label><input id="terms" type="checkbox" name="terms" ng-model="terms" required="required"/></div></div><div class="see-privacy-text">Por favor lea nuestro <a href="#privacy" target="_blank">politica de privacidad</a> para ver como recolectamos y usamos su información.</div><!--.submit-btn-container<button type="submit" ng-disabled="registerForm.$invalid || submitLoading" rp-spinner="{{submitLoading ? 4 : null}}" class="btn btn-block btn-success"><span ng-hide="oldUserBlob">Registrarse</span></button>--></form></div><div class="switch-mode-link-container">Ya tiene cuenta? <a href="#login" l10n-inc="l10n-inc"> Ingresar</a></div></div><div ng-show="mode==&quot;failed&quot;" class="row mode-masterkeyerror"><div class="col-xs-12 col-md-10 col-md-offset-1"><p class="literal">Ocurrio un error durante el registro. Por favor intente nuevamente más tarde.</p><p class="literal">El error reportado fue: <span ng-bind="error_detail"></span></p><p><button ng-click="mode=&quot;form&quot;" class="btn btn-primary">Volver</button></p></div></div><div ng-show="mode==&quot;alreadyexists&quot;" class="row mode-masterkeyerror"><div class="col-xs-12 col-md-10 col-md-offset-1"><p class="literal">Ya hay una cuenta con ese nombre, por favor elija otro nombre e intente nuevamente.</p><p><button ng-click="mode=&quot;form&quot;" class="btn btn-primary">Volver</button></p></div></div><div ng-show="mode==&quot;secret&quot;" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><h2 ng-hide="oldUserBlob">Registrarse</h2><div class="sign-up-steps-list"><li>Step<span> 1</span></li><li class="active">Paso <span> 2</span></li><li>Paso <span> 3</span></li></div><div ng-hide="oldUserBlob" class="alert alert-info">Al continuar, usted entiende que por medidas de seguridad DineX no provee un mecanismo para recuperar la contraseña o la clave secreta. Si usted olvida su contraseña y su clave secreta, no podrá acceder a su cuenta.</div><div class="secret-key-container"><div ng-hide="oldUserBlob">La clave secreta desbloquea el acceso a los fondos de la cuenta aún cuando olvide su nombre de usuario DineX o su contraseña. Por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. <a href="https://support.ripplelabs.com/hc/en-us/articles/201823366-Password-Recovery-and-Your-Secret-Key" target="_blank" l10n-inc="l10n-inc"> Lea más</a> acerca de claves y seguridad de su cuenta.</div><div ng-show="oldUserBlob">Si no ha guardado su clave secreta, por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. En el caso de que olvide su nombre de usuario DineX o su contraseñ, con su clave secreta puede recuperar su cuenta.</div><div class="secret-key"><span class="fa fa-key"></span><span ng-hide="showSecret">•••••••••••••••••••••••••••••</span><span ng-show="showSecret">{{keyOpen}}</span></div><a href="" ng-click="showSecret=!showSecret"><span ng-hide="showSecret">Mostrar clave secreta</span><span ng-show="showSecret">Ocultar clave secreta</span></a></div><div class="submit-btn-container"><button ng-click="mode=&quot;verification&quot;" class="btn btn-block btn-success"><span>Continuar</span></button></div></div></div><div ng-show="mode==&quot;verification&quot;" class="row auth-form-container mode-verification col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><h2 ng-hide="oldUserBlob">Registrarse</h2><ul class="sign-up-steps-list"><li class="completed">Paso <span> 1</span></li><li class="completed">Paso <span> 2</span></li><li class="active">Paso <span> 3</span></li></ul><div class="auth-attention">Hemos enviado un Email a <span> {{userBlob.data.email}}</span>. Para completar su registro, siga el enlace en el Email.</div><div ng-show="resendSuccess" class="auth-attention">El Email de verificación ha sido re-enviado.</div><form name="resendForm" class="row"><div class="col-xs-12"><label>Email:</label></div><div class="col-xs-12 col-sm-8"><div class="change-email-bar"><input type="email" ng-model="newEmail" placeholder="{{userBlob.data.email}}" class="form-control"/></div></div><div class="col-xs-12 col-sm-4"><button ng-click="resendEmail()" type="submit" ng-disabled="resendForm.$invalid || resendLoading" rp-spinner="{{resendLoading ? 4 : null}}" class="btn btn-success btn-block">Re-enviar Email</button></div></form></div></div><div ng-show="mode==&quot;welcome&quot;" class="row mode-welcome"><div class="col-xs-12 col-md-10 col-md-offset-1"><p class="important">Importante:</p><p class="hint">La clave secreta desbloquea el acceso a los fondos de la cuenta aún cuando olvide su nombre de usuario DineX o su contraseña. Por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. <a href="https://support.ripplelabs.com/hc/en-us/articles/201823366-Password-Recovery-and-Your-Secret-Key" target="_blank"> Lea más</a> acerca de claves y seguridad de su cuenta.</p><div class="credentials"><span class="username">Nombre de usuario:<span class="value">{{username}}</span></span><span class="password">Contraseña:<span ng-show="showPassword==true" class="value">{{password1}}&#32;</span><span ng-hide="showPassword==true" class="value">{{password}}</span><rp-confirm action-text="Are you in a safe place where no person or camera can see your screen?" action-button-text="Yes, show me" action-function="showPassword=true" cancel-button-text="no" ng-hide="showPassword==true"><a href="">Mostrar</a></rp-confirm><a href="" ng-click="showPassword=false" ng-show="showPassword==true">Ocultar</a></span></div><div class="secret"><p class="important"> </p><p class="key">{{address}}</p><p class="important">Clave secreta:</p><p ng-show="showSecret==true" class="key">{{keyOpen}}</p><p ng-hide="showSecret==true" class="key">{{key}}</p><p ng-hide="showSecret==true"><rp-confirm action-text="Are you in a safe place where no person or camera can see your screen?" action-button-text="Yes, show me" action-function="showSecret=true" cancel-button-text="no"><button class="btn btn-info btn-sm">Mostrar clave secreta</button></rp-confirm></p><p ng-show="showSecret==true"><button ng-click="showSecret=false" class="btn btn-info btn-sm">Ocultar clave secreta</button></p></div><p class="important">¿Ha guardado su clave secreta en un lugar seguro?</p><div class="row"><div class="col-xs-12 col-sm-5 col-lg-4"><a href="#balance" ng-click="goToFund()" class="btn btn-info btn-block btn-big">Sí, guardé mi clave secreta</a></div></div></div></div></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(84);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="LoginCtrl" class="col-xs-12 content"><div ng-hide="$routeParams.tab" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Bienvenido a DineX!</h4><ul><li> Ingresa a la cuenta de demostración para pasajeros. Aquí verás lo simple que es realizar pagos con DineX. La aplicación para Smartphones tiene las mismas vistas y funcionalidades.</li><li> Nombre de usuario: pasajeros</li><li> Contraseña: dinex777</li><li> Puedes abrir en otra ventana la cuenta de usuario conductor y hacer un pago de prueba para que la veas en acción!</li><li> Cualquier duda escríbenos a info@dinex.cl o a través de nuestras redes sociales.</li></ul></div><div class="auth-form-wrapper"><form name="loginForm" ng-submit="submitForm()"><h2>Ingresar</h2><div ng-show="verifyStatus" class="auth-attention text-center"><div ng-show="\'verifying\' === verifyStatus" class="status">Verificando...</div><div ng-show="\'verified\' === verifyStatus" class="status">Ha verificado exitosamente su correo</div><div ng-show="\'error\' === verifyStatus" class="status">El mensaje de verificación de correo es inválido. Ha expirado o se ha reenviado. Por favor revise su bandeja de entrada por el correo más reciente.</div></div><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div ng-show="status" class="text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div><div class="submit-btn-container"><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || loginForm.$invalid" ng-hide="twoFactor" class="btn btn-submit btn-block btn-success"><span>Ingresar</span></button><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || !token" ng-show="twoFactor" class="btn btn-submit btn-block btn-success"><span>Verificar</span></button></div><!--.submit-btn-container<a href="#recover/{{username}}" ng-show="showRecover" class="recover-btn"><button ng-click="" class="btn btn-block btn-primary"><span>Recuperar cuenta</span></button></a>--><!--a.recover(ng-href="#/recover/{{username}}", ng-hide="showRecover", l10n) Account Recovery--></form></div><div class="switch-mode-link-container">Nuevo en {{productName}}? <a href="#register" l10n-inc="l10n-inc">Registrarse</a></div></div><!--.row.action-login(ng-show="$routeParams.tab")<div class="col-xs-12 col-sm-6 col-md-6"><div ng-show="\'send\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p ng-show="$routeParams.amount">va a enviar</p><p ng-hide="$routeParams.amount">va a enviar dinero al usuario DineX</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-show="$routeParams.amount">Al usuario DineX</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'trust\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p>va a confiar</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true, no_interest: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-hide="$routeParams.name">Al usuario DineX</p><p ng-show="$routeParams.name">A <b> {{$routeParams.name}}</b> con dirección</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'contacts\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><span><p l10n-inc="l10n-inc">you will add the user</p><div class="address">{{$routeParams.to}}</div><p l10n-inc="l10n-inc">To your ripple contacts</p></span></div></div><div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-lg-offset-1"><form name="loginForm" ng-submit="submitForm()"><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div class="row"><div ng-show="status" class="col-xs-12 text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div></div><div class="row"><div class="col-xs-12"><button type="submit" ng-disabled="loginForm.$invalid || ajax_loading" rp-spinner="{{ajax_loading ? 4 : null}}" class="btn btn-lg btn-submit btn-block btn-primary">Ingresar</button></div></div><p class="literal hint">Puede confirmar esta transacción en la página siguiente.</p><p class="literal">Nuevo en {{productName}}? <a href="#/register" l10n-inc="l10n-inc">Crear cuenta</a></p></form></div>--></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -11888,85 +13166,17 @@
 	}
 
 /***/ },
-/* 67 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var jade = __webpack_require__(80);
-
-	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
-	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-	var buf = [];
-	with (locals || {}) {
-	var interp;
-	buf.push('<section ng-controller="BalanceCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><group ng-hide="!connected || loadState.account" class="disconnected"><p class="literal">Cargando...</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><group ng-show="connected &amp;&amp; loadState.account"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Aquí puedes ver el saldo e historial de tu cuenta</h4><ul><li> Ingresa a la pestaña historial y verás un listado de los pagos recibidos.</li><li> En la sección retirar podrás pedir la transferencia de fondos de tu cuenta DineX a tu cuenta bancaria. Los fondos estarán disponibles al día siguiente.</li><li> En el ícono del engranaje puedes ver la configuración de tu cuenta. La campana te notificará cuando hayas recibido un pago.</li><li> Eso es todo! Simple, rápido y seguro :)</li></ul></div><div class="row"><div class="col-xs-12 col-xs-8"><div ng-show="account.Balance" class="currency-overview"><div ng-repeat="entry in balances" ng-class="\'currency-\' + (entry.total | rpcurrency | lowercase)" class="balancebox currency-non-native"><div class="total row"><div class="lbl col-xs-8"><i style="color:#22a301" ng-class="\'fa-\' + (entry.total | rpcurrency | lowercase)" class="icon fa fa-money"></i><span rp-currency="entry.total" rp-currency-full="rp-currency-full" style="color:#22a301"></span></div><div class="balance col-xs-4">{{ entry.total | rpamount:{rel_precision: 0} }}</div></div><div ng-repeat="(issuer, component) in entry.components" ng-show="entry.show" class="component row"><div class="head"><div ng-show="component.gateway.app" class="lbl col-xs-8">{{component.gateway.app.name}}<span ng-hide="true" class="status unverified">Sin verificar</span></div><div ng-hide="component.gateway.app" rp-pretty-issuer="issuer" rp-pretty-issuer-contacts="userBlob.data.contacts" class="lbl col-xs-8"></div><div class="balance col-xs-4">{{ component | rpamount:{rel_precision: 0} }}</div></div><form ng-show="component.window == \'withdraw\'" class="withdraw"><div ng-show="!step || step==1" class="step1"><div class="row"><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_destination">Enter bitcoin address.</label><input id="send_destination" name="send_destination" type="text" class="form-control"/></div><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_amount">Ingrese monto a retirar.</label><input id="send_amount" name="send_amount" type="text" class="form-control"/></div></div><div class="row errorGroups"><div rp-errors="send_destination" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="required" class="error">Enter a valid bitcoin address</div><div rp-error-on="invalid" class="error">Enter a valid bitcoin address</div></div><div rp-errors="send_amount" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="invalid" class="error">Ingrese un monto válido</div></div></div><div class="row"><div class="col-xs-12 col-sm-4 col-md-3"><button type="submit" ng-disabled="" ng-click="step=2" class="btn btn-block btn-success submit">Retirar</button></div></div></div><div ng-show="step==2" class="step2"><label>You are sending<span class="amount"> 1.2345</span> BTC to:</label><div class="btc_address">1agizZ31TmpachYAuG3n56XCb1R5vc3cTQ</div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div><div class="col-xs-12 col-sm-3"><button type="submit" ng-disabled="" ng-click="step=3" class="btn btn-block btn-success submit">Confirmar</button></div></div></div><div ng-show="step==3" class="step3"><div class="row"><div class="col-xs-12 col-sm-6"><div class="message type-offline">Offline</div><div class="message type-success">Transacción exitosa</div><div class="message type-warning">Atención</div><div class="message type-error">Transacción fallida</div><div class="message type-info">Mensaje</div></div></div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div></div></div></form></div></div></div></div></div></group></section>');
-	}
-	return buf.join("");
-	}
-
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var jade = __webpack_require__(80);
-
-	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
-	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-	var buf = [];
-	with (locals || {}) {
-	var interp;
-	buf.push('<section ng-controller="HistoryCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><group ng-hide="!connected || loadState.transactions" class="disconnected"><p class="literal">Cargando historial...</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div><p class="literal">El historial de su cuenta está vacío</p><p><a href="#/balance" class="btn btn-default">Volver al balance</a></p></div><group ng-show="connected &amp;&amp; loadState.transactions &amp;&amp; account.Balance" class="row"><div class="filters row-padding-small col-sm-3"><h3>Filtros</h3><div class="filter date-filter"><a href="" ng-click="showFilterDate=!showFilterDate" class="filter-title">Fecha <div ng-hide="showFilterDate" class="fa fa-caret-right"></div><div ng-show="showFilterDate" class="fa fa-caret-down"></div></a><div ng-show="showFilterDate"><div class="filter-description">Cargar historial para un rango de fechas</div><form ng-submit="submitDateRangeForm()" class="filter-choices"><div class="input-group"><div class="input-group-addon"><i class="fa fa-calendar">Desde</i></div><input type="text" rp-datepicker="rp-datepicker" ng-model="dateMinView" readonly="readonly" class="form-control"/></div><div class="input-group"><div class="input-group-addon"><i class="fa fa-calendar">Hasta</i></div><input type="text" rp-datepicker="rp-datepicker" ng-model="dateMaxView" readonly="readonly" class="form-control"/></div><button type="submit" class="btn btn-block btn-primary submit">Filtro</button></form></div></div><div class="filter amount-filter"><a href="" ng-click="showFilterMinAmount=!showFilterMinAmount" class="filter-title">Monto mínimo<div ng-hide="showFilterMinAmount" class="fa fa-caret-right"></div><div ng-show="showFilterMinAmount" class="fa fa-caret-down"></div></a><form ng-submit="submitMinimumAmountForm()" ng-show="showFilterMinAmount" class="filter-choices row form-group"><div class="col-xs-8"><input type="text" ng-model="filters.minimumAmount" class="form-control"/></div><div class="col-xs-4"><button type="submit" class="btn btn-block btn-primary submit">Filtro</button></div></form></div></div><div class="transactions col-sm-9"><h3>Historial de transacciones</h3><div class="head"><div class="type"></div><div class="i"></div><div class="dt">Fecha</div><div class="desc">Descripción</div></div><div ng-hide="historyState==\'loading\' || historyShow" class="message">Lo sentimos, no hay transacciones que coincidan con el filtro indicado.</div><ul><li ng-repeat="entry in historyShow track by entry.hash" ng-click="details[entry.hash] = !details[entry.hash]" ng-class="{open: details[entry.hash]}" ng-class-odd="\'odd\'" rp-pretty-amount-date="entry.dateRaw" class="{{entry.transaction.type}}"><div class="info"><span class="type">&nbsp;</span><span ng-hide="entry.details" class="i"><i ng-show="entry.transaction.type==\'received\'" class="fa fa-arrow-down"></i><i ng-show="entry.transaction.type==\'sent\'" class="fa fa-arrow-up"></i><i ng-show="entry.transaction.type==\'trusted\'" class="fa fa-download fa-rotate-90"></i><i ng-show="entry.transaction.type==\'trusting\'" class="fa fa-download fa-rotate-270"></i><i ng-show="!entry.transaction.type || entry.transaction.type==\'offernew\' || entry.transaction.type==\'offercancel\' || entry.transaction.type==\'exchange\' || entry.transaction.type==\'rippling\'" class="fa fa-exchange"></i><i ng-show="entry.transaction.type==\'accountset\'" class="fa fa-cogs"></i><i ng-show="entry.transaction.type==\'failed\'" class="fa fa-exclamation-triangle"></i></span><span ng-show="entry.details" class="i"><i class="fa fa-arrow-down"></i></span><span class="dt">{{entry.date | date:\'MMM d, h:mm:ss a\'}}</span><span ng-hide="entry.details" ng-switch on="entry.transaction.type" class="desc"><span ng-switch-when="sent"><span rp-span-spacing="rp-span-spacing">Enviaste<span rp-pretty-amount="entry.transaction.amount" class="amount"></span>a<span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span></span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="received"><span rp-span-spacing="rp-span-spacing"><span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span>te envio<span rp-pretty-amount="entry.transaction.amount" class="amount"></span></span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="exchange"><span rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="trusted"><span rp-span-spacing="rp-span-spacing"><span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span>now trusts you for<span rp-pretty-amount="entry.transaction.amount" class="amount"></span></span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="trusting"><span rp-span-spacing="rp-span-spacing">Activacion de cuenta<!--span.address(rp-pretty-identity="entry.transaction.counterparty")--><!--| for--><!--span.amount(rp-pretty-amount="entry.transaction.amount")--></span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="offernew"><span ng-show="entry.transaction.sell" rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span><span ng-hide="entry.transaction.sell" rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="offercancel"><span rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="accountset"><span>Los detalles de la cuenta han sido modificados</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="rippling"><span>Calculando</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="failed">Transacción fallida</span><span ng-switch-default="ng-switch-default">');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span></span><span ng-show="entry.details" ng-switch on="entry.details.type" class="desc"><span ng-switch-when="giveaway"><span rp-span-spacing="rp-span-spacing"><span>{{entry.details.app.name}}</span> sent you<span rp-pretty-amount="entry.transaction.amount" class="amount"></span> and activated your account!</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span><span ng-switch-when="deposit"><span rp-span-spacing="rp-span-spacing">Ha depositado <span rp-pretty-amount="entry.transaction.amount" class="amount"></span> usando {{entry.details.app.name}}</span>');
-	var __val__ = __webpack_require__(79)()
-	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</span></span></div><!--.details(ng-if="details[entry.hash]")<div ng-show="entry.balanceEffects" class="effects"><div class="title">Cambios en el balance</div><div class="effect header"><span class="description">Descripción</span><span class="issuer">Emisor</span><span class="amount">Monto</span><span class="balance">Balance final</span></div><div ng-repeat="effect in entry.balanceEffects" class="effect"><span class="description"><span ng-show="effect.type == \'balance_change\'" data-label="Description">Sin información.</span><span ng-show="effect.type == \'trust_change_balance\'" data-label="Description">{{effect.currency}} Cambios en el balance</span><span ng-show="effect.type == \'fee\'" data-label="Description">Comisión</span></span><span rp-pretty-issuer="effect.amount.issuer().to_json()" rp-pretty-issuer-contacts="userBlob.data.contacts" rp-pretty-issuer-default="-" data-label="Issuer" class="issuer"></span><span data-label="Amount" rp-pretty-amount="effect.amount" class="amount"></span><span data-label="Final balance" rp-pretty-amount="effect.balance" class="balance"></span></div></div><div class="links"><a rp-link-tx="entry.hash" class="txLink">Detalles de transacción</a><a href="#/contact?to={{entry.transaction.counterparty}}" rp-no-propagate="rp-no-propagate" ng-show="entry.transaction.counterparty &amp;&amp; !(entry.transaction.counterparty | rponlycontactname)" class="addLink">Añadir <strong> {{entry.transaction.counterparty | rpcontactname}}</strong> a contactos</a></div>--></li></ul><div class="foot"><div ng-show="historyState==\'loading\'">Cargando...</div><a ng-show="historyState==\'ready\'" href="" ng-click="loadMore()" class="loadmore">Cargar más</a><div ng-show="historyState==\'full\'">No quedan más transacciones</div></div></div></group></section><!-- TODO filter calendar: High/low limits.--><!-- TODO filter calendar: High limit calculation after the low limit--><!-- TODO we loose history after tab Change--><!-- TODO problem when manually editing date filter input field--><!-- TODO currency filter to work with also trust type--><!-- TODO optimization.. double (triple on load more) update history-->');
-	}
-	return buf.join("");
-	}
-
-/***/ },
 /* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<section ng-controller="AccountCtrl" class="col-xs-12 content"><div ng-show="connected" class="row"><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><div class="col-sm-3"><div class="info"><a href="" ng-click="infoPage = \'public\'" ng-class="{active: infoPage == \'public\'}">Información pública</a></div></div><div class="col-sm-9 list"><div ng-show="\'web\' === client"><div ng-show="infoPage == \'public\'" class="showPublic"><div ng-show="loading" class="alert alert-warning">Cambiando su nombre de DineX...</div><div ng-show="success" class="alert alert-success">Su nombre DineX ha sido cambiado con éxito.</div><h4>Configuración de cuenta</h4><div ng-show="showAnnouncement" class="auth-attention banner"><h5>Editar nombre DineX desactivado en demo.</h5></div><div class="section"><div class="descriptor">Nombre DineX</div><div class="row"><div class="col-xs-12 col-sm-3 username">~{{userCredentials.username}}</div><div class="col-xs-12 col-sm-9"><a href="" ng-hide="openForm">editar</a></div><form id="renameForm" name="renameForm" ng-show="openForm" ng-submit="rename()"><div id="open_name_change" class="form-group"><label for="name">Nuevo nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="username" name="username" type="text" ng-model="username" required="required" rp-focus="rp-focus" autocomplete="off" maxlength="20" rpDest="rpDest" rp-available-name="rp-available-name" rp-available-name-invalid-reason="usernameInvalidReason" rp-available-name-reserved-for="usernameReservedFor" rp-loading="usernameLoading" class="form-control"/></div><div rp-errors="username" ng-hide="usernameLoading" class="errorGroup"><div rp-error-valid="rp-error-valid" class="success">Disponible</div><div rp-error-on="rpAvailableName" class="error"><span ng-switch on="usernameInvalidReason"><span ng-switch-when="exists">Ya registrado!</span><span ng-switch-when="reserved">Reservado para {{usernameReservedFor}}<span>&#32;</span><i rp-popover="rp-popover" rp-popover-placement="bottom" rp-popover-title="Reserved domain" rp-popover-trigger="click" ng-switch-when="reserved" data-content="This name belongs to a high-traffic website and has been reserved to prevent phishing." class="fa fa-question-circle"></i></span><span ng-switch-when="tooshort">Debe tener al menos dos caracteres</span><span ng-switch-when="toolong">Debe tener como máximo 20 caracteres</span><span ng-switch-when="charset">Solo a-z, 0-9 y guión (-)</span><span ng-switch-when="starthyphen">No puede empezar por guión (-)</span><span ng-switch-when="endhyphen">No puede terminar en guión (-)</span><span ng-switch-when="multhyphen">No puede enlazar guiones (--)</span></span></div></div><span ng-show="usernameLoading">Comprobando...</span><div class="form-group"><label type="password" for="password">Contraseña actual</label><input id="password" type="password" name="password" ng-model="password" required="required" class="form-control"/></div><div ng-show="error" ng-switch on="error" class="alert alert-danger"><span ng-switch-when="wrongpassword">La contraseña ingresada es incorrecta.</span><span ng-switch-when="cantlogin">Su nombre DineX ha cambiado. Por favor ingrese nuevamente.</span><span ng-switch-default="ng-switch-default">No se ha podido cambiar su nombre DineX, por favor intente más tarde.</span></div><div class="row"><div class="col-xs-12 col-sm-6"><button type="submit" ng-disabled="renameForm.$invalid || loading" class="btn btn-success btn-block"><span ng-hide="loading">Enviar</span><span ng-show="loading">Cargando...</span></button></div><div class="col-xs-12 col-sm-6"><a href="" ng-click="openForm=!openForm" class="txtbtn">Cancelar</a></div></div></div></form></div></div></div></div></div></div></section>');
+	buf.push('<section ng-controller="BalanceCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><group ng-hide="!connected || loadState.account" class="disconnected"><p class="literal">Cargando...</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><group ng-show="connected &amp;&amp; loadState.account"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Navega por las pestañas en la barra superior para que veas las funciones de DineX</h4><ul><li> En esta pestaña puedes ver el saldo, historial de los pagos realizados y los contactos de la cuenta.</li><li> En la sección PAGAR puedes realizar los pagos.</li><li> En la sección FINANCIAR puedes cargar fondos a tu cuenta DineX o bien pedir el reembolso de tu cuenta DineX a tu cuenta bancaria. Los fondos estarán disponibles al día siguiente en caso de que los necesites.</li><li> En el ícono del engranaje puedes ver la configuración de tu cuenta. La campana te notificará cuando se haya verificado un pago.</li><li> Eso es todo! Simple, rápido y seguro :)</li></ul></div><div class="row"><div class="col-xs-12 col-xs-8"><div ng-show="account.Balance" class="currency-overview"><div ng-repeat="entry in balances" ng-class="\'currency-\' + (entry.total | rpcurrency | lowercase)" class="balancebox currency-non-native"><div class="total row"><div class="lbl col-xs-8"><i style="color:#22a301" ng-class="\'fa-\' + (entry.total | rpcurrency | lowercase)" class="icon fa fa-money"></i><span rp-currency="entry.total" rp-currency-full="rp-currency-full" style="color:#22a301"></span></div><div class="balance col-xs-4">{{ entry.total | rpamount:{rel_precision: 0} }}</div></div><div ng-repeat="(issuer, component) in entry.components" ng-show="entry.show" class="component row"><div class="head"><div ng-show="component.gateway.app" class="lbl col-xs-8">{{component.gateway.app.name}}<span ng-hide="true" class="status unverified">Sin verificar</span></div><div ng-hide="component.gateway.app" rp-pretty-issuer="issuer" rp-pretty-issuer-contacts="userBlob.data.contacts" class="lbl col-xs-8"></div><div class="balance col-xs-4">{{ component | rpamount:{rel_precision: 0} }}</div></div><form ng-show="component.window == \'withdraw\'" class="withdraw"><div ng-show="!step || step==1" class="step1"><div class="row"><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_destination">Enter bitcoin address.</label><input id="send_destination" name="send_destination" type="text" class="form-control"/></div><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_amount">Ingrese monto a retirar.</label><input id="send_amount" name="send_amount" type="text" class="form-control"/></div></div><div class="row errorGroups"><div rp-errors="send_destination" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="required" class="error">Enter a valid bitcoin address</div><div rp-error-on="invalid" class="error">Enter a valid bitcoin address</div></div><div rp-errors="send_amount" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="invalid" class="error">Ingrese un monto válido</div></div></div><div class="row"><div class="col-xs-12 col-sm-4 col-md-3"><button type="submit" ng-disabled="" ng-click="step=2" class="btn btn-block btn-success submit">Retirar</button></div></div></div><div ng-show="step==2" class="step2"><label>You are sending<span class="amount"> 1.2345</span> BTC to:</label><div class="btc_address">1agizZ31TmpachYAuG3n56XCb1R5vc3cTQ</div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div><div class="col-xs-12 col-sm-3"><button type="submit" ng-disabled="" ng-click="step=3" class="btn btn-block btn-success submit">Confirmar</button></div></div></div><div ng-show="step==3" class="step3"><div class="row"><div class="col-xs-12 col-sm-6"><div class="message type-offline">Offline</div><div class="message type-success">Transacción exitosa</div><div class="message type-warning">Atención</div><div class="message type-error">Transacción fallida</div><div class="message type-info">Mensaje</div></div></div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div></div></div></form></div></div></div></div></div></group></section>');
 	}
 	return buf.join("");
 	}
@@ -11975,14 +13185,50 @@
 /* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<section ng-controller="SecurityCtrl" class="col-xs-12 content"><div ng-show="connected" class="row"><div ng-hide="isUnlocked" class="col-xs-12"><div class="auth-attention sessionUnlock"><h5>Sesión expirada</h5><div class="status">Para ver o editar sus preferencias de seguridad, debe tener una sesión activa.</div><div class="row"><div class="col-xs-12 col-sm-5"><form ng-submit="restoreSession()"><label for="sessionPassword">Contraseña</label><input id="sessionPassword" type="password" name="sessionPassword" ng-model="sessionPassword" rp-focus="rp-focus" class="form-control"/><button type="submit" ng-disabled="isConfirming" rp-spinner="{{isConfirming ? 4 : null}}" class="btn btn-primary btn-block"><span>Restaurar sesión</span></button></form></div></div></div><div ng-show="unlockError" class="alert alert-danger"><span>La contraseña ingresada es incorrecta.</span></div></div><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><div ng-show="isUnlocked" class="col-sm-3"><div class="settingPage"><a href="#/security" ng-class="{active: $route.current.tabName == \'security\'}">Seguridad</a></div></div><div ng-show="isUnlocked" class="col-sm-9 list"><div ng-show="settingsPage == \'security\'" class="showSecurity"><div ng-show="\'web\' === client"><div ng-show="loading" class="alert alert-warning">Cambiando su contraseña DineX...</div><div ng-show="success" class="alert alert-success">Su contraseña DineX se ha modificado exitosamente.</div><div ng-show="errorLoading2FA" class="alert alert-danger">No es posible acceder a la configuración de autentificación de dos factores.</div><div ng-show="error2FA" class="alert alert-danger">Error al guardar la configuación de autentificación de dos factores.</div><div ng-show="invalidToken" class="alert alert-danger">El código de verificación es invalido.</div><div ng-show="enableSuccess" class="alert alert-success">La autentificación de dos factores se ha activado.</div><div ng-show="disableSuccess" class="alert alert-success">La autentificación de dos factores se ha desactivado.</div><h4>Preferencias de seguridad</h4><div ng-show="showAnnouncement" class="auth-attention banner"><h5>Cambiar contrasena y ver clave secreta desactivado en demo.</h5></div><!--.section<div class="descriptor">Autentificación de dos factores</div><div ng-show="loading2FA" class="row"><div class="col-xs-12 col-sm-9"><div rp-spinner="4">Cargando la configuración de autentificación de dos factores...</div></div></div><div ng-hide="loading2FA || errorLoading2FA || mode2FA === \'verifyPhone\'" class="row"><div class="col-xs-9 col-sm-8 col-md-6"><span ng-show="enabled2FA">Habilitado</span><span ng-hide="enabled2FA">Deshabilitado</span></div><div class="col-xs-3 col-sm-4 col-md-6"><a href="" ng-show="enabled2FA" ng-click="disable2FA()">desabilitar</a><rp-popup onOpen="open2FA"><a href="" rp-popup-link="rp-popup-link" ng-hide="enabled2FA">habilitar</a><div rp-popup-content="rp-popup-content" class="connectModal modal2FA"><div class="modal-header"><div id="logo" class="navbar-brand hidden-sm modal-logo"></div><div class="modal-title">Conectar</div></div><div class="modal-body"><div class="modal-prompt">Authy provee el servicio de autentificción de dos factores para DineX. Para habilitar la autentificación, debes compartir información con Authy.</div><div class="grey-focus"><div class="row modal-permissions"><div class="col-xs-12 col-sm-4">- Tu Email:</div><div class="col-xs-12 col-sm-8 email">{{userBlob.data.email}}</div></div><div class="row modal-permissions"><div class="col-xs-12 col-sm-4">- Tu número de teléfono:</div><div class="col-xs-12 col-sm-8 phone2FA"><div class="form-group authy-control"><label>Código de país</label><input ng-model="countryCode" class="authy-countries form-control"/></div><div class="form-group authy-control"><label>Número de teléfono</label><input name="phoneNumber" ng-model="phoneNumber" class="form-control"/></div></div></div></div><div class="modal-agreement">Al continuar, aceptas los <a href="https://www.authy.com/terms" target="_blank" l10n-inc="l10n-inc"> términos de servicio</a> de Authy.</div><div class="modal-buttons"><button ng-click="savePhone()" ng-disabled="savingPhone" class="modal-btn btn btn-default btn-primary btn-md"><span>Compartir</span></button><button data-dismiss="modal" ng-hide="savingPhone" class="modal-btn btn btn-default btn-md">Cancelar</button></div></div></div></rp-popup></div></div><div ng-hide="!mode2FA || mode2FA === \'verifyPhone\'" class="row confirm2FA"><div class="col-xs-12 col-sm-9"><div class="status"><div rp-spinner="4" ng-show="mode2FA === \'savePhone\'">Guardando preferencias...</div><div rp-spinner="4" ng-show="mode2FA === \'disable\'">Deshabilitando autentificación de dos factores...</div><div rp-spinner="4" ng-show="mode2FA === \'enable\'">Habilitando autentificación de dos factores...</div></div></div></div><form ng-show="mode2FA === \'verifyPhone\'" class="verify2FA"><div class="row"><div class="col-xs-12"><div class="status"><span ng-hide="via === \'app\'">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="via === \'app\'">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span> +{{currentCountryCode}} {{currentPhone}}</span><div l10n-inc="l10n-inc">Enter the code below to complete the process.</div></div></div></div><div class="row"><div class="col-xs-12 col-sm-8"><label for="verifyToken">Código de verificación</label></div></div><div class="row"><div class="col-xs-7 col-sm-5"><input id="verifyToken" name="verifyToken" ng-model="verifyToken" class="form-control"/></div><div class="col-xs-5 col-sm-3"><button type="button" ng-disabled="isRequesting" rp-spinner="{{isRequesting ? 4 : null}}" ng-click="requestToken()" class="btn btn-default btn-block"><span ng-hide="via === \'app\'">Re-enviar código</span><span ng-show="via === \'app\'">Enviar via SMS</span></button></div></div><div class="row"><div class="col-xs-7 col-sm-3"><button type="button" ng-disabled="isVerifying" ng-click="enable2FA()" rp-spinner="{{isVerifying ? 4 : null}}" class="btn btn-primary btn-block"><span>Habilitar</span></button></div><div class="col-xs-5 col-sm-2"><a ng-click="cancel2FA()" class="txtbtn">Cancelar</a></div></div></form>--><div class="section"><div class="descriptor">Contraseña DineX</div><div class="row"><div class="col-xs-9 col-sm-8 col-md-6">*****************</div><div class="col-xs-3 col-sm-4 col-md-6"><a href="" ng-hide="openFormPassword">editar</a></div></div><div class="row"><div class="row"><div class="auth-form-container col-xs-12 col-md-8 col-lg-6"><form id="renameForm" name="changeForm" ng-show="openFormPassword" ng-submit="changePassword()"><div class="form-group"><label type="password" for="password">Contraseña actual</label><input id="password" type="password" name="password" rp-focus="rp-focus" ng-model="password" required="required" class="form-control"/></div><div ng-show="error" ng-switch on="error" class="alert alert-danger"><span ng-switch-when="wrongpassword">La contraseña ingresada es incorrecta.</span><span ng-switch-when="cantlogin">Su contraseña DineX ha cambiado, por favor ingrese nuevamente</span><span ng-switch-default="ng-switch-default">No fue posible cambiar su contraseña DineX, por favor intente más tarde.</span></div><div ng-class="{\'field-error\': \'weak\' === strength || \'match\' === strength}" class="form-group"><label for="change_password">Nueva contraseña</label><input name="change_password1" type="password" autocomplete="off" ng-model="password1" rp-strong-password="rp-strong-password" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="strength==\'weak\'"><span>Su contraseña es débil. No contiene números y símbolos o es muy corta.</span></p><p ng-show="strength==\'match\'"><span>Su nombre Dinex y contraseña no pueden coincidir. Por favor cree una nueva contraseña.</span></p></div><div ng-class="{\'field-error\': changeForm.change_password1.$error.rpSameInSet &amp;&amp; changeForm.change_password2.$dirty}" class="form-group"><label for="change_password2">Confirmar contraseña</label><input name="change_password2" autocomplete="off" type="password" ng-model="password2" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="changeForm.change_password1.$error.rpSameInSet &amp;&amp; changeForm.change_password2.$dirty"><span>Contraseñas no coinciden</span></p></div><div ng-show=""><div class="form-group"><div class="strength {{strength}}">{{strength}}</div></div></div><div class="row"><div class="col-xs-12 col-sm-6"><button type="submit" ng-disabled="changeForm.$invalid || loading" class="btn btn-success btn-block"><span ng-hide="loading">Enviar</span><span ng-show="loading">Cargando...</span></button></div><div class="col-xs-12 col-sm-6"><a href="" ng-click="openFormPassword=!openFormPassword" class="txtbtn">Cancelar</a></div></div></form></div></div></div></div><div class="section"><div class="descriptor">Clave secreta</div><div class="row"></div><label>La clave secreta desbloquea el acceso a los fondos de la cuenta aún cuando olvide su nombre de usuario DineX o su contraseña. Por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. Puede emplearla para recuperar sus fondos.</label><div class="row"><div class="col-xs-9 col-sm-8 col-md-6"><span ng-show="security.master_seed" class="value">{{security.master_seed}}</span><span ng-hide="security.master_seed" class="value">••••••••••••••••••••••••••••••••••••••••••••</span></div><div class="col-xs-3 col-sm-4 col-md-3"><a href="">Mostrar</a><a href="" ng-click="security.master_seed = null" ng-show="security.master_seed">Ocultar</a></div></div></div><!--.descriptor(l10n) Password protection for transactions--><!--.row<div class="col-xs-12"><div class="description">Si deshabilita las solicitudes de contraseña, aún así deberá ingresarla en ciertos casos.</div><div class="helperInput"><form name="persistUnlock" ng-submit="setPasswordProtection()"><div ng-hide="editUnlock" class="row"><div class="col-xs-6 col-sm-5 col-md-3"><div class="description">Requerir contraseña</div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="description"><div ng-show="requirePassword">Si</div><div ng-hide="requirePassword">No</div></div></div><div class="col-xs-3 col-sm-4 col-md-4"><div class="description"><a href="" id="edit" ng-click="editUnlock = true">editar</a></div></div></div><div ng-show="editUnlock" class="row"><div class="col-xs-6 col-sm-5 col-md-3"><div class="description">Requerir contraseña</div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="helperInput description"><label><input type="checkbox" name="unlock" ng-checked="requirePassword" ng-click="requirePasswordChanged = true"/></label></div></div><div class="col-xs-3 col-sm-3 col-md-2"><div class="description"><button id="save" type="submit" ng-disabled="serverForm.$invalid" class="btn btn-block btn-success btn-xs submit">Guardar</button></div></div></div></form></div></div>--></div></div></div></div></section>');
+	buf.push('<section ng-controller="HistoryCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><group ng-hide="!connected || loadState.transactions" class="disconnected"><p class="literal">Cargando historial...</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div><p class="literal">El historial de su cuenta está vacío</p><p><a href="#/balance" class="btn btn-default">Volver al balance</a></p></div><group ng-show="connected &amp;&amp; loadState.transactions &amp;&amp; account.Balance" class="row"><div class="filters row-padding-small col-sm-3"><h3>Filtros</h3><div class="filter date-filter"><a href="" ng-click="showFilterDate=!showFilterDate" class="filter-title">Fecha <div ng-hide="showFilterDate" class="fa fa-caret-right"></div><div ng-show="showFilterDate" class="fa fa-caret-down"></div></a><div ng-show="showFilterDate"><div class="filter-description">Cargar historial para un rango de fechas</div><form ng-submit="submitDateRangeForm()" class="filter-choices"><div class="input-group"><div class="input-group-addon"><i class="fa fa-calendar">Desde</i></div><input type="text" rp-datepicker="rp-datepicker" ng-model="dateMinView" readonly="readonly" class="form-control"/></div><div class="input-group"><div class="input-group-addon"><i class="fa fa-calendar">Hasta</i></div><input type="text" rp-datepicker="rp-datepicker" ng-model="dateMaxView" readonly="readonly" class="form-control"/></div><button type="submit" class="btn btn-block btn-primary submit">Filtro</button></form></div></div><div class="filter amount-filter"><a href="" ng-click="showFilterMinAmount=!showFilterMinAmount" class="filter-title">Monto mínimo<div ng-hide="showFilterMinAmount" class="fa fa-caret-right"></div><div ng-show="showFilterMinAmount" class="fa fa-caret-down"></div></a><form ng-submit="submitMinimumAmountForm()" ng-show="showFilterMinAmount" class="filter-choices row form-group"><div class="col-xs-8"><input type="text" ng-model="filters.minimumAmount" class="form-control"/></div><div class="col-xs-4"><button type="submit" class="btn btn-block btn-primary submit">Filtro</button></div></form></div></div><div class="transactions col-sm-9"><h3>Historial de transacciones</h3><div class="head"><div class="type"></div><div class="i"></div><div class="dt">Fecha</div><div class="desc">Descripción</div></div><div ng-hide="historyState==\'loading\' || historyShow" class="message">Lo sentimos, no hay transacciones que coincidan con el filtro indicado.</div><ul><li ng-repeat="entry in historyShow track by entry.hash" ng-click="details[entry.hash] = !details[entry.hash]" ng-class="{open: details[entry.hash]}" ng-class-odd="\'odd\'" rp-pretty-amount-date="entry.dateRaw" class="{{entry.transaction.type}}"><div class="info"><span class="type">&nbsp;</span><span ng-hide="entry.details" class="i"><i ng-show="entry.transaction.type==\'received\'" class="fa fa-arrow-down"></i><i ng-show="entry.transaction.type==\'sent\'" class="fa fa-arrow-up"></i><i ng-show="entry.transaction.type==\'trusted\'" class="fa fa-download fa-rotate-90"></i><i ng-show="entry.transaction.type==\'trusting\'" class="fa fa-download fa-rotate-270"></i><i ng-show="!entry.transaction.type || entry.transaction.type==\'offernew\' || entry.transaction.type==\'offercancel\' || entry.transaction.type==\'exchange\' || entry.transaction.type==\'rippling\'" class="fa fa-exchange"></i><i ng-show="entry.transaction.type==\'accountset\'" class="fa fa-cogs"></i><i ng-show="entry.transaction.type==\'failed\'" class="fa fa-exclamation-triangle"></i></span><span ng-show="entry.details" class="i"><i class="fa fa-arrow-down"></i></span><span class="dt">{{entry.date | date:\'MMM d, h:mm:ss a\'}}</span><span ng-hide="entry.details" ng-switch on="entry.transaction.type" class="desc"><span ng-switch-when="sent"><span rp-span-spacing="rp-span-spacing">Enviaste<span rp-pretty-amount="entry.transaction.amount" class="amount"></span>a<span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span></span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="received"><span rp-span-spacing="rp-span-spacing"><span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span>te envio<span rp-pretty-amount="entry.transaction.amount" class="amount"></span></span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="exchange"><span rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="trusted"><span rp-span-spacing="rp-span-spacing"><span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span>now trusts you for<span rp-pretty-amount="entry.transaction.amount" class="amount"></span></span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="trusting"><span rp-span-spacing="rp-span-spacing">Activacion de cuenta<!--span.address(rp-pretty-identity="entry.transaction.counterparty")--><!--| for--><!--span.amount(rp-pretty-amount="entry.transaction.amount")--></span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="offernew"><span ng-show="entry.transaction.sell" rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span><span ng-hide="entry.transaction.sell" rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="offercancel"><span rp-span-spacing="rp-span-spacing">No se puede realizar la operación.</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="accountset"><span>Los detalles de la cuenta han sido modificados</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="rippling"><span>Calculando</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="failed">Transacción fallida</span><span ng-switch-default="ng-switch-default">');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span></span><span ng-show="entry.details" ng-switch on="entry.details.type" class="desc"><span ng-switch-when="giveaway"><span rp-span-spacing="rp-span-spacing"><span>{{entry.details.app.name}}</span> sent you<span rp-pretty-amount="entry.transaction.amount" class="amount"></span> and activated your account!</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span><span ng-switch-when="deposit"><span rp-span-spacing="rp-span-spacing">Ha depositado <span rp-pretty-amount="entry.transaction.amount" class="amount"></span> usando {{entry.details.app.name}}</span>');
+	var __val__ = __webpack_require__(83)()
+	buf.push(null == __val__ ? "" : __val__);
+	buf.push('</span></span></div><!--.details(ng-if="details[entry.hash]")<div ng-show="entry.balanceEffects" class="effects"><div class="title">Cambios en el balance</div><div class="effect header"><span class="description">Descripción</span><span class="issuer">Emisor</span><span class="amount">Monto</span><span class="balance">Balance final</span></div><div ng-repeat="effect in entry.balanceEffects" class="effect"><span class="description"><span ng-show="effect.type == \'balance_change\'" data-label="Description">Sin información.</span><span ng-show="effect.type == \'trust_change_balance\'" data-label="Description">{{effect.currency}} Cambios en el balance</span><span ng-show="effect.type == \'fee\'" data-label="Description">Comisión</span></span><span rp-pretty-issuer="effect.amount.issuer().to_json()" rp-pretty-issuer-contacts="userBlob.data.contacts" rp-pretty-issuer-default="-" data-label="Issuer" class="issuer"></span><span data-label="Amount" rp-pretty-amount="effect.amount" class="amount"></span><span data-label="Final balance" rp-pretty-amount="effect.balance" class="balance"></span></div></div><div class="links"><a rp-link-tx="entry.hash" class="txLink">Detalles de transacción</a><a href="#/contact?to={{entry.transaction.counterparty}}" rp-no-propagate="rp-no-propagate" ng-show="entry.transaction.counterparty &amp;&amp; !(entry.transaction.counterparty | rponlycontactname)" class="addLink">Añadir <strong> {{entry.transaction.counterparty | rpcontactname}}</strong> a contactos</a></div>--></li></ul><div class="foot"><div ng-show="historyState==\'loading\'">Cargando...</div><a ng-show="historyState==\'ready\'" href="" ng-click="loadMore()" class="loadmore">Cargar más</a><div ng-show="historyState==\'full\'">No quedan más transacciones</div></div></div></group></section><!-- TODO filter calendar: High/low limits.--><!-- TODO filter calendar: High limit calculation after the low limit--><!-- TODO we loose history after tab Change--><!-- TODO problem when manually editing date filter input field--><!-- TODO currency filter to work with also trust type--><!-- TODO optimization.. double (triple on load more) update history-->');
 	}
 	return buf.join("");
 	}
@@ -11991,7 +13237,71 @@
 /* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="ContactsCtrl" class="col-xs-12 content"><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Añadir contactos está desactivado en la cuenta demo por seguridad.</h4></div></div><div class="row row-padding-small head hidden-xs"><div class="col-xs-3">Contactos</div><div ng-show="\'web\' === client" class="col-xs-6">Nombre Dinex</div><div ng-show="\'desktop\' === client" class="col-xs-6">Nombre Dinex</div><div class="col-xs-3 text-right"><a ng-click="toggle_form()" ng-disabled="addform_visible" class="btn btn-success btn-sm sign">Añadir contacto</a></div></div><div class="row head visible-xs"><div class="col-xs-12"><a ng-click="toggle_form()" ng-disabled="addform_visible" class="btn btn-success btn-block btn-sm sign">Añadir contacto</a></div></div><div ng-show="addform_visible" class="row row-padding-small addForm"><div class="col-xs-12 col-sm-5"><form name="addForm" id="addForm" ng-submit="create()"><div class="form-group"><label for="Name">Contacto</label><input id="name" name="name" type="text" step="any" maxlength="70" ng-model="contact.name" rp-unique="userBlob.data.contacts" rp-unique-field="name" rp-autofill="$routeParams.name" rp-autofill-on="addform_visible = true" required="required" rp-focus="rp-focus" class="form-control input-lg name"/><div rp-errors="name" class="errorGroup"><div rp-error-on="required" class="error">Por favor ingrese un contacto.</div><div rp-error-on="rpUnique" class="error">Este contacto ya existe.</div></div></div><div class="form-group"><div ng-show="\'web\' === client"><label for="Address">Nombre Dinex</label><div class="spinnerEnabledInput"><input id="address" name="address" type="text" step="any" ng-model="contact.view" rp-dest="rp-dest" rp-dest-address="rp-dest-address" rp-dest-bitcoin="rp-dest-bitcoin" rp-dest-ripple-name="rp-dest-ripple-name" rp-dest-model="contact.address" rp-dest-loading="address_loading" rp-unique="userBlob.data.contacts" rp-unique-field="address" rp-spinner="{{address_loading ? 4 : null}}" rp-autofill="$routeParams.to" rp-autofill-on="addform_visible = true" required="required" class="form-control input-lg address"/></div><div rp-errors="address" class="errorGroup"><div rp-error-on="required" class="error">Por favor ingrese un nombre DineX.</div><div rp-error-on="rpUnique" class="error">Ya tiene un contacto con ese nombre DineX.</div><div rp-error-on="rpDest" class="error">No es un nombre DineX válido.</div></div></div><div ng-show="\'desktop\' === client"><label for="Address">Nombre Dinex</label><div class="spinnerEnabledInput"><input id="address" name="address" type="text" step="any" ng-model="contact.view" rp-dest="rp-dest" rp-dest-address="rp-dest-address" rp-dest-bitcoin="rp-dest-bitcoin" rp-dest-ripple-name="rp-dest-ripple-name" rp-dest-model="contact.address" rp-dest-loading="address_loading" rp-unique="userBlob.data.contacts" rp-unique-field="address" rp-spinner="{{address_loading ? 4 : null}}" rp-autofill="$routeParams.to" rp-autofill-on="addform_visible = true" required="required" class="form-control input-lg address"/></div><div rp-errors="address" class="errorGroup"><div rp-error-on="required" class="error">Por favor ingrese un nombre DineX.</div><div rp-error-on="rpUnique" class="error">Ya tiene un contacto con ese nombre DineX.</div><div rp-error-on="rpDest" class="error">No es un nombre DineX válido.</div></div></div></div><div class="form-group"><label for="dt">Etiqueta de destino</label><input id="dt" name="dt" type="text" step="any" placeholder="Dejar en blanco si no aplica" ng-model="contact.dt" rp-stdt="rp-stdt" rp-autofill="$routeParams.dt" class="form-control input-lg dt"/><div rp-errors="dt" class="errorGroup"><div rp-error-on="rpStdt" class="error">Etiqueta de destino inválida</div></div></div><div class="row row-padding-small"><div class="col-xs-6 col-sm-4"><button type="button" ng-click="addform_visible = false" class="btn btn-default btn-block">Cancelar</button></div><div class="col-xs-6 col-sm-8"><button type="submit" ng-disabled="addForm.$invalid" class="btn btn-success btn-block submit">Añadir contacto</button></div></div></form></div></div><div ng-repeat="entry in userBlob.data.contacts" ng-class="{editing: editing}" ng-controller="ContactRowCtrl" class="row row-padding-small contact"><div class="col-xs-12 col-sm-3"><div ng-show="editing"><ng-form name="inlineName"><input name="editname" type="text" maxlength="70" ng-model="editname" rp-unique="userBlob.data.contacts" rp-unique-field="name" rp-unique-orig="entry.name" ng-enter="update($index)" class="form-control inline"/><div rp-errors="editname" class="errorGroup"><div rp-error-on="rpUnique" class="error">Ya tiene un contacto con el mismo nombre.</div></div></ng-form></div><span ng-hide="editing" class="name">{{entry.name}}</span></div><div class="col-xs-12 col-sm-6"><div ng-show="editing"><ng-form name="inlineAddress"><input name="editaddress" type="text" ng-model="editview" rp-unique="userBlob.data.contacts" rp-unique-field="address" rp-unique-orig="entry.address" rp-dest="rp-dest" rp-dest-address="rp-dest-address" rp-dest-bitcoin="rp-dest-bitcoin" rp-dest-ripple-name="rp-dest-ripple-name" rp-dest-model="editaddress" ng-enter="update($index)" class="form-control inline"/><div rp-errors="editaddress" class="errorGroup"><div rp-error-on="rpUnique" class="error">Ya tiene este contacto.</div><div rp-error-on="rpDest" class="error">No es un nombre válido.</div></div><div class="form-group"><label for="contact_dt">Etiqueta de destino</label><input id="contact_dt" name="dt" type="text" step="any" placeholder="Dejar en blanco si no aplica" ng-model="editdt" rp-stdt="rp-stdt" rp-autofill="$routeParams.dt" ng-enter="update($index)" class="form-control dt inline"/><div rp-errors="dt" class="errorGroup"><div rp-error-on="rpStdt" class="error">Etiqueta de destino inválida.</div></div></div><div class="row"><div class="col-xs-6 col-sm-6 col-md-8 col-lg-9"><rp-confirm action-text="Are you sure you want to delete this contact?" action-button-text="Delete" action-button-css="btn btn-default btn-danger" action-function="remove($index)" cancel-button-css="btn btn-default" cancel-button-text="Cancel" ng-hide="showPassword==true"><a href="" class="danger">Eliminar</a></rp-confirm></div><div class="col-xs-6 col-sm-6 col-md-4 col-lg-3"><button ng-disabled="inlineAddress.editaddress.$error.rpDest" ng-click="update($index)" class="save btn btn-block btn-success">Guardar</button></div></div></ng-form></div><div ng-hide="editing"><b class="hidden-xs">{{entry.address | rpaddressorigin}}: {{entry.view || entry.address}}</b></div></div><div class="col-xs-12 col-sm-3 text-right"><div class="row padding-vertical-xs"><div ng-hide="editing" class="col-xs-6"><button ng-click="edit($index)" class="edit btn btn-block btn-default btn-sm">Editar</button></div><div ng-show="editing" class="col-xs-6"><button ng-click="cancel($index)" class="editing btn-block btn btn-default btn-sm">Cancelar</button></div><div class="col-xs-6"><button ng-click="send($index)" class="send btn btn-block btn-primary btn-sm">Pagar</button></div></div></div></div><div ng-hide="userBlob.data.contacts.length">Todavía no tienes ningún contacto. Haga click en el botón "Añadir contacto" para registrarlo.</div></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(84);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="AccountCtrl" class="col-xs-12 content"><div ng-show="connected" class="row"><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><div class="col-sm-3"><div class="info"><a href="" ng-click="infoPage = \'public\'" ng-class="{active: infoPage == \'public\'}">Información pública</a></div></div><div class="col-sm-9 list"><div ng-show="\'web\' === client"><div ng-show="infoPage == \'public\'" class="showPublic"><div ng-show="loading" class="alert alert-warning">Cambiando su nombre de DineX...</div><div ng-show="success" class="alert alert-success">Su nombre DineX ha sido cambiado con éxito.</div><h4>Configuración de cuenta</h4><div ng-show="showAnnouncement" class="auth-attention banner"><h5>Editar nombre DineX está desactivado en la cuenta demo por seguridad.</h5></div><div class="section"><div class="descriptor">Nombre DineX</div><div class="row"><div class="col-xs-12 col-sm-3 username">~{{userCredentials.username}}</div><div class="col-xs-12 col-sm-9"><a href="" ng-hide="openForm">editar</a></div><form id="renameForm" name="renameForm" ng-show="openForm" ng-submit="rename()"><div id="open_name_change" class="form-group"><label for="name">Nuevo nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="username" name="username" type="text" ng-model="username" required="required" rp-focus="rp-focus" autocomplete="off" maxlength="20" rpDest="rpDest" rp-available-name="rp-available-name" rp-available-name-invalid-reason="usernameInvalidReason" rp-available-name-reserved-for="usernameReservedFor" rp-loading="usernameLoading" class="form-control"/></div><div rp-errors="username" ng-hide="usernameLoading" class="errorGroup"><div rp-error-valid="rp-error-valid" class="success">Disponible</div><div rp-error-on="rpAvailableName" class="error"><span ng-switch on="usernameInvalidReason"><span ng-switch-when="exists">Ya registrado!</span><span ng-switch-when="reserved">Reservado para {{usernameReservedFor}}<span>&#32;</span><i rp-popover="rp-popover" rp-popover-placement="bottom" rp-popover-title="Reserved domain" rp-popover-trigger="click" ng-switch-when="reserved" data-content="This name belongs to a high-traffic website and has been reserved to prevent phishing." class="fa fa-question-circle"></i></span><span ng-switch-when="tooshort">Debe tener al menos dos caracteres</span><span ng-switch-when="toolong">Debe tener como máximo 20 caracteres</span><span ng-switch-when="charset">Solo a-z, 0-9 y guión (-)</span><span ng-switch-when="starthyphen">No puede empezar por guión (-)</span><span ng-switch-when="endhyphen">No puede terminar en guión (-)</span><span ng-switch-when="multhyphen">No puede enlazar guiones (--)</span></span></div></div><span ng-show="usernameLoading">Comprobando...</span><div class="form-group"><label type="password" for="password">Contraseña actual</label><input id="password" type="password" name="password" ng-model="password" required="required" class="form-control"/></div><div ng-show="error" ng-switch on="error" class="alert alert-danger"><span ng-switch-when="wrongpassword">La contraseña ingresada es incorrecta.</span><span ng-switch-when="cantlogin">Su nombre DineX ha cambiado. Por favor ingrese nuevamente.</span><span ng-switch-default="ng-switch-default">No se ha podido cambiar su nombre DineX, por favor intente más tarde.</span></div><div class="row"><div class="col-xs-12 col-sm-6"><button type="submit" ng-disabled="renameForm.$invalid || loading" class="btn btn-success btn-block"><span ng-hide="loading">Enviar</span><span ng-show="loading">Cargando...</span></button></div><div class="col-xs-12 col-sm-6"><a href="" ng-click="openForm=!openForm" class="txtbtn">Cancelar</a></div></div></div></form></div></div></div></div></div></div></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(84);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="SendCtrl" class="single content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div><p class="literal">Debe depositar dinero en su cuenta antes de enviar dinero</p><p><a href="#/balance" class="btn btn-default">Volver al balance</a></p></div><form name="sendForm" id="sendForm" role="form" ng-show="mode==&quot;form&quot; &amp;&amp; account.Balance" ng-submit="send_prepared()" class="row-padding-small mode-form"><p class="literal">Enviar dinero a la red DineX</p><hr/><div ng-show="showAnnouncement" class="auth-attention banner"><h5>Escriba conductores y seleccione la opcion ~conductores. ( Los nombres DineX van precedidos de ~ )</h5></div><div ng-if="\'web\' === client" class="row form-group"><div class="col-xs-12 col-sm-6 col-md-5"><label for="send_destination">Receptor</label><input id="send_destination" name="send_destination" type="text" rp-combobox="recipient_query" rp-combobox-value-as-ripple-name="rp-combobox-value-as-ripple-name" placeholder="Ingrese el destinatario" ng-model="send.recipient" rp-dest="rp-dest" rp-dest-address="rp-dest-address" rp-dest-contact="rp-dest-contact" rp-dest-bitcoin="rp-dest-bitcoin" rp-dest-email="rp-dest-email" rp-dest-ripple-name="rp-dest-ripple-name" rp-dest-loading="recipient_loading" required="required" rp-autofill="$routeParams.to" rp-focus="rp-focus" rp-spinner="{{recipient_loading ? 4 : null}}" class="form-control"/><div rp-errors="send_destination" class="errorGroup"><div rp-error-on="required" class="error">Por favor ingrese un receptor.</div><div rp-error-on="rpDest" class="error">Receptor debe ser un nombre de usuario DineX o contacto.</div><div rp-error-on="federation" class="error">Esta dirección de email no está habilitado en DineX.</div></div></div></div><div ng-if="\'desktop\' === client" class="row form-group"><div class="col-xs-12 col-sm-6 col-md-5"><label for="send_destination">Receptor</label><input id="send_destination" name="send_destination" type="text" rp-combobox="recipient_query" rp-combobox-value-as-ripple-name="rp-combobox-value-as-ripple-name" placeholder="Enter a Ripple address or contact" ng-model="send.recipient" rp-dest="rp-dest" rp-dest-address="rp-dest-address" rp-dest-contact="rp-dest-contact" rp-dest-bitcoin="rp-dest-bitcoin" rp-dest-email="rp-dest-email" rp-dest-ripple-name="rp-dest-ripple-name" rp-dest-loading="recipient_loading" required="required" rp-autofill="$routeParams.to" rp-focus="rp-focus" rp-spinner="{{recipient_loading ? 4 : null}}" class="form-control"/><div rp-errors="send_destination" class="errorGroup"><div rp-error-valid ng-show="send.recipient != send.recipient_address" class="success">{{send.recipient_address}}</div><div rp-error-on="required" class="error">Por favor ingrese un receptor.</div><div rp-error-on="rpDest" class="error">Receptor debe ser un contacto o un nombre de usuario DineX.</div><div rp-error-on="federation" class="error">Esta dirección de email no está habilitado en DineX.</div></div></div></div><!--ul.tagsLinks<li><a href="" ng-click="send.show_dt_field = true" ng-hide="send.show_dt_field || send.bitcoin || send.federation">Mostrar etiqueta de destino</a></li>--><div ng-show="send.show_dt_field" class="row form-group"><div class="col-xs-12 col-sm-6 col-md-5"><label for="send_dt">Etiqueta de destino</label> <a href="" ng-click="send.show_dt_field = false">ocultar</a><input id="send_dt" name="send_dt" type="text" ng-model="send.dt" rp-stdt="rp-stdt" rp-autofill="$routeParams.dt" ng-required="send.recipient_info.dest_tag_required" class="form-control"/><div rp-errors="send_dt" class="errorGroup"><div rp-error-on="rpStdt" class="error">Etiqueta de destino inválida</div><div rp-error-on="required" class="error">Destino no puede estar en blanco.</div></div><div ng-show="send.recipient_info.dest_tag_required">El receptor requiere que se especifique una etiqueta de destino en la transacción. Si no conoce la etiqueta de destino, por favor contacte con ellos antes de efectuar una transacción.</div></div></div><div ng-show="$routeParams.st || send.st" class="row form-group"><div class="col-xs-12 col-sm-6 col-md-5"><label for="send_st">Etiqueta de origen</label><input id="send_st" name="send_st" type="text" ng-model="send.st" rp-stdt="rp-stdt" rp-autofill="$routeParams.st" class="form-control"/><div rp-errors="send_st" class="errorGroup"><div rp-error-on="rpStdt" class="error">Etiqueta de origen inválida</div></div></div></div><div ng-repeat="field in send.extra_fields" ng-switch="field.type" class="row form-group"><div ng-switch-when="text" class="col-xs-12 col-sm-6 col-md-5"><label ng-bind="field.label"></label><p ng-show="field.hint" ng-bind="field.hint" class="field-hint"></p><input type="text" ng-model="field.value" ng-required="{{field.required}}" class="form-control"/></div><div ng-switch-when="select" class="col-xs-12 col-sm-6 col-md-5"><label ng-bind="field.label"></label><p ng-show="field.hint" ng-bind="field.hint" class="field-hint"></p><select type="text" ng-model="field.value" ng-required="{{field.required}}" class="form-control"><option ng-repeat="option in field.options" ng-bind="option.label" value="{{option.value}}" ng-selected="option.selected" ng-disabled="option.disabled"></option></select></div></div><div ng-show="send.currency_choices.length" class="form-group"><label for="send_amount">Receptor recibirá</label><div ng-if="!send.currency_force" class="row amount"><div class="col-xs-12 col-sm-6 col-md-2"><input id="send_amount" name="send_amount" type="text" ng-model="send.amount" required="required" rp-autofill="$routeParams.amount" rp-autofill-amount="rp-autofill-amount" rp-amount="rp-amount" rp-amount-positive="rp-amount-positive" rp-amount-xrp-limit="rp-amount-xrp-limit" rp-amount-xrp-limit-currency="{{send.currency}}" class="form-control"/></div><!--.col-xs-12.col-sm-6.col-md-3<input id="send_amount_currency" name="send_amount_currency" type="text" rp-combobox="{{send.currency_choices}}" rp-combobox-select="rp-combobox-select" ng-model="send.currency" rp-autofill="$routeParams.amount" rp-autofill-currency="rp-autofill-currency" rp-restrict-currencies="{{send.restrict_currencies}}" class="form-control currency"/>--></div><div ng-if="send.currency_force" class="row"><div class="col-xs-12 col-sm-6 col-md-3 input-group currency_force"><input id="send_amount" name="send_amount" type="text" ng-model="send.amount" required="required" ng-disabled="!!send.force_amount" rp-autofill="$routeParams.amount" rp-autofill-amount="rp-autofill-amount" rp-amount="rp-amount" rp-amount-positive="rp-amount-positive" rp-amount-xrp-limit="rp-amount-xrp-limit" rp-amount-xrp-limit-currency="{{send.currency}}" class="form-control"/><span ng-bind="send.currency_force" class="input-group-addon"></span></div></div><div rp-errors="send_amount_currency" class="errorGroup"><div rp-error-on="rpRestrictCurrencies" class="error">{{send.recipient | rpcontactname}} no puede recibir esta transacción.</div></div><div rp-errors="send_amount" class="errorGroup"><div rp-error-on="required" class="error">Por favor ingrese el monto.</div><div rp-error-on="rpAmount" class="error">Monto no válido.</div><div rp-error-on="rpAmountPositive" class="error">Monto debe ser superior a cero.</div><div rp-error-on="rpMaxAmount" class="error">Esta transacción excede su saldo. Puede enviar un máximo de {{account.max_spend | rpamount:{rel_precision: 0} }}</div><div ng-show="send.recipient_info.disallow_xrp &amp;&amp; send.currency_code==\'XRP\'" class="error">Receptor no puede recibir este pago.</div><div ng-show="send.trust_limit" class="notice">{{send.recipient | rpcontactname}} confia por {{send.trust_limit | rpamount}} {{send.trust_limit | rpcurrency}}.</div></div></div><div class="row"><div ng-show="send.currency_code == \'XRP\'" class="col-xs-12 col-sm-6 col-md-5"><button id="sendXrpButton" type="submit" ng-disabled="sendForm.$invalid || send.self || !send.recipient_resolved || account.max_spend.to_number() &lt; send.amount * 1000000" class="btn btn-block btn-success submit">Enviar</button></div></div><div class="remote"><p ng-show="send.fund_status == \'insufficient-xrp\'" class="literal">Cuenta de destino no ha sido activada.</p><p ng-show="send.path_status == \'checking\'" rp-spinner="4" class="literal">Verificando</p><p ng-show="send.path_status == \'fed-check\'" rp-spinner="4" class="literal">Analizando</p><p ng-show="send.path_status == \'account-currencies\'" rp-spinner="4" class="literal">Verificando </p><p ng-show="send.path_status == \'bridge-quote\'" rp-spinner="4" class="literal">Verificando</p><p ng-show="send.path_status == \'pending\' &amp;&amp; send.currency_code != \'XRP\'" rp-spinner="4" class="literal">Calculando</p><p ng-show="send.path_status == \'pending\' &amp;&amp; send.currency_code == \'XRP\'" rp-spinner="4" class="literal">Calculando</p><p ng-show="send.path_status == \'no-path\' &amp;&amp; send.currency_code != \'XRP\'" class="literal">No puede enviar {{send.amount}} {{send.currency}} a {{send.recipient}} Ya sea no tiene fondos o la cuenta no es parte de la red DineX.</p><p ng-show="send.path_status == \'error-no-currency\'" class="literal">No se puede realizar la transacción.</p><p ng-show="send.path_status == \'error-quote\'" class="literal">Error.</p><p ng-show="send.path_status == \'error\'" class="literal">Error al enviar la transacción.</p><div ng-if="send.path_status == \'done\'" class="currency_sets"><div class="row row-padding-small"><div class="col-xs-12"><p ng-show="send.currency_code != \'XRP\' || send.bitcoin" class="literal">Puede enviar</p><p ng-show="send.currency_code == \'XRP\' &amp;&amp; !send.bitcoin" class="literal">O puede enviar</p></div></div><div ng-show="send.alternatives.length" class="row row-padding-small alternatives"><div ng-repeat="alt in send.alternatives" class="col-xs-12 col-sm-6 col-md-4 col-lg-3"><div class="margin"><div class="am"><span class="amnt">{{alt.amount | rpamount:{rel_precision: 4, rel_min_precision: 2} }}</span><span class="currency">{{alt.amount | rpcurrency }}</span><div class="ex">(<span class="rate">{{alt.rate | rpamount:{rel_precision: 4, rel_min_precision: 2 } }}</span><span class="pair">{{send.currency_code}}/{{alt.amount | rpcurrency}}</span>)</div></div><button type="submit" ng-disabled="sendForm.$invalid" ng-click="send.alt = alt" class="btn btn-block btn-success">Enviar {{ alt.amount | rpcurrency }}</button></div></div></div><div ng-show="send.alternatives.length &amp;&amp; lastUpdate" class="row row-padding-small pathupdate"><div class="col-xs-12">Actualizado <span> {{lastUpdate}}</span> <span ng-show="lastUpdate &gt; \'1\'" l10n-inc="l10n-inc"> segundos</span> <span ng-show="lastUpdate == \'1\'" l10n-inc="l10n-inc"> segundos</span> atrás</div></div></div></div></form><group ng-show="mode==&quot;wait_path&quot; &amp;&amp; account.Balance" class="mode-wait-path"><p rp-spinner="4" class="literal">Calculando</p></group><group ng-show="mode==&quot;confirm&quot; &amp;&amp; account.Balance" class="mode-confirm"><p class="literal">Enviando <span> {{ (send.alt.amount || send.currency) | rpcurrency}}</span> a</p><div class="dest_feedback"><div ng-show="send.recipient_name" class="recipient">{{send.recipient_name}}</div><div ng-hide="send.recipient_name" class="recipient">{{send.recipient_address}}</div><!--.extra(href="", ng-show="send.recipient != send.recipient_address || send.recipient_name") {{send.recipient_address}}--><div ng-show="send.dt" class="dt">Etiqueta de destino: {{send.dt}}</div></div><p class="literal">Recibirá</p><p rp-pretty-amount="send.amount_feedback" class="amount_feedback"></p><form ng-submit="send_confirmed()" class="call-to-action"><p ng-show="send.secret" class="literal">¿Está seguro?</p><div ng-show="showAnnouncement" class="auth-attention banner"><h5>La confirmación de envío con contraseña se puede deshabilitar en configuración -> preferencias</h5></div><p ng-hide="send.secret" class="literal">Por favor ingrese su contraseña para confirmar la transacción.</p><div ng-if="!send.secret" class="row row-padding-small"><input id="send_unlock_password" name="send_unlock_password" type="password" required="required" ng-model="send.unlock_password" class="form-control"/></div><div class="row row-padding-small"><div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><button type="button" ng-click="cancelConfirm()" class="btn btn-block btn-default back">&laquo; Volver</button></div><div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><button id="confirmButton" type="submit" ng-disabled="confirm_wait" class="btn btn-block btn-success submit">Confirmar</button></div></div></form></group><group ng-show="mode==&quot;sending&quot; &amp;&amp; account.Balance" class="mode-sending"><p rp-spinner="4" class="literal">Enviando transacción</p><hr/></group><group ng-show="mode==&quot;error&quot; &amp;&amp; account.Balance" class="mode-error"><group ng-switch on="error_type"><group ng-switch-when="noDest" class="result-error"><h2 class="tx-status">Destino no es válido</h2><p>La cuenta a la cual quiere enviar no existe.</p></group><group ng-switch-when="noPath" class="result-error"><h2 class="tx-status">No se puede realizar la transacción :(</h2><p>DineX no puede realizar la transacción entre estas cuentas.</p></group><group ng-switch-when="invalidTransaction" class="result-error"><h2 class="tx-status">Transacción inválida.</h2><p>La transacción fue rechazada.</p></group><group ng-switch-when="unlockFailed" class="result-error"><h2 class="tx-status">Desbloqueo fallido</h2><p>Su cuento no pudo ser desbloqueada. Por favor intente más tarde.</p></group><group ng-switch-default="ng-switch-default"><p class="literal">Lo sentimos, ocurrió un error al enviar su transacción. Asegúrese de estar conectado a internet e intente nuevamente.</p><p class="literal">Por favor asegúrese de no enviar su transacción más de una vez.</p></group></group><p><button ng-click="cancelConfirm()" class="btn btn-default">&laquo; Volver</button></p></group><group ng-show="mode==&quot;rippleerror&quot; &amp;&amp; account.Balance" class="mode-ripplerror"><rp-transaction-status rp-engine-result="{{engine_result}}" rp-engine-result-message="{{engine_result_message}}" rp-accepted="{{engine_status_accepted}}"></rp-transaction-status><group class="actions"><hr/><div ng-show="addressSaved" class="text-success actionLink">Contacto guardado!</div><div ng-hide="contact" class="save-address-form actionLink"><a href="" ng-click="show_save_address_form = true">Agregar este usuario a contactos</a><form name="saveAddressForm" ng-class="{ show: show_save_address_form }" ng-submit="saveAddress()"><div class="address">{{send.recipient_address}}</div><label for="save_address_name">Nombrar este usuario</label><input id="contact_name" name="save_address_name" type="text" ng-model="saveAddressName" unique="unique" required="required" rp-autofill="$routeParams.name" class="form-control"/><div ng-show="saveAddressForm.save_address_name.$error.unique" class="error">Ya tiene un contacto con el mismo nombre.</div><div><button type="submit" ng-disabled="addressSaving" class="btn btn-success"><span ng-show="addressSaving">Guardando...</span><span ng-hide="addressSaving">Guardar</span></button><a href="" ng-click="show_save_address_form = false">Cancelar</a></div><hr/></form></div><div class="actionLink"><a href="" ng-click="reset()">Enviar otro pago</a></div><div class="actionLink"><a href="" ng-click="reset_goto(\'balance\')">Volver al balance</a></div><hr/></group></group><group ng-show="mode==&quot;status&quot; &amp;&amp; account.Balance" class="mode-status"><group ng-show="tx_result==&quot;pending&quot;" class="pending"><h2 class="tx-status">Su transacción ha sido enviada.</h2><p>El balance de su cuenta se actualizará una vez que se confirme la transacción.</p></group><group ng-show="tx_result==&quot;cleared&quot;" class="result-success"><h2 class="tx-status">Transacción confirmada!</h2></group><group ng-show="tx_result==&quot;partial&quot;" class="result-partial"><h2 class="tx-status">Transacción parcialmente válida!</h2><p>Su transacción se ha realizado parcialmente.</p></group><group ng-show="tx_result==&quot;error&quot;" class="result-error"><h2 class="tx-status">Transacción no pudo ser enviada!</h2><p>No se pudo realizar la transacción. Por favor intente más tarde.</p></group><group ng-show="tx_result==&quot;malformed&quot;" class="result-malformed"><h2 class="tx-status">Transacción mal hecha!</h2><p ng-switch on="engine_result"><span ng-switch-default="ng-switch-default">Su transacción es inválida, debido a: {{engine_result}} - {{engine_result_message}}</span></p></group><group ng-show="tx_result==&quot;failure&quot;" class="result-malformed"><h2 class="tx-status">Transacción mal hecha!</h2><p ng-switch on="engine_result"><span ng-switch-when="tefDST_TAG_NEEDED">La cuenta de destino requiere que se especifique la etiqueta para realizar pagos.</span></p></group><group ng-show="tx_result==&quot;local&quot;" class="result-failed"><h2 class="tx-status">Transacción fallida!</h2><p ng-switch on="engine_result"><span ng-switch-when="telINSUF_FEE_P">El servidor al que envió la transacción estaba demasiado ocupado para procesar o redirigir su transacción con la comisión que ha incluido.</span></p></group><group ng-show="tx_result==&quot;claim&quot;" class="result-malformed"><h2 class="tx-status">Transacción fallida!</h2><p ng-switch on="engine_result"><span ng-switch-when="tecNO_DST">La cuenta de destino no existe.</span><span ng-switch-when="tecNO_DST_INSUF_XRP">La cuenta de destino no existe. Se debe cargar saldo para crearla.</span><span ng-switch-default="ng-switch-default">Error: {{engine_result_message}}</span></p></group><group ng-show="tx_result==&quot;failed&quot;" class="result-failed"><h2 class="tx-status">Transacción fallida!</h2><p ng-switch on="engine_result"><span ng-switch-when="terNO_LINE">Usted no puede realizar pagos en esta moneda.</span><span ng-switch-default="ng-switch-default">Su transacción no pudo ser confirmada, debido a: {{engine_result_message}}</span></p></group><group class="actions"><hr/><div ng-show="addressSaved" class="text-success actionLink">Contacto guardado!</div><div ng-hide="contact" class="save-address-form actionLink"><a href="" ng-click="show_save_address_form = true">Agregar este usuario a contactos</a><form name="saveAddressForm" ng-class="{ show: show_save_address_form }" ng-submit="saveAddress()"><div class="address">{{send.recipient_address}}</div><label for="save_address_name">Nombrar este usuario</label><input id="contact_name" name="save_address_name" type="text" ng-model="saveAddressName" unique="unique" required="required" rp-autofill="$routeParams.name" class="form-control"/><div ng-show="saveAddressForm.save_address_name.$error.unique" class="error">Ya tiene un contacto con el mismo nombre.</div><div><button type="submit" ng-disabled="addressSaving || saveAddressForm.$invalid" class="btn btn-success"><span ng-show="addressSaving">Guardando...</span><span ng-hide="addressSaving">Guardar</span></button><a href="" ng-click="show_save_address_form = false">Cancelar</a></div><hr/></form></div><div class="actionLink"><a href="" ng-click="reset()">Enviar otro pago</a></div><div class="actionLink"><a href="" ng-click="reset_goto(\'balance\')">Volver al balance</a></div><hr/></group></group></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(84);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="SecurityCtrl" class="col-xs-12 content"><div ng-show="connected" class="row"><div ng-hide="isUnlocked" class="col-xs-12"><div class="auth-attention sessionUnlock"><h5>Sesión expirada</h5><div class="status">Para ver o editar sus preferencias de seguridad, debe tener una sesión activa.</div><div class="row"><div class="col-xs-12 col-sm-5"><form ng-submit="restoreSession()"><label for="sessionPassword">Contraseña</label><input id="sessionPassword" type="password" name="sessionPassword" ng-model="sessionPassword" rp-focus="rp-focus" class="form-control"/><button type="submit" ng-disabled="isConfirming" rp-spinner="{{isConfirming ? 4 : null}}" class="btn btn-primary btn-block"><span>Restaurar sesión</span></button></form></div></div></div><div ng-show="unlockError" class="alert alert-danger"><span>La contraseña ingresada es incorrecta.</span></div></div><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><div ng-show="isUnlocked" class="col-sm-3"><div class="settingPage"><a href="#/security" ng-class="{active: $route.current.tabName == \'security\'}">Seguridad</a></div></div><div ng-show="isUnlocked" class="col-sm-9 list"><div ng-show="settingsPage == \'security\'" class="showSecurity"><div ng-show="\'web\' === client"><div ng-show="loading" class="alert alert-warning">Cambiando su contraseña DineX...</div><div ng-show="success" class="alert alert-success">Su contraseña DineX se ha modificado exitosamente.</div><div ng-show="errorLoading2FA" class="alert alert-danger">No es posible acceder a la configuración de autentificación de dos factores.</div><div ng-show="error2FA" class="alert alert-danger">Error al guardar la configuación de autentificación de dos factores.</div><div ng-show="invalidToken" class="alert alert-danger">El código de verificación es invalido.</div><div ng-show="enableSuccess" class="alert alert-success">La autentificación de dos factores se ha activado.</div><div ng-show="disableSuccess" class="alert alert-success">La autentificación de dos factores se ha desactivado.</div><h4>Preferencias de seguridad</h4><div ng-show="showAnnouncement" class="auth-attention banner"><h5>Cambio de contraseña y ver clave secreta está desactivado en la cuenta demo por seguridad.</h5></div><!--.section<div class="descriptor">Autentificación de dos factores</div><div ng-show="loading2FA" class="row"><div class="col-xs-12 col-sm-9"><div rp-spinner="4">Cargando la configuración de autentificación de dos factores...</div></div></div><div ng-hide="loading2FA || errorLoading2FA || mode2FA === \'verifyPhone\'" class="row"><div class="col-xs-9 col-sm-8 col-md-6"><span ng-show="enabled2FA">Habilitado</span><span ng-hide="enabled2FA">Deshabilitado</span></div><div class="col-xs-3 col-sm-4 col-md-6"><a href="" ng-show="enabled2FA" ng-click="disable2FA()">desabilitar</a><rp-popup onOpen="open2FA"><a href="" rp-popup-link="rp-popup-link" ng-hide="enabled2FA">habilitar</a><div rp-popup-content="rp-popup-content" class="connectModal modal2FA"><div class="modal-header"><div id="logo" class="navbar-brand hidden-sm modal-logo"></div><div class="modal-title">Conectar</div></div><div class="modal-body"><div class="modal-prompt">Authy provee el servicio de autentificción de dos factores para DineX. Para habilitar la autentificación, debes compartir información con Authy.</div><div class="grey-focus"><div class="row modal-permissions"><div class="col-xs-12 col-sm-4">- Tu Email:</div><div class="col-xs-12 col-sm-8 email">{{userBlob.data.email}}</div></div><div class="row modal-permissions"><div class="col-xs-12 col-sm-4">- Tu número de teléfono:</div><div class="col-xs-12 col-sm-8 phone2FA"><div class="form-group authy-control"><label>Código de país</label><input ng-model="countryCode" class="authy-countries form-control"/></div><div class="form-group authy-control"><label>Número de teléfono</label><input name="phoneNumber" ng-model="phoneNumber" class="form-control"/></div></div></div></div><div class="modal-agreement">Al continuar, aceptas los <a href="https://www.authy.com/terms" target="_blank" l10n-inc="l10n-inc"> términos de servicio</a> de Authy.</div><div class="modal-buttons"><button ng-click="savePhone()" ng-disabled="savingPhone" class="modal-btn btn btn-default btn-primary btn-md"><span>Compartir</span></button><button data-dismiss="modal" ng-hide="savingPhone" class="modal-btn btn btn-default btn-md">Cancelar</button></div></div></div></rp-popup></div></div><div ng-hide="!mode2FA || mode2FA === \'verifyPhone\'" class="row confirm2FA"><div class="col-xs-12 col-sm-9"><div class="status"><div rp-spinner="4" ng-show="mode2FA === \'savePhone\'">Guardando preferencias...</div><div rp-spinner="4" ng-show="mode2FA === \'disable\'">Deshabilitando autentificación de dos factores...</div><div rp-spinner="4" ng-show="mode2FA === \'enable\'">Habilitando autentificación de dos factores...</div></div></div></div><form ng-show="mode2FA === \'verifyPhone\'" class="verify2FA"><div class="row"><div class="col-xs-12"><div class="status"><span ng-hide="via === \'app\'">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="via === \'app\'">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span> +{{currentCountryCode}} {{currentPhone}}</span><div l10n-inc="l10n-inc">Enter the code below to complete the process.</div></div></div></div><div class="row"><div class="col-xs-12 col-sm-8"><label for="verifyToken">Código de verificación</label></div></div><div class="row"><div class="col-xs-7 col-sm-5"><input id="verifyToken" name="verifyToken" ng-model="verifyToken" class="form-control"/></div><div class="col-xs-5 col-sm-3"><button type="button" ng-disabled="isRequesting" rp-spinner="{{isRequesting ? 4 : null}}" ng-click="requestToken()" class="btn btn-default btn-block"><span ng-hide="via === \'app\'">Re-enviar código</span><span ng-show="via === \'app\'">Enviar via SMS</span></button></div></div><div class="row"><div class="col-xs-7 col-sm-3"><button type="button" ng-disabled="isVerifying" ng-click="enable2FA()" rp-spinner="{{isVerifying ? 4 : null}}" class="btn btn-primary btn-block"><span>Habilitar</span></button></div><div class="col-xs-5 col-sm-2"><a ng-click="cancel2FA()" class="txtbtn">Cancelar</a></div></div></form>--><div class="section"><div class="descriptor">Contraseña DineX</div><div class="row"><div class="col-xs-9 col-sm-8 col-md-6">*****************</div><div class="col-xs-3 col-sm-4 col-md-6"><a href="" ng-hide="openFormPassword">editar</a></div></div><div class="row"><div class="row"><div class="auth-form-container col-xs-12 col-md-8 col-lg-6"><form id="renameForm" name="changeForm" ng-show="openFormPassword" ng-submit="changePassword()"><div class="form-group"><label type="password" for="password">Contraseña actual</label><input id="password" type="password" name="password" rp-focus="rp-focus" ng-model="password" required="required" class="form-control"/></div><div ng-show="error" ng-switch on="error" class="alert alert-danger"><span ng-switch-when="wrongpassword">La contraseña ingresada es incorrecta.</span><span ng-switch-when="cantlogin">Su contraseña DineX ha cambiado, por favor ingrese nuevamente</span><span ng-switch-default="ng-switch-default">No fue posible cambiar su contraseña DineX, por favor intente más tarde.</span></div><div ng-class="{\'field-error\': \'weak\' === strength || \'match\' === strength}" class="form-group"><label for="change_password">Nueva contraseña</label><input name="change_password1" type="password" autocomplete="off" ng-model="password1" rp-strong-password="rp-strong-password" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="strength==\'weak\'"><span>Su contraseña es débil. No contiene números y símbolos o es muy corta.</span></p><p ng-show="strength==\'match\'"><span>Su nombre Dinex y contraseña no pueden coincidir. Por favor cree una nueva contraseña.</span></p></div><div ng-class="{\'field-error\': changeForm.change_password1.$error.rpSameInSet &amp;&amp; changeForm.change_password2.$dirty}" class="form-group"><label for="change_password2">Confirmar contraseña</label><input name="change_password2" autocomplete="off" type="password" ng-model="password2" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="changeForm.change_password1.$error.rpSameInSet &amp;&amp; changeForm.change_password2.$dirty"><span>Contraseñas no coinciden</span></p></div><div ng-show=""><div class="form-group"><div class="strength {{strength}}">{{strength}}</div></div></div><div class="row"><div class="col-xs-12 col-sm-6"><button type="submit" ng-disabled="changeForm.$invalid || loading" class="btn btn-success btn-block"><span ng-hide="loading">Enviar</span><span ng-show="loading">Cargando...</span></button></div><div class="col-xs-12 col-sm-6"><a href="" ng-click="openFormPassword=!openFormPassword" class="txtbtn">Cancelar</a></div></div></form></div></div></div></div><div class="section"><div class="descriptor">Clave secreta</div><div class="row"></div><label>La clave secreta desbloquea el acceso a los fondos de la cuenta aún cuando olvide su nombre de usuario DineX o su contraseña. Por favor escríbala y guardela en un lugar PRIVADO Y SEGURO. Puede emplearla para recuperar sus fondos.</label><div class="row"><div class="col-xs-9 col-sm-8 col-md-6"><span ng-show="security.master_seed" class="value">{{security.master_seed}}</span><span ng-hide="security.master_seed" class="value">••••••••••••••••••••••••••••••••••••••••••••</span></div><div class="col-xs-3 col-sm-4 col-md-3"><a href="">Mostrar</a><a href="" ng-click="security.master_seed = null" ng-show="security.master_seed">Ocultar</a></div></div></div><div class="descriptor">Protección de contraseña para transacciones</div><div class="row"><div class="col-xs-12"><div class="description">Si deshabilita las solicitudes de contraseña, aún así deberá ingresarla en ciertos casos.</div><div class="helperInput"><form name="persistUnlock" ng-submit="setPasswordProtection()"><div ng-hide="editUnlock" class="row"><div class="col-xs-6 col-sm-5 col-md-3"><div class="description">Requerir contraseña</div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="description"><div ng-show="requirePassword">Si</div><div ng-hide="requirePassword">No</div></div></div><div class="col-xs-3 col-sm-4 col-md-4"><div class="description"><a href="" id="edit" ng-click="editUnlock = true">editar</a></div></div></div><div ng-show="editUnlock" class="row"><div class="col-xs-6 col-sm-5 col-md-3"><div class="description">Require password</div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="helperInput description"><label><input type="checkbox" name="unlock" ng-checked="requirePassword" ng-click="requirePasswordChanged = true"/></label></div></div><div class="col-xs-3 col-sm-3 col-md-2"><div class="description"><button id="save" type="submit" ng-disabled="serverForm.$invalid" class="btn btn-block btn-success btn-xs submit">Guardar</button></div></div></div></form></div></div></div></div></div></div></div></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -12004,26 +13314,26 @@
 	}
 
 /***/ },
-/* 72 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<section ng-controller="FundCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><div ng-show="connected" class="row"><div class="col-sm-3"><div class="currencies"><a href="#/fund/clp" ng-class="{active: $routeParams.currency == \'clp\'}">CLP</a></div></div><div class="col-sm-9 list"><div ng-show="$routeParams.currency == \'clp\'" class="fundXrp"><div ng-show="\'web\' === client"><div class="nameLine">Nombre DineX: <span ng-show="userCredentials.username" class="name">~{{userCredentials.username}}</span><span ng-hide="userCredentials.username">cargando...</span></div><div class="description">Use su nombre DineX para enviar y recibir transacciones.</div></div></div></div></div></section>');
+	buf.push('<section ng-controller="FundCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><div ng-show="connected" class="row"><div class="col-sm-3"><div class="currencies"><a href="#/fund/clp" ng-class="{active: $routeParams.currency == \'clp\'}">CLP</a></div></div><div class="col-sm-9 list"><div ng-show="$routeParams.currency == \'clp\'" class="fundXrp"><div ng-show="\'web\' === client"><div class="nameLine">Nombre DineX: <span ng-show="userCredentials.username" class="name">~{{userCredentials.username}}</span><span ng-hide="userCredentials.username">cargando...</span></div><div class="description">Para cargar saldo deberás transferir a la cuenta bancaria de DineX e ingresar en esta pestaña el rut de la cuenta desde donde se realizó la transferencia.</div>O bien puedes depositar en una sucursal bancaria asociada e ingresar el folio del comprobante de depósito.\nAsí de simple!</div></div></div></div></section>');
 	}
 	return buf.join("");
 	}
 
 /***/ },
-/* 73 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -12036,10 +13346,10 @@
 	}
 
 /***/ },
-/* 74 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -12052,10 +13362,10 @@
 	}
 
 /***/ },
-/* 75 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -12068,7 +13378,7 @@
 	}
 
 /***/ },
-/* 76 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -12596,7 +13906,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 
-	exports.isBuffer = __webpack_require__(81);
+	exports.isBuffer = __webpack_require__(85);
 
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -12640,7 +13950,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(83);
+	exports.inherits = __webpack_require__(87);
 
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -12658,10 +13968,10 @@
 	  return Object.prototype.hasOwnProperty.call(obj, prop);
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(82)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(86)))
 
 /***/ },
-/* 77 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -12968,53 +14278,53 @@
 
 
 /***/ },
-/* 78 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<nav role="navigation" ng-controller="NavbarCtrl" class="navbar"><div class="mainnav"><div class="container"><div class="navbar-header"><div class="navbar-toggle snapper-toggle"><a href="" class="fa fa-bars"></a></div><a id="logo" href="#/" title="DineX" class="navbar-brand hidden-xs"></a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav topMenu"><li id="nav-wallet" ng-class="{active: $route.current.mainMenu == \'wallet\'}"><a href="#/balance">Resumen</a></li><li id="nav-withdraw" ng-class="{active: $route.current.mainMenu == \'withdraw\'}"><a href="#/withdraw">Retirar</a></li></ul><ul class="nav navbar-nav navbar-right"><li class="dropdown balances-dropdown"><p ng-show="!loadState.account" class="navbar-text">Cargando su saldo...</p><a ng-show="loadState.account" class="dropdown-toggle"><span ng-show="!account.Account" class="balance primary">Cuenta sin fondos</span><span ng-show="account.Account" class="balance primary"></span><li ng-repeat="balance in balances" class="balance"><span class="balance">{{balance.total | rpamount:{rel_precision: 0} }}&nbsp;</span><span rp-currency="balance.total" rp-currency-short="rp-currency-short" class="balance"></span></li></a></li><li ng-hide="\'desktop\' === client"><a href="#/account">~{{userCredentials.username}}</a></li><li class="dropdown notifications-dropdown"><a ng-click="read()" class="dropdown-toggle fa fa-bell"><div ng-show="unseenNotifications.count" class="number">{{unseenNotifications.count}}</div></a><ul id="notifications" class="dropdown-menu"><li ng-hide="loadState.transactions" class="message">Cargando...</li><li ng-show="loadState.transactions &amp;&amp; !notifications.length" class="message">No hay notificaciones recientes.</li><li ng-repeat="entry in notifications" ng-class="{unseen: entry.unseen}" rp-link-tx="entry.hash" ng-show="notifications.length" class="notification"><div ng-switch on="entry.transaction.type" class="desc"><div ng-switch-when="sent" class="transaction"><span>Ha enviado <strong class="nowrap"> {{entry.transaction.amount | rpamount}} {{entry.transaction.amount | rpcurrency}}</strong> a <span title="{{entry.transaction.counterparty}}" class="address"> {{entry.transaction.counterparty | rpcontactname}}</span></span>');
-	var __val__ = __webpack_require__(79)()
+	buf.push('<nav role="navigation" ng-controller="NavbarCtrl" class="navbar"><div class="mainnav"><div class="container"><div class="navbar-header"><div class="navbar-toggle snapper-toggle"><a href="" class="fa fa-bars"></a></div><a id="logo" href="#/" title="DineX" class="navbar-brand hidden-xs"></a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav topMenu"><li id="nav-wallet" ng-class="{active: $route.current.mainMenu == \'wallet\'}"><a href="#/balance">Resumen</a></li><li id="nav-send" ng-class="{active: $route.current.mainMenu == \'send\'}"><a href="#/send">Pagar</a></li><li id="nav-fund" ng-class="{active: $route.current.mainMenu == \'fund\'}"><a href="#/fund">Financiar</a></li></ul><ul class="nav navbar-nav navbar-right"><li class="dropdown balances-dropdown"><p ng-show="!loadState.account" class="navbar-text">Cargando su saldo...</p><a ng-show="loadState.account" class="dropdown-toggle"><span ng-show="!account.Account" class="balance primary">Cuenta sin fondos</span><span ng-show="account.Account" class="balance primary"></span><li ng-repeat="balance in balances" class="balance"><span class="balance">{{balance.total | rpamount:{rel_precision: 0} }}&nbsp;</span><span rp-currency="balance.total" rp-currency-short="rp-currency-short" class="balance"></span></li></a></li><li ng-hide="\'desktop\' === client"><a href="#/account">~{{userCredentials.username}}</a></li><li class="dropdown notifications-dropdown"><a ng-click="read()" class="dropdown-toggle fa fa-bell"><div ng-show="unseenNotifications.count" class="number">{{unseenNotifications.count}}</div></a><ul id="notifications" class="dropdown-menu"><li ng-hide="loadState.transactions" class="message">Cargando...</li><li ng-show="loadState.transactions &amp;&amp; !notifications.length" class="message">No hay notificaciones recientes.</li><li ng-repeat="entry in notifications" ng-class="{unseen: entry.unseen}" rp-link-tx="entry.hash" ng-show="notifications.length" class="notification"><div ng-switch on="entry.transaction.type" class="desc"><div ng-switch-when="sent" class="transaction"><span>Ha enviado <strong class="nowrap"> {{entry.transaction.amount | rpamount}} {{entry.transaction.amount | rpcurrency}}</strong> a <span title="{{entry.transaction.counterparty}}" class="address"> {{entry.transaction.counterparty | rpcontactname}}</span></span>');
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="received" class="transaction"><span title="{{entry.transaction.counterparty}}" class="address"><span>{{entry.transaction.counterparty | rpcontactnamefull | rpripplename: {tilde: true} }}</span> te envio<strong class="nowrap"> {{entry.transaction.amount | rpamount:{reference_date:entry.dateRaw} }} {{entry.transaction.amount | rpcurrency}}</strong></span>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="exchange" class="transaction"><span>You requested to exchange<strong class="nowrap"> {{entry.transaction.spent | rpamount}}\n{{entry.transaction.spent | rpcurrency}}</strong> to<strong class="nowrap"> {{entry.transaction.amount | rpamount}}\n{{entry.transaction.amount | rpcurrency}}</strong></span>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="trusted" class="transaction"><span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactname}} now trusts you for</span><strong class="nowrap"> {{entry.transaction.amount | rpamount}}\n{{entry.transaction.amount | rpcurrency}}</strong>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="trusting" class="transaction"><span>You now trust&#32;<span title="{{entry.transaction.counterparty}}" class="address">{{entry.transaction.counterparty | rpcontactname}}</span> for<strong class="nowrap"> {{entry.transaction.amount | rpamount:{reference_date:entry.dateRaw} }}\n{{entry.transaction.amount | rpcurrency}}</strong>.</span>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="offernew" class="transaction"><span ng-show="entry.transaction.sell">You created an order to sell&#32;<strong>{{entry.transaction.gets | rpamount}} {{entry.transaction.gets | rpcurrency}}</strong> for&#32;<strong>{{entry.transaction.pays | rpamount}} {{entry.transaction.pays | rpcurrency}}</strong></span><span ng-hide="entry.transaction.sell">You created an order to buy&#32;<strong>{{entry.transaction.pays | rpamount}} {{entry.transaction.pays | rpcurrency}}</strong> for&#32;<strong>{{entry.transaction.gets | rpamount}} {{entry.transaction.gets | rpcurrency}}</strong></span>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="offercancel" class="transaction"><span>You cancelled an order accepting&#32;<strong class="nowrap">{{entry.transaction.pays | rpamount}}\n{{entry.transaction.pays | rpcurrency}}</strong> for&#32;<strong class="nowrap">{{entry.transaction.gets | rpamount}}\n{{entry.transaction.gets | rpcurrency}}</strong></span>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="accountset" class="transaction">Los datos de la cuenta han sido modificados</div><div ng-switch-when="rippling" class="transaction"><span>Calculando</span>');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</div><div ng-switch-when="failed" class="transaction">Transacción fallida</div><div ng-switch-default="ng-switch-default" class="transaction">');
-	var __val__ = __webpack_require__(79)()
+	var __val__ = __webpack_require__(83)()
 	buf.push(null == __val__ ? "" : __val__);
-	buf.push('</div></div><div class="date">{{entry.date | rpfromnow}}</div></li><li ng-show="notifications.length" class="history"><a href="#/history">Ver historial completo</a></li></ul></li><li class="settings"><a class="dropdown-toggle fa fa-cog"></a><ul class="dropdown-menu"><li><a href="#/account"><img src="img/profile.png"/> Cuenta</a></li><!--li.divider--><!--li: a(href="#/trust", l10n) Trust--><li class="divider"></li><li><a href="#/security"><img src="img/settings.png"/> Preferencias</a></li><li class="divider"></li><li><a ng-click="logout()" class="logout"><img src="img/logout.png"/> Salir</a></li></ul></li></ul></div></div></div><div ng-show="$route.current.mainMenu == \'wallet\'" class="subnav"><div class="container"><ul><li ng-class="{active: $route.current.tabName == \'balance\'}"><a href="#/balance">Balance</a></li><li ng-class="{active: $route.current.tabName == \'history\'}"><a href="#/history">Historial</a></li></ul></div></div><div ng-show="$route.current.mainMenu == \'exchange\' || $route.current.mainMenu == \'trade\'" class="subnav"><div class="container"><ul><li ng-class="{active: $route.current.tabName == \'trade\'}"><a href="#/trade">Trade</a></li><li ng-class="{active: $route.current.tabName == \'exchange\'}"><a href="#/exchange">Convert</a></li></ul></div></div><div ng-if="recovered" ng-show="recovered" class="auth-attention banner text-center"><h4>Su cuenta ha sido recuperada y la nueva contraseña se ha guardado con éxito!</h4><a href="#" ng-click="recovered = false">descartar</a></div></nav>');
+	buf.push('</div></div><div class="date">{{entry.date | rpfromnow}}</div></li><li ng-show="notifications.length" class="history"><a href="#/history">Ver historial completo</a></li></ul></li><li class="settings"><a class="dropdown-toggle fa fa-cog"></a><ul class="dropdown-menu"><li><a href="#/account"><img src="img/profile.png"/> Cuenta</a></li><!--li.divider--><!--li: a(href="#/trust", l10n) Trust--><li class="divider"></li><li><a href="#/security"><img src="img/settings.png"/> Preferencias</a></li><li class="divider"></li><li><a ng-click="logout()" class="logout"><img src="img/logout.png"/> Salir</a></li></ul></li></ul></div></div></div><div ng-show="$route.current.mainMenu == \'wallet\'" class="subnav"><div class="container"><ul><li ng-class="{active: $route.current.tabName == \'balance\'}"><a href="#/balance">Balance</a></li><li ng-class="{active: $route.current.tabName == \'history\'}"><a href="#/history">Historial</a></li><li ng-class="{active: $route.current.tabName == \'contacts\'}"><a href="#/contacts">Contactos</a></li></ul></div></div><div ng-show="$route.current.mainMenu == \'exchange\' || $route.current.mainMenu == \'trade\'" class="subnav"><div class="container"><ul><li ng-class="{active: $route.current.tabName == \'trade\'}"><a href="#/trade">Trade</a></li><li ng-class="{active: $route.current.tabName == \'exchange\'}"><a href="#/exchange">Convert</a></li></ul></div></div><div ng-show="$route.current.mainMenu == \'fund\' || $route.current.mainMenu == \'withdraw\'" class="subnav"><div class="container"><ul><li ng-class="{active: $route.current.tabName == \'fund\'}"><a href="#/fund">Depositar</a></li><li ng-class="{active: $route.current.tabName == \'withdraw\'}"><a href="#/withdraw">Retirar</a></li></ul></div></div><div ng-if="recovered" ng-show="recovered" class="auth-attention banner text-center"><h4>Su cuenta ha sido recuperada y la nueva contraseña se ha guardado con éxito!</h4><a href="#" ng-click="recovered = false">descartar</a></div></nav>');
 	}
 	return buf.join("");
 	}
 
 /***/ },
-/* 79 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(80);
+	var jade = __webpack_require__(84);
 
 	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
 	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
@@ -13027,7 +14337,7 @@
 	}
 
 /***/ },
-/* 80 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -13184,7 +14494,7 @@
 	  if (!filename) throw err;
 
 	  var context = 3
-	    , str = __webpack_require__(84).readFileSync(filename, 'utf8')
+	    , str = __webpack_require__(88).readFileSync(filename, 'utf8')
 	    , lines = str.split('\n')
 	    , start = Math.max(lineno - context, 0)
 	    , end = Math.min(lines.length, lineno + context);
@@ -13207,7 +14517,7 @@
 
 
 /***/ },
-/* 81 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function isBuffer(arg) {
@@ -13218,7 +14528,7 @@
 	}
 
 /***/ },
-/* 82 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// shim for using process in browser
@@ -13287,7 +14597,7 @@
 
 
 /***/ },
-/* 83 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	if (typeof Object.create === 'function') {
@@ -13316,7 +14626,7 @@
 
 
 /***/ },
-/* 84 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var files = {};
