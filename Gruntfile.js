@@ -102,17 +102,6 @@ module.exports = function (grunt) {
         options: {
 	    base: '<%= config.dist %>',
             livereload: false,
-	    middleware: function(connect, options, middlewares) {
-		middlewares.unshift(function(req, res, next) {
-                    var filename = req.url;
-                    if (!grunt.file.exists(filename)) {
-			filename = '/404.html';
-			return next();
-                    }
-                    res.end(grunt.file.read(filename));
-		});
-		return middlewares;
-            }
         }
       }
     },
