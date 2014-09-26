@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         open: true,
         livereload: 35729,
         // Change this to '0.0.0.0' to access the server from outside
-        hostname: '0.0.0.0'
+        hostname: 'localhost',
       },
       livereload: {
         options: {
@@ -100,8 +100,19 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          base: '<%= config.dist %>',
-          livereload: false
+	    base: '<%= config.dist %>',
+            livereload: false,
+	    middleware: function(connect, options, middlewares) {
+		middlewares.unshift(function(req, res, next) {
+                    var filename = req.url;
+                    if (!grunt.file.exists(filename)) {
+			filename = '/404.html';
+			return next();
+                    }
+                    res.end(grunt.file.read(filename));
+		});
+		return middlewares;
+            }
         }
       }
     },
