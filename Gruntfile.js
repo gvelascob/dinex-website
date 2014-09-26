@@ -289,9 +289,6 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*'
           ]
         }, {
-          src: 'node_modules/apache-server-configs/dist/.htaccess',
-          dest: '<%= config.dist %>/.htaccess'
-        }, {
           expand: true,
           dot: true,
           cwd: 'bower_components/bootstrap/dist',
