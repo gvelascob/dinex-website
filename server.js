@@ -37,6 +37,14 @@ app.use(express.static(__dirname + '/dist'));
 // this will allow "GET /style.css" instead of "GET /css/style.css":
 //app.use(express.static(__dirname + '/public/css'));
 
+//allow cors
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    if ('OPTIONS' == req.method) return res.send(200);
+    next();
+});
+
 
 app.get('/404', function(req, res, next){
   // trigger a 404 since no other middleware
