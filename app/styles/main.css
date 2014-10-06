@@ -307,6 +307,7 @@ a:focus {
 .callout a {
   color: #ed427f;
   text-decoration: none;
+  font-weight: 600;
 }
 .callout a:hover,
 a:focus {
@@ -358,7 +359,7 @@ callout a:focus {
 /* Call to Action demo */
 
 .call-to-action-demo {
-    padding: 0px 0px 20px 0px;
+    padding: 10px 0px 30px 0px;
 }
 
 .call-to-action-demo .btn {
