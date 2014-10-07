@@ -264,8 +264,8 @@ hr.small {
   text-decoration: none;
   font-weight: 600;
 }
-.service-item a:hover,
-a:focus {
+
+.service-item a:hover,a:focus {
   color: #22a301;
   text-decoration: underline;
 }
@@ -340,12 +340,13 @@ callout a:focus {
 
 .img-portfolio1 {
     margin: 0 auto;
-	padding:5%;
+    padding:5%;
 }
 
 .img-portfolio1:hover {
     opacity: 0.8;
 }
+
 /* Call to Action */
 
 .call-to-action {
