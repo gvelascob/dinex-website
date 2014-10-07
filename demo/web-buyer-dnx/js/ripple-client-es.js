@@ -1,5 +1,5 @@
 /*!
- * Ripple Client v69bdc03
+ * Ripple Client v638f959
  * Copyright (c) 2014 Ripple Labs, Inc.
  * Licensed under the ISC license.
  */

@@ -10522,6 +10522,13 @@ rp-pie-chart .sub.other {
   color: #22a301;
 }
 
+@media screen and (max-width: 360px) {
+  #t-balance .total .balance {
+    font: 38px OpenSansRegular;
+    color: #22a301;
+  }
+}
+
 #t-balance .currency-overview {
   padding: 10px;
   margin: 0;
@@ -10545,16 +10552,27 @@ rp-pie-chart .sub.other {
   color: #ccccca;
 }
 
-#t-balance .currency-overview .balancebox .amount {
+@media (max-width: 360px) {
+  #t-balance .currency-overview .balancebox .lbl {
+    font-family: OpenSansBold;
+    font-size: 0.85em;
+  }
+  #t-balance .currency-overview .balancebox .lbl .desc {
+    font: 12px OpenSansLight;
+    color: #ccccca;
+  }
+}
+
+#t-balance .currency-overview .balancebox .Amount {
   color: #1e3f78;
 }
 
-#t-balance .currency-overview .balancebox .amount .fraction {
+#t-balance .currency-overview .balancebox .Amount .fraction {
   font-family: OpenSansLight;
   color: #b8dba5;
 }
 
-#t-balance .currency-overview .balancebox .amount .currency {
+#t-balance .currency-overview .balancebox .Amount .currency {
   margin-left: 15px;
   font-family: OpenSansLight;
 }

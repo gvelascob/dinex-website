@@ -1,5 +1,5 @@
 /*!
- * Ripple Client vfa4c028
+ * Ripple Client v2a727dd
  * Copyright (c) 2014 Ripple Labs, Inc.
  * Licensed under the ISC license.
  */
@@ -349,8 +349,8 @@
 	 * The app controller manages the global scope.
 	 */
 
-	var util = __webpack_require__(77),
-	    events = __webpack_require__(76),
+	var util = __webpack_require__(76),
+	    events = __webpack_require__(77),
 	    rewriter = __webpack_require__(55),
 	    genericUtils = __webpack_require__(56),
 	    Amount = ripple.Amount;
@@ -4564,7 +4564,7 @@
 	 * The id service is used for user identification and authorization.
 	 */
 
-	var util = __webpack_require__(77),
+	var util = __webpack_require__(76),
 	    Base58Utils = __webpack_require__(51),
 	    RippleAddress = __webpack_require__(1).RippleAddress;
 
@@ -8407,7 +8407,7 @@
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab  = __webpack_require__(63).Tab;
 
 	var RegisterTab = function ()
@@ -8668,7 +8668,7 @@
 /* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab = __webpack_require__(63).Tab;
 
 	var LoginTab = function ()
@@ -8684,7 +8684,7 @@
 
 	LoginTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(68)();
+	  return __webpack_require__(65)();
 	};
 
 	LoginTab.prototype.angular = function (module) {
@@ -8954,7 +8954,7 @@
 /* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util     = __webpack_require__(77);
+	var util     = __webpack_require__(76);
 	var Tab      = __webpack_require__(63).Tab;
 
 	var RecoverTab = function ()
@@ -8970,7 +8970,7 @@
 
 	RecoverTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(65)();
+	  return __webpack_require__(66)();
 	};
 
 	RecoverTab.prototype.extraRoutes = [
@@ -9079,7 +9079,7 @@
 /* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77),
+	var util = __webpack_require__(76),
 	    Tab = __webpack_require__(63).Tab;
 
 	var BalanceTab = function ()
@@ -9096,7 +9096,7 @@
 
 	BalanceTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(66)();
+	  return __webpack_require__(67)();
 	};
 
 	BalanceTab.prototype.angular = function (module)
@@ -9250,7 +9250,7 @@
 /* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77),
+	var util = __webpack_require__(76),
 	    Tab = __webpack_require__(63).Tab,
 	    rewriter = __webpack_require__(55);
 
@@ -9266,7 +9266,7 @@
 
 	HistoryTab.prototype.generateHtml = function ()
 	{
-	  return __webpack_require__(67)();
+	  return __webpack_require__(68)();
 	};
 
 	HistoryTab.prototype.angular = function (module) {
@@ -9707,7 +9707,7 @@
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab = __webpack_require__(63).Tab;
 
 	var AccountTab = function ()
@@ -9815,7 +9815,7 @@
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab  = __webpack_require__(63).Tab;
 
 	var SecurityTab = function ()
@@ -10179,7 +10179,7 @@
 /* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab = __webpack_require__(63).Tab;
 
 	var TxTab = function ()
@@ -10308,7 +10308,7 @@
 /* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77),
+	var util = __webpack_require__(76),
 	    Tab = __webpack_require__(63).Tab;
 
 	var FundTab = function ()
@@ -10399,7 +10399,7 @@
 /* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77),
+	var util = __webpack_require__(76),
 	    Tab = __webpack_require__(63).Tab;
 
 	var WithdrawTab = function ()
@@ -10447,7 +10447,7 @@
 /* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab = __webpack_require__(63).Tab;
 
 	var EulaTab = function ()
@@ -10486,7 +10486,7 @@
 /* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77);
+	var util = __webpack_require__(76);
 	var Tab = __webpack_require__(63).Tab;
 
 	var PrivacyTab = function ()
@@ -11800,7 +11800,7 @@
 /* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var util = __webpack_require__(77),
+	var util = __webpack_require__(76),
 	    webutil = __webpack_require__(52),
 	    log = __webpack_require__(53);
 
@@ -11866,7 +11866,7 @@
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<section ng-controller="RecoverCtrl" class="col-xs-12 content"><div class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><form name="recoverForm" ng-submit="submitForm()" ng-show="mode === \'recover\'"><h2>Recuperar cuenta</h2><div class="auth-attention text-center"><div class="status">Sólo se puede recuperar la cuenta DineX con la clave secreta. Recuperará su nombre DineX, contactos y otra información.</div></div><div class="form-group"><label for="recover_username">Nombre Dinex</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="recover_username" name="recover_username" type="text" ng-model="username" required="required" rp-focus="rp-focus" autocomplete="off" maxlength="20" rpDest="rpDest" class="form-control"/></div></div><div class="form-group"><label for="recover_masterkey">Clave secreta</label><input id="recover_masterkey" name="recover_masterkey" type="password" autocomplete="off" required="required" ng-model="masterkey" class="form-control"/></div><div ng-show="recoverError" class="error text-center"><div>No fue posible recuperar la cuenta.</div><div ng-bind="recoverError"></div></div><div class="submit-btn-container"><button type="submit" ng-disabled="recoverForm.$invalid || submitLoading" rp-spinner="{{submitLoading ? 4 : null}}" class="btn btn-block btn-success"><span ng-show="submitLoading">Cargando...</span><span ng-hide="submitLoading">Recuperar cuenta</span></button></div></form><form name="setPasswordForm" ng-submit="submitForm()" ng-show="mode === \'setPassword\'"><h2>Establecer contraseña</h2><div class="auth-attention text-center"><div class="status">Su cuenta fue recuperada exitosamente. Por favor asegure su cuenta con una nueva contraseña.</div></div><div class="form-group"><label>Nombre Dinex</label><div class="rippleName"><span>~</span><span ng-bind="username"></span></div></div><div ng-class="{\'field-error\': \'weak\' === strength || \'match\' === strength}" class="form-group"><label for="password1">Contraseña</label><input id="password1" name="password1" type="password" autocomplete="off" ng-model="password1" rp-strong-password="rp-strong-password" required="required" rp-focus="rp-focus" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="strength==\'weak\'"><span>Su contraseña es débil. No contiene números y símbolos o es muy corta.</span></p><p ng-show="strength==\'match\'"><span>Su nombre Dinex y contraseña no pueden coincidir. Por favor cree una nueva contraseña.</span></p></div><div ng-class="{\'field-error\': setPasswordForm.password1.$error.rpSameInSet &amp;&amp; setPasswordForm.password2.$dirty}" class="form-group"><label for="password2">Confirmar contraseña</label><input id="password2" name="password2" autocomplete="off" type="password" ng-model="password2" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="setPasswordForm.password1.$error.rpSameInSet &amp;&amp; setPasswordForm.password2.$dirty"><span>Contraseñas no coinciden</span></p></div><div ng-show="passwordError" class="error text-center"><div>No fue posible cambiar su contraseña.</div><div ng-bind="passwordError"></div></div><div class="submit-btn-container"><button type="submit" ng-disabled="setPasswordForm.$invalid || submitLoading" rp-spinner="{{submitLoading ? 4 : null}}" class="btn btn-block btn-success"><span ng-show="submitLoading">Actualizando...</span><span ng-hide="submitLoading">Establecer contraseña</span></button></div></form></div><div class="switch-mode-link-container">¿Recuerda su contraseña? <a href="#login" l10n-inc="l10n-inc"> Ingresar</a></div></div></section>');
+	buf.push('<section ng-controller="LoginCtrl" class="col-xs-12 content"><div ng-hide="$routeParams.tab" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Bienvenido a DineX! </h4><ul><li> Ingresa a la cuenta de demostración para conductores. Aquí verás lo simple que es recibir pagos con DineX. La aplicación para Smartphones tiene las mismas vistas y funcionalidades.</li><li> Nombre de usuario: conductores</li><li> Contraseña: dinex777</li><li> Puedes abrir en otra ventana la cuenta de usuario pasajero y hacer un pago de prueba para que la veas en acción!</li><li> Cualquier duda escríbenos a info@dinex.cl o a través de nuestras redes sociales.</li></ul></div><div class="auth-form-wrapper"><form name="loginForm" ng-submit="submitForm()"><h2>Ingresar</h2><div ng-show="verifyStatus" class="auth-attention text-center"><div ng-show="\'verifying\' === verifyStatus" class="status">Verificando...</div><div ng-show="\'verified\' === verifyStatus" class="status">Ha verificado exitosamente su correo</div><div ng-show="\'error\' === verifyStatus" class="status">El mensaje de verificación de correo es inválido. Ha expirado o se ha reenviado. Por favor revise su bandeja de entrada por el correo más reciente.</div></div><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div ng-show="status" class="text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div><div class="submit-btn-container"><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || loginForm.$invalid" ng-hide="twoFactor" class="btn btn-submit btn-block btn-success"><span>Ingresar</span></button><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || !token" ng-show="twoFactor" class="btn btn-submit btn-block btn-success"><span>Verificar</span></button></div><!--.submit-btn-container<a href="#recover/{{username}}" ng-show="showRecover" class="recover-btn"><button ng-click="" class="btn btn-block btn-primary"><span>Recuperar cuenta</span></button></a>--><!--a.recover(ng-href="#/recover/{{username}}", ng-hide="showRecover", l10n) Account Recovery--></form></div><div class="switch-mode-link-container">Nuevo en {{productName}}? <a href="#register" l10n-inc="l10n-inc">Registrarse</a></div></div><!--.row.action-login(ng-show="$routeParams.tab")<div class="col-xs-12 col-sm-6 col-md-6"><div ng-show="\'send\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p ng-show="$routeParams.amount">va a enviar</p><p ng-hide="$routeParams.amount">va a enviar dinero al usuario DineX</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-show="$routeParams.amount">Al usuario DineX</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'trust\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p>va a confiar</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true, no_interest: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-hide="$routeParams.name">Al usuario DineX</p><p ng-show="$routeParams.name">A <b> {{$routeParams.name}}</b> con dirección</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'contacts\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><span><p l10n-inc="l10n-inc">you will add the user</p><div class="address">{{$routeParams.to}}</div><p l10n-inc="l10n-inc">To your ripple contacts</p></span></div></div><div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-lg-offset-1"><form name="loginForm" ng-submit="submitForm()"><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div class="row"><div ng-show="status" class="col-xs-12 text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div></div><div class="row"><div class="col-xs-12"><button type="submit" ng-disabled="loginForm.$invalid || ajax_loading" rp-spinner="{{ajax_loading ? 4 : null}}" class="btn btn-lg btn-submit btn-block btn-primary">Ingresar</button></div></div><p class="literal hint">Puede confirmar esta transacción en la página siguiente.</p><p class="literal">Nuevo en {{productName}}? <a href="#/register" l10n-inc="l10n-inc">Crear cuenta</a></p></form></div>--></section>');
 	}
 	return buf.join("");
 	}
@@ -11882,13 +11882,29 @@
 	var buf = [];
 	with (locals || {}) {
 	var interp;
-	buf.push('<section ng-controller="BalanceCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><group ng-hide="!connected || loadState.account" class="disconnected"><p class="literal">Cargando...</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><group ng-show="connected &amp;&amp; loadState.account"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Aquí puedes ver el saldo e historial de tu cuenta</h4><ul><li> Ingresa a la pestaña historial y verás un listado de los pagos recibidos.</li><li> En la sección retirar podrás pedir la transferencia de fondos de tu cuenta DineX a tu cuenta bancaria. Los fondos estarán disponibles al día siguiente.</li><li> En el ícono del engranaje puedes ver la configuración de tu cuenta. La campana te notificará cuando hayas recibido un pago.</li><li> Eso es todo! Simple, rápido y seguro :)</li></ul></div><div class="row"><div class="col-xs-12 col-xs-8"><div ng-show="account.Balance" class="currency-overview"><div ng-repeat="entry in balances" ng-class="\'currency-\' + (entry.total | rpcurrency | lowercase)" class="balancebox currency-non-native"><div class="total row"><div class="lbl col-xs-8"><i style="color:#22a301" ng-class="\'fa-\' + (entry.total | rpcurrency | lowercase)" class="icon fa fa-money"></i><span rp-currency="entry.total" rp-currency-short="rp-currency-short" style="color:#22a301"></span></div><div class="balance col-xs-4">{{ entry.total | rpamount:{rel_precision: 0} }}</div></div><div ng-repeat="(issuer, component) in entry.components" ng-show="entry.show" class="component row"><div class="head"><div ng-show="component.gateway.app" class="lbl col-xs-8">{{component.gateway.app.name}}<span ng-hide="true" class="status unverified">Sin verificar</span></div><div ng-hide="component.gateway.app" rp-pretty-issuer="issuer" rp-pretty-issuer-contacts="userBlob.data.contacts" class="lbl col-xs-8"></div><div class="balance col-xs-4">{{ component | rpamount:{rel_precision: 0} }}</div></div><form ng-show="component.window == \'withdraw\'" class="withdraw"><div ng-show="!step || step==1" class="step1"><div class="row"><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_destination">Enter bitcoin address.</label><input id="send_destination" name="send_destination" type="text" class="form-control"/></div><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_amount">Ingrese monto a retirar.</label><input id="send_amount" name="send_amount" type="text" class="form-control"/></div></div><div class="row errorGroups"><div rp-errors="send_destination" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="required" class="error">Enter a valid bitcoin address</div><div rp-error-on="invalid" class="error">Enter a valid bitcoin address</div></div><div rp-errors="send_amount" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="invalid" class="error">Ingrese un monto válido</div></div></div><div class="row"><div class="col-xs-12 col-sm-4 col-md-3"><button type="submit" ng-disabled="" ng-click="step=2" class="btn btn-block btn-success submit">Retirar</button></div></div></div><div ng-show="step==2" class="step2"><label>You are sending<span class="amount"> 1.2345</span> BTC to:</label><div class="btc_address">1agizZ31TmpachYAuG3n56XCb1R5vc3cTQ</div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div><div class="col-xs-12 col-sm-3"><button type="submit" ng-disabled="" ng-click="step=3" class="btn btn-block btn-success submit">Confirmar</button></div></div></div><div ng-show="step==3" class="step3"><div class="row"><div class="col-xs-12 col-sm-6"><div class="message type-offline">Offline</div><div class="message type-success">Transacción exitosa</div><div class="message type-warning">Atención</div><div class="message type-error">Transacción fallida</div><div class="message type-info">Mensaje</div></div></div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div></div></div></form></div></div></div></div></div></group></section>');
+	buf.push('<section ng-controller="RecoverCtrl" class="col-xs-12 content"><div class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div class="auth-form-wrapper"><form name="recoverForm" ng-submit="submitForm()" ng-show="mode === \'recover\'"><h2>Recuperar cuenta</h2><div class="auth-attention text-center"><div class="status">Sólo se puede recuperar la cuenta DineX con la clave secreta. Recuperará su nombre DineX, contactos y otra información.</div></div><div class="form-group"><label for="recover_username">Nombre Dinex</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="recover_username" name="recover_username" type="text" ng-model="username" required="required" rp-focus="rp-focus" autocomplete="off" maxlength="20" rpDest="rpDest" class="form-control"/></div></div><div class="form-group"><label for="recover_masterkey">Clave secreta</label><input id="recover_masterkey" name="recover_masterkey" type="password" autocomplete="off" required="required" ng-model="masterkey" class="form-control"/></div><div ng-show="recoverError" class="error text-center"><div>No fue posible recuperar la cuenta.</div><div ng-bind="recoverError"></div></div><div class="submit-btn-container"><button type="submit" ng-disabled="recoverForm.$invalid || submitLoading" rp-spinner="{{submitLoading ? 4 : null}}" class="btn btn-block btn-success"><span ng-show="submitLoading">Cargando...</span><span ng-hide="submitLoading">Recuperar cuenta</span></button></div></form><form name="setPasswordForm" ng-submit="submitForm()" ng-show="mode === \'setPassword\'"><h2>Establecer contraseña</h2><div class="auth-attention text-center"><div class="status">Su cuenta fue recuperada exitosamente. Por favor asegure su cuenta con una nueva contraseña.</div></div><div class="form-group"><label>Nombre Dinex</label><div class="rippleName"><span>~</span><span ng-bind="username"></span></div></div><div ng-class="{\'field-error\': \'weak\' === strength || \'match\' === strength}" class="form-group"><label for="password1">Contraseña</label><input id="password1" name="password1" type="password" autocomplete="off" ng-model="password1" rp-strong-password="rp-strong-password" required="required" rp-focus="rp-focus" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="strength==\'weak\'"><span>Su contraseña es débil. No contiene números y símbolos o es muy corta.</span></p><p ng-show="strength==\'match\'"><span>Su nombre Dinex y contraseña no pueden coincidir. Por favor cree una nueva contraseña.</span></p></div><div ng-class="{\'field-error\': setPasswordForm.password1.$error.rpSameInSet &amp;&amp; setPasswordForm.password2.$dirty}" class="form-group"><label for="password2">Confirmar contraseña</label><input id="password2" name="password2" autocomplete="off" type="password" ng-model="password2" required="required" rp-same-in-set="passwordSet" class="form-control"/><p ng-show="setPasswordForm.password1.$error.rpSameInSet &amp;&amp; setPasswordForm.password2.$dirty"><span>Contraseñas no coinciden</span></p></div><div ng-show="passwordError" class="error text-center"><div>No fue posible cambiar su contraseña.</div><div ng-bind="passwordError"></div></div><div class="submit-btn-container"><button type="submit" ng-disabled="setPasswordForm.$invalid || submitLoading" rp-spinner="{{submitLoading ? 4 : null}}" class="btn btn-block btn-success"><span ng-show="submitLoading">Actualizando...</span><span ng-hide="submitLoading">Establecer contraseña</span></button></div></form></div><div class="switch-mode-link-container">¿Recuerda su contraseña? <a href="#login" l10n-inc="l10n-inc"> Ingresar</a></div></div></section>');
 	}
 	return buf.join("");
 	}
 
 /***/ },
 /* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(80);
+
+	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+	var buf = [];
+	with (locals || {}) {
+	var interp;
+	buf.push('<section ng-controller="BalanceCtrl" class="col-xs-12 content"><group ng-hide="connected" class="disconnected"><p class="literal">Debe estar online para ver esta pantalla</p></group><group ng-hide="!connected || loadState.account" class="disconnected"><p class="literal">Cargando...</p></group><div ng-show="\'web\' === client &amp;&amp; !loadingAccount &amp;&amp; !account.Balance &amp;&amp; loadState.account &amp;&amp; connected"><div class="auth-attention banner"><h4>Bienvenido a Dinex! Para activar su cuenta debe hacer un depósito inicial.</h4><ul><li> </li><li> </li></ul></div></div><group ng-show="connected &amp;&amp; loadState.account"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Aquí puedes ver el saldo e historial de tu cuenta</h4><ul><li> Ingresa a la pestaña historial y verás un listado de los pagos recibidos.</li><li> En la sección retirar podrás pedir la transferencia de fondos de tu cuenta DineX a tu cuenta bancaria. Los fondos estarán disponibles al día siguiente.</li><li> En el ícono del engranaje puedes ver la configuración de tu cuenta. La campana te notificará cuando hayas recibido un pago.</li><li> Eso es todo! Simple, rápido y seguro :)</li></ul></div><div class="row"><div class="col-xs-12 col-xs-8"><div ng-show="account.Balance" class="currency-overview"><div ng-repeat="entry in balances" ng-class="\'currency-\' + (entry.total | rpcurrency | lowercase)" class="balancebox currency-non-native"><div class="total row"><div class="lbl col-xs-8"><i style="color:#22a301" ng-class="\'fa-\' + (entry.total | rpcurrency | lowercase)" class="icon fa fa-money"></i><span rp-currency="entry.total" rp-currency-short="rp-currency-short" style="color:#22a301"></span></div><div class="balance col-xs-4">{{ entry.total | rpamount:{rel_precision: 0} }}</div></div><div ng-repeat="(issuer, component) in entry.components" ng-show="entry.show" class="component row"><div class="head"><div ng-show="component.gateway.app" class="lbl col-xs-8">{{component.gateway.app.name}}<span ng-hide="true" class="status unverified">Sin verificar</span></div><div ng-hide="component.gateway.app" rp-pretty-issuer="issuer" rp-pretty-issuer-contacts="userBlob.data.contacts" class="lbl col-xs-8"></div><div class="balance col-xs-4">{{ component | rpamount:{rel_precision: 0} }}</div></div><form ng-show="component.window == \'withdraw\'" class="withdraw"><div ng-show="!step || step==1" class="step1"><div class="row"><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_destination">Enter bitcoin address.</label><input id="send_destination" name="send_destination" type="text" class="form-control"/></div><div class="col-xs-12 col-sm-6 col-md-6"><label for="send_amount">Ingrese monto a retirar.</label><input id="send_amount" name="send_amount" type="text" class="form-control"/></div></div><div class="row errorGroups"><div rp-errors="send_destination" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="required" class="error">Enter a valid bitcoin address</div><div rp-error-on="invalid" class="error">Enter a valid bitcoin address</div></div><div rp-errors="send_amount" class="col-xs-12 col-sm-6 col-md-6 errorGroup"><div rp-error-valid="rp-error-valid" class="success"></div><div rp-error-on="invalid" class="error">Ingrese un monto válido</div></div></div><div class="row"><div class="col-xs-12 col-sm-4 col-md-3"><button type="submit" ng-disabled="" ng-click="step=2" class="btn btn-block btn-success submit">Retirar</button></div></div></div><div ng-show="step==2" class="step2"><label>You are sending<span class="amount"> 1.2345</span> BTC to:</label><div class="btc_address">1agizZ31TmpachYAuG3n56XCb1R5vc3cTQ</div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div><div class="col-xs-12 col-sm-3"><button type="submit" ng-disabled="" ng-click="step=3" class="btn btn-block btn-success submit">Confirmar</button></div></div></div><div ng-show="step==3" class="step3"><div class="row"><div class="col-xs-12 col-sm-6"><div class="message type-offline">Offline</div><div class="message type-success">Transacción exitosa</div><div class="message type-warning">Atención</div><div class="message type-error">Transacción fallida</div><div class="message type-info">Mensaje</div></div></div><div class="row"><div class="col-xs-12 col-sm-3"><button ng-click="step=1" class="btn btn-block btn-default">Volver</button></div></div></div></form></div></div></div></div></div></group></section>');
+	}
+	return buf.join("");
+	}
+
+/***/ },
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var jade = __webpack_require__(80);
@@ -11935,22 +11951,6 @@
 	var __val__ = __webpack_require__(79)()
 	buf.push(null == __val__ ? "" : __val__);
 	buf.push('</span></span></div><!--.details(ng-if="details[entry.hash]")<div ng-show="entry.balanceEffects" class="effects"><div class="title">Cambios en el balance</div><div class="effect header"><span class="description">Descripción</span><span class="issuer">Emisor</span><span class="amount">Monto</span><span class="balance">Balance final</span></div><div ng-repeat="effect in entry.balanceEffects" class="effect"><span class="description"><span ng-show="effect.type == \'balance_change\'" data-label="Description">Sin información.</span><span ng-show="effect.type == \'trust_change_balance\'" data-label="Description">{{effect.currency}} Cambios en el balance</span><span ng-show="effect.type == \'fee\'" data-label="Description">Comisión</span></span><span rp-pretty-issuer="effect.amount.issuer().to_json()" rp-pretty-issuer-contacts="userBlob.data.contacts" rp-pretty-issuer-default="-" data-label="Issuer" class="issuer"></span><span data-label="Amount" rp-pretty-amount="effect.amount" class="amount"></span><span data-label="Final balance" rp-pretty-amount="effect.balance" class="balance"></span></div></div><div class="links"><a rp-link-tx="entry.hash" class="txLink">Detalles de transacción</a><a href="#/contact?to={{entry.transaction.counterparty}}" rp-no-propagate="rp-no-propagate" ng-show="entry.transaction.counterparty &amp;&amp; !(entry.transaction.counterparty | rponlycontactname)" class="addLink">Añadir <strong> {{entry.transaction.counterparty | rpcontactname}}</strong> a contactos</a></div>--></li></ul><div class="foot"><div ng-show="historyState==\'loading\'">Cargando...</div><a ng-show="historyState==\'ready\'" href="" ng-click="loadMore()" class="loadmore">Cargar más</a><div ng-show="historyState==\'full\'">No quedan más transacciones</div></div></div></group></section><!-- TODO filter calendar: High/low limits.--><!-- TODO filter calendar: High limit calculation after the low limit--><!-- TODO we loose history after tab Change--><!-- TODO problem when manually editing date filter input field--><!-- TODO currency filter to work with also trust type--><!-- TODO optimization.. double (triple on load more) update history-->');
-	}
-	return buf.join("");
-	}
-
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var jade = __webpack_require__(80);
-
-	module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
-	attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-	var buf = [];
-	with (locals || {}) {
-	var interp;
-	buf.push('<section ng-controller="LoginCtrl" class="col-xs-12 content"><div ng-hide="$routeParams.tab" class="row auth-form-container col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6"><div ng-show="showAnnouncement" class="auth-attention banner"><h4>Bienvenido a DineX! </h4><ul><li> Ingresa a la cuenta de demostración para conductores. Aquí verás lo simple que es recibir pagos con DineX. La aplicación para Smartphones tiene las mismas vistas y funcionalidades.</li><li> Nombre de usuario: conductores</li><li> Contraseña: dinex777</li><li> Puedes abrir en otra ventana la cuenta de usuario pasajero y hacer un pago de prueba para que la veas en acción!</li><li> Cualquier duda escríbenos a info@dinex.cl o a través de nuestras redes sociales.</li></ul></div><div class="auth-form-wrapper"><form name="loginForm" ng-submit="submitForm()"><h2>Ingresar</h2><div ng-show="verifyStatus" class="auth-attention text-center"><div ng-show="\'verifying\' === verifyStatus" class="status">Verificando...</div><div ng-show="\'verified\' === verifyStatus" class="status">Ha verificado exitosamente su correo</div><div ng-show="\'error\' === verifyStatus" class="status">El mensaje de verificación de correo es inválido. Ha expirado o se ha reenviado. Por favor revise su bandeja de entrada por el correo más reciente.</div></div><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div ng-show="status" class="text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div><div class="submit-btn-container"><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || loginForm.$invalid" ng-hide="twoFactor" class="btn btn-submit btn-block btn-success"><span>Ingresar</span></button><button type="submit" rp-spinner="{{ajax_loading ? 4 : null}}" ng-disabled="ajax_loading || !token" ng-show="twoFactor" class="btn btn-submit btn-block btn-success"><span>Verificar</span></button></div><!--.submit-btn-container<a href="#recover/{{username}}" ng-show="showRecover" class="recover-btn"><button ng-click="" class="btn btn-block btn-primary"><span>Recuperar cuenta</span></button></a>--><!--a.recover(ng-href="#/recover/{{username}}", ng-hide="showRecover", l10n) Account Recovery--></form></div><div class="switch-mode-link-container">Nuevo en {{productName}}? <a href="#register" l10n-inc="l10n-inc">Registrarse</a></div></div><!--.row.action-login(ng-show="$routeParams.tab")<div class="col-xs-12 col-sm-6 col-md-6"><div ng-show="\'send\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p ng-show="$routeParams.amount">va a enviar</p><p ng-hide="$routeParams.amount">va a enviar dinero al usuario DineX</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-show="$routeParams.amount">Al usuario DineX</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'trust\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><p>va a confiar</p><div ng-show="$routeParams.amount" class="amount"><span class="number">{{$routeParams.amount | rpamount:{xrp_human: true, no_interest: true} }}</span><span class="currency">{{$routeParams.amount | rpcurrency}}</span></div><p ng-hide="$routeParams.name">Al usuario DineX</p><p ng-show="$routeParams.name">A <b> {{$routeParams.name}}</b> con dirección</p><div class="address">{{$routeParams.to}}</div></div><div ng-show="\'contacts\' == $routeParams.tab" class="info"><p class="literal">{{$routeParams.label}}</p><span><p l10n-inc="l10n-inc">you will add the user</p><div class="address">{{$routeParams.to}}</div><p l10n-inc="l10n-inc">To your ripple contacts</p></span></div></div><div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-lg-offset-1"><form name="loginForm" ng-submit="submitForm()"><div ng-hide="twoFactor" class="form-group"><label for="login_username">Nombre DineX</label><div class="input-group"><span class="input-group-addon ripple-addon">~</span><input id="login_username" name="login_username" type="text" ng-model="username" required="required" rp-focus-on-empty="rp-focus-on-empty" rp-autofill="$routeParams.username" class="form-control"/></div></div><div ng-hide="twoFactor" class="form-group"><label for="login_password">Contraseña</label><input id="login_password" name="login_password" type="password" ng-model="password" required="required" rp-focus="rp-focus" class="form-control"/></div><div ng-show="twoFactor"><div class="form-group"><span ng-show="twoFactor.via === \'sms\'" class="status">Por favor ingrese el código de verificaión del SMS enviado a su teléfono:</span><span ng-show="twoFactor.via === \'app\'" class="status">Por favor ingrese el código de verificación de la aplicación instalada en su dispositivo.</span><span ng-bind="maskedPhone" class="maskedPhone"> </span></div><div class="form-group text-right"> <button type="button" ng-click="requestToken()" class="btn btn-inline btn-primary"> <span ng-show="twoFactor.via === \'sms\'">Re-enviar</span><span ng-show="twoFactor.via === \'app\'">Enviar via SMS</span></button><a ng-click="cancel2FA()" class="txtbtn danger">Cancelar</a></div><div class="form-group"> <label for="token">Código de verificación</label><input id="login_password" name="token" ng-model="token" rp-focus="rp-focus" class="form-control"/></div><div class="form-group"><input name="rememberMe" type="checkbox" ng-model="rememberMe" class="rememberMe"/><label for="rememberMe">Recordarme en este dispositivo por 30 días</label></div></div><div class="row"><div ng-show="status" class="col-xs-12 text-status"><span>{{status}}</span><br/><div ng-repeat="message in backendMessages" class="backend"><b>{{message.backend}} &#32;</b><span>{{message.message}}</span></div></div></div><div class="row"><div class="col-xs-12"><button type="submit" ng-disabled="loginForm.$invalid || ajax_loading" rp-spinner="{{ajax_loading ? 4 : null}}" class="btn btn-lg btn-submit btn-block btn-primary">Ingresar</button></div></div><p class="literal hint">Puede confirmar esta transacción en la página siguiente.</p><p class="literal">Nuevo en {{productName}}? <a href="#/register" l10n-inc="l10n-inc">Crear cuenta</a></p></form></div>--></section>');
 	}
 	return buf.join("");
 	}
@@ -12069,313 +12069,6 @@
 
 /***/ },
 /* 76 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-	function EventEmitter() {
-	  this._events = this._events || {};
-	  this._maxListeners = this._maxListeners || undefined;
-	}
-	module.exports = EventEmitter;
-
-	// Backwards-compat with node 0.10.x
-	EventEmitter.EventEmitter = EventEmitter;
-
-	EventEmitter.prototype._events = undefined;
-	EventEmitter.prototype._maxListeners = undefined;
-
-	// By default EventEmitters will print a warning if more than 10 listeners are
-	// added to it. This is a useful default which helps finding memory leaks.
-	EventEmitter.defaultMaxListeners = 10;
-
-	// Obviously not all Emitters should be limited to 10. This function allows
-	// that to be increased. Set to zero for unlimited.
-	EventEmitter.prototype.setMaxListeners = function(n) {
-	  if (!isNumber(n) || n < 0 || isNaN(n))
-	    throw TypeError('n must be a positive number');
-	  this._maxListeners = n;
-	  return this;
-	};
-
-	EventEmitter.prototype.emit = function(type) {
-	  var er, handler, len, args, i, listeners;
-
-	  if (!this._events)
-	    this._events = {};
-
-	  // If there is no 'error' event listener then throw.
-	  if (type === 'error') {
-	    if (!this._events.error ||
-	        (isObject(this._events.error) && !this._events.error.length)) {
-	      er = arguments[1];
-	      if (er instanceof Error) {
-	        throw er; // Unhandled 'error' event
-	      }
-	      throw TypeError('Uncaught, unspecified "error" event.');
-	    }
-	  }
-
-	  handler = this._events[type];
-
-	  if (isUndefined(handler))
-	    return false;
-
-	  if (isFunction(handler)) {
-	    switch (arguments.length) {
-	      // fast cases
-	      case 1:
-	        handler.call(this);
-	        break;
-	      case 2:
-	        handler.call(this, arguments[1]);
-	        break;
-	      case 3:
-	        handler.call(this, arguments[1], arguments[2]);
-	        break;
-	      // slower
-	      default:
-	        len = arguments.length;
-	        args = new Array(len - 1);
-	        for (i = 1; i < len; i++)
-	          args[i - 1] = arguments[i];
-	        handler.apply(this, args);
-	    }
-	  } else if (isObject(handler)) {
-	    len = arguments.length;
-	    args = new Array(len - 1);
-	    for (i = 1; i < len; i++)
-	      args[i - 1] = arguments[i];
-
-	    listeners = handler.slice();
-	    len = listeners.length;
-	    for (i = 0; i < len; i++)
-	      listeners[i].apply(this, args);
-	  }
-
-	  return true;
-	};
-
-	EventEmitter.prototype.addListener = function(type, listener) {
-	  var m;
-
-	  if (!isFunction(listener))
-	    throw TypeError('listener must be a function');
-
-	  if (!this._events)
-	    this._events = {};
-
-	  // To avoid recursion in the case that type === "newListener"! Before
-	  // adding it to the listeners, first emit "newListener".
-	  if (this._events.newListener)
-	    this.emit('newListener', type,
-	              isFunction(listener.listener) ?
-	              listener.listener : listener);
-
-	  if (!this._events[type])
-	    // Optimize the case of one listener. Don't need the extra array object.
-	    this._events[type] = listener;
-	  else if (isObject(this._events[type]))
-	    // If we've already got an array, just append.
-	    this._events[type].push(listener);
-	  else
-	    // Adding the second element, need to change to array.
-	    this._events[type] = [this._events[type], listener];
-
-	  // Check for listener leak
-	  if (isObject(this._events[type]) && !this._events[type].warned) {
-	    var m;
-	    if (!isUndefined(this._maxListeners)) {
-	      m = this._maxListeners;
-	    } else {
-	      m = EventEmitter.defaultMaxListeners;
-	    }
-
-	    if (m && m > 0 && this._events[type].length > m) {
-	      this._events[type].warned = true;
-	      console.error('(node) warning: possible EventEmitter memory ' +
-	                    'leak detected. %d listeners added. ' +
-	                    'Use emitter.setMaxListeners() to increase limit.',
-	                    this._events[type].length);
-	      if (typeof console.trace === 'function') {
-	        // not supported in IE 10
-	        console.trace();
-	      }
-	    }
-	  }
-
-	  return this;
-	};
-
-	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
-
-	EventEmitter.prototype.once = function(type, listener) {
-	  if (!isFunction(listener))
-	    throw TypeError('listener must be a function');
-
-	  var fired = false;
-
-	  function g() {
-	    this.removeListener(type, g);
-
-	    if (!fired) {
-	      fired = true;
-	      listener.apply(this, arguments);
-	    }
-	  }
-
-	  g.listener = listener;
-	  this.on(type, g);
-
-	  return this;
-	};
-
-	// emits a 'removeListener' event iff the listener was removed
-	EventEmitter.prototype.removeListener = function(type, listener) {
-	  var list, position, length, i;
-
-	  if (!isFunction(listener))
-	    throw TypeError('listener must be a function');
-
-	  if (!this._events || !this._events[type])
-	    return this;
-
-	  list = this._events[type];
-	  length = list.length;
-	  position = -1;
-
-	  if (list === listener ||
-	      (isFunction(list.listener) && list.listener === listener)) {
-	    delete this._events[type];
-	    if (this._events.removeListener)
-	      this.emit('removeListener', type, listener);
-
-	  } else if (isObject(list)) {
-	    for (i = length; i-- > 0;) {
-	      if (list[i] === listener ||
-	          (list[i].listener && list[i].listener === listener)) {
-	        position = i;
-	        break;
-	      }
-	    }
-
-	    if (position < 0)
-	      return this;
-
-	    if (list.length === 1) {
-	      list.length = 0;
-	      delete this._events[type];
-	    } else {
-	      list.splice(position, 1);
-	    }
-
-	    if (this._events.removeListener)
-	      this.emit('removeListener', type, listener);
-	  }
-
-	  return this;
-	};
-
-	EventEmitter.prototype.removeAllListeners = function(type) {
-	  var key, listeners;
-
-	  if (!this._events)
-	    return this;
-
-	  // not listening for removeListener, no need to emit
-	  if (!this._events.removeListener) {
-	    if (arguments.length === 0)
-	      this._events = {};
-	    else if (this._events[type])
-	      delete this._events[type];
-	    return this;
-	  }
-
-	  // emit removeListener for all listeners on all events
-	  if (arguments.length === 0) {
-	    for (key in this._events) {
-	      if (key === 'removeListener') continue;
-	      this.removeAllListeners(key);
-	    }
-	    this.removeAllListeners('removeListener');
-	    this._events = {};
-	    return this;
-	  }
-
-	  listeners = this._events[type];
-
-	  if (isFunction(listeners)) {
-	    this.removeListener(type, listeners);
-	  } else {
-	    // LIFO order
-	    while (listeners.length)
-	      this.removeListener(type, listeners[listeners.length - 1]);
-	  }
-	  delete this._events[type];
-
-	  return this;
-	};
-
-	EventEmitter.prototype.listeners = function(type) {
-	  var ret;
-	  if (!this._events || !this._events[type])
-	    ret = [];
-	  else if (isFunction(this._events[type]))
-	    ret = [this._events[type]];
-	  else
-	    ret = this._events[type].slice();
-	  return ret;
-	};
-
-	EventEmitter.listenerCount = function(emitter, type) {
-	  var ret;
-	  if (!emitter._events || !emitter._events[type])
-	    ret = 0;
-	  else if (isFunction(emitter._events[type]))
-	    ret = 1;
-	  else
-	    ret = emitter._events[type].length;
-	  return ret;
-	};
-
-	function isFunction(arg) {
-	  return typeof arg === 'function';
-	}
-
-	function isNumber(arg) {
-	  return typeof arg === 'number';
-	}
-
-	function isObject(arg) {
-	  return typeof arg === 'object' && arg !== null;
-	}
-
-	function isUndefined(arg) {
-	  return arg === void 0;
-	}
-
-
-/***/ },
-/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -12966,6 +12659,313 @@
 	}
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(82)))
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	function EventEmitter() {
+	  this._events = this._events || {};
+	  this._maxListeners = this._maxListeners || undefined;
+	}
+	module.exports = EventEmitter;
+
+	// Backwards-compat with node 0.10.x
+	EventEmitter.EventEmitter = EventEmitter;
+
+	EventEmitter.prototype._events = undefined;
+	EventEmitter.prototype._maxListeners = undefined;
+
+	// By default EventEmitters will print a warning if more than 10 listeners are
+	// added to it. This is a useful default which helps finding memory leaks.
+	EventEmitter.defaultMaxListeners = 10;
+
+	// Obviously not all Emitters should be limited to 10. This function allows
+	// that to be increased. Set to zero for unlimited.
+	EventEmitter.prototype.setMaxListeners = function(n) {
+	  if (!isNumber(n) || n < 0 || isNaN(n))
+	    throw TypeError('n must be a positive number');
+	  this._maxListeners = n;
+	  return this;
+	};
+
+	EventEmitter.prototype.emit = function(type) {
+	  var er, handler, len, args, i, listeners;
+
+	  if (!this._events)
+	    this._events = {};
+
+	  // If there is no 'error' event listener then throw.
+	  if (type === 'error') {
+	    if (!this._events.error ||
+	        (isObject(this._events.error) && !this._events.error.length)) {
+	      er = arguments[1];
+	      if (er instanceof Error) {
+	        throw er; // Unhandled 'error' event
+	      }
+	      throw TypeError('Uncaught, unspecified "error" event.');
+	    }
+	  }
+
+	  handler = this._events[type];
+
+	  if (isUndefined(handler))
+	    return false;
+
+	  if (isFunction(handler)) {
+	    switch (arguments.length) {
+	      // fast cases
+	      case 1:
+	        handler.call(this);
+	        break;
+	      case 2:
+	        handler.call(this, arguments[1]);
+	        break;
+	      case 3:
+	        handler.call(this, arguments[1], arguments[2]);
+	        break;
+	      // slower
+	      default:
+	        len = arguments.length;
+	        args = new Array(len - 1);
+	        for (i = 1; i < len; i++)
+	          args[i - 1] = arguments[i];
+	        handler.apply(this, args);
+	    }
+	  } else if (isObject(handler)) {
+	    len = arguments.length;
+	    args = new Array(len - 1);
+	    for (i = 1; i < len; i++)
+	      args[i - 1] = arguments[i];
+
+	    listeners = handler.slice();
+	    len = listeners.length;
+	    for (i = 0; i < len; i++)
+	      listeners[i].apply(this, args);
+	  }
+
+	  return true;
+	};
+
+	EventEmitter.prototype.addListener = function(type, listener) {
+	  var m;
+
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  if (!this._events)
+	    this._events = {};
+
+	  // To avoid recursion in the case that type === "newListener"! Before
+	  // adding it to the listeners, first emit "newListener".
+	  if (this._events.newListener)
+	    this.emit('newListener', type,
+	              isFunction(listener.listener) ?
+	              listener.listener : listener);
+
+	  if (!this._events[type])
+	    // Optimize the case of one listener. Don't need the extra array object.
+	    this._events[type] = listener;
+	  else if (isObject(this._events[type]))
+	    // If we've already got an array, just append.
+	    this._events[type].push(listener);
+	  else
+	    // Adding the second element, need to change to array.
+	    this._events[type] = [this._events[type], listener];
+
+	  // Check for listener leak
+	  if (isObject(this._events[type]) && !this._events[type].warned) {
+	    var m;
+	    if (!isUndefined(this._maxListeners)) {
+	      m = this._maxListeners;
+	    } else {
+	      m = EventEmitter.defaultMaxListeners;
+	    }
+
+	    if (m && m > 0 && this._events[type].length > m) {
+	      this._events[type].warned = true;
+	      console.error('(node) warning: possible EventEmitter memory ' +
+	                    'leak detected. %d listeners added. ' +
+	                    'Use emitter.setMaxListeners() to increase limit.',
+	                    this._events[type].length);
+	      if (typeof console.trace === 'function') {
+	        // not supported in IE 10
+	        console.trace();
+	      }
+	    }
+	  }
+
+	  return this;
+	};
+
+	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+
+	EventEmitter.prototype.once = function(type, listener) {
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  var fired = false;
+
+	  function g() {
+	    this.removeListener(type, g);
+
+	    if (!fired) {
+	      fired = true;
+	      listener.apply(this, arguments);
+	    }
+	  }
+
+	  g.listener = listener;
+	  this.on(type, g);
+
+	  return this;
+	};
+
+	// emits a 'removeListener' event iff the listener was removed
+	EventEmitter.prototype.removeListener = function(type, listener) {
+	  var list, position, length, i;
+
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  if (!this._events || !this._events[type])
+	    return this;
+
+	  list = this._events[type];
+	  length = list.length;
+	  position = -1;
+
+	  if (list === listener ||
+	      (isFunction(list.listener) && list.listener === listener)) {
+	    delete this._events[type];
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+
+	  } else if (isObject(list)) {
+	    for (i = length; i-- > 0;) {
+	      if (list[i] === listener ||
+	          (list[i].listener && list[i].listener === listener)) {
+	        position = i;
+	        break;
+	      }
+	    }
+
+	    if (position < 0)
+	      return this;
+
+	    if (list.length === 1) {
+	      list.length = 0;
+	      delete this._events[type];
+	    } else {
+	      list.splice(position, 1);
+	    }
+
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+	  }
+
+	  return this;
+	};
+
+	EventEmitter.prototype.removeAllListeners = function(type) {
+	  var key, listeners;
+
+	  if (!this._events)
+	    return this;
+
+	  // not listening for removeListener, no need to emit
+	  if (!this._events.removeListener) {
+	    if (arguments.length === 0)
+	      this._events = {};
+	    else if (this._events[type])
+	      delete this._events[type];
+	    return this;
+	  }
+
+	  // emit removeListener for all listeners on all events
+	  if (arguments.length === 0) {
+	    for (key in this._events) {
+	      if (key === 'removeListener') continue;
+	      this.removeAllListeners(key);
+	    }
+	    this.removeAllListeners('removeListener');
+	    this._events = {};
+	    return this;
+	  }
+
+	  listeners = this._events[type];
+
+	  if (isFunction(listeners)) {
+	    this.removeListener(type, listeners);
+	  } else {
+	    // LIFO order
+	    while (listeners.length)
+	      this.removeListener(type, listeners[listeners.length - 1]);
+	  }
+	  delete this._events[type];
+
+	  return this;
+	};
+
+	EventEmitter.prototype.listeners = function(type) {
+	  var ret;
+	  if (!this._events || !this._events[type])
+	    ret = [];
+	  else if (isFunction(this._events[type]))
+	    ret = [this._events[type]];
+	  else
+	    ret = this._events[type].slice();
+	  return ret;
+	};
+
+	EventEmitter.listenerCount = function(emitter, type) {
+	  var ret;
+	  if (!emitter._events || !emitter._events[type])
+	    ret = 0;
+	  else if (isFunction(emitter._events[type]))
+	    ret = 1;
+	  else
+	    ret = emitter._events[type].length;
+	  return ret;
+	};
+
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
+
 
 /***/ },
 /* 78 */

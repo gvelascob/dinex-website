@@ -10522,6 +10522,13 @@ rp-pie-chart .sub.other {
   color: #22a301;
 }
 
+@media screen and (max-width: 360px) {
+  #t-balance .total .balance {
+    font: 38px OpenSansRegular;
+    color: #22a301;
+  }
+}
+
 #t-balance .currency-overview {
   padding: 10px;
   margin: 0;
@@ -10543,6 +10550,17 @@ rp-pie-chart .sub.other {
 #t-balance .currency-overview .balancebox .lbl .desc {
   font: 12px OpenSansLight;
   color: #ccccca;
+}
+
+@media (max-width: 360px) {
+  #t-balance .currency-overview .balancebox .lbl {
+    font-family: OpenSansBold;
+    font-size: 0.85em;
+  }
+  #t-balance .currency-overview .balancebox .lbl .desc {
+    font: 12px OpenSansLight;
+    color: #ccccca;
+  }
 }
 
 #t-balance .currency-overview .balancebox .amount {

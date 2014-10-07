@@ -1,1 +1,0 @@
-"object"==typeof global&&"function"==typeof global.setImmediate&&"object"==typeof process&&"object"==typeof window&&"undefined"==typeof window.setImmediate&&(window.setImmediate=global.setImmediate);
