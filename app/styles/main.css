@@ -314,12 +314,13 @@ hr.small {
   text-decoration: none;
   font-weight: 600;
 }
-.callout a:hover,
-a:focus {
+
+.callout a:hover,a:focus {
   color: #ed42d5;
   text-decoration: none;
 }
-callout a:focus {
+
+.callout a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -383,4 +384,26 @@ callout a:focus {
 
 footer {
     padding: 100px 0;
+}
+
+/*corporate*/
+
+corporate {
+}
+
+.corporate a {
+  color: #38ac1a;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.corporate a:hover,a:focus {
+  color: #22a301;
+  text-decoration: none;
+}
+
+.corporate a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
