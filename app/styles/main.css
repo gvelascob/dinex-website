@@ -367,16 +367,13 @@ callout a:focus {
     margin: 10px;
 }
 
-/* Map */
+/* join */
 
-.map {
-    height: 500px;
+.join {
+    padding: 50px 0px 50px 0px;
 }
 
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
+
 }
 
 /* Footer */
