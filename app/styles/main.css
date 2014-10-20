@@ -24,7 +24,7 @@ body {
 }
 
 .text-vertical-super {
-    padding:8%;
+    padding:3%;
 	display: table-cell;
     text-align: center;
     vertical-align: super;
