@@ -7,7 +7,7 @@ var Options = {
   // Local domain
   //
   // Which domain should ripple-client consider native?
-  domain: 'dinex.cl',
+  domain: 'ripple.com',
 
   // Rippled to connect
   server: {
