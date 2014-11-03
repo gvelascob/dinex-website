@@ -8162,7 +8162,7 @@ header nav.navbar ul.nav > li > a:focus {
 }
 
 header nav.navbar ul.nav > li.active {
-  background: #598fef;
+  background: #27bc01;
 }
 
 header nav.navbar ul.nav > li.active a:hover,
@@ -8177,7 +8177,7 @@ header nav.navbar ul.nav li.balances-dropdown .currency {
 
 header nav.navbar .open > .dropdown-toggle {
   height: 50px;
-  background: #598fef;
+  background: #27bc01;
 }
 
 header nav.navbar .open > .dropdown-menu {
@@ -8205,7 +8205,7 @@ header nav.navbar li.settings {
 }
 
 header .mainnav {
-  background-color: #427fed;
+  background-color: #22a301;
 }
 
 header .mainnav .collapse {
@@ -8377,7 +8377,7 @@ footer .right-links > a {
 
 .mobile-nav a.active {
   color: #ffffff;
-  background: #427fed;
+  background: #22a301;
 }
 
 .mobile-nav a.wallet .nav-icon,
@@ -8649,7 +8649,7 @@ form .notice {
 
 form .success {
   font-size: 13px;
-  color: #22a301;
+  color: #427fed;
 }
 
 form .amount input,
@@ -8936,7 +8936,7 @@ h1 {
   line-height: 100px;
   color: #ffffff;
   text-align: center;
-  background: #427fed;
+  background: #22a301;
 }
 
 .order-warning {
@@ -8958,7 +8958,7 @@ h1 {
   font: bold 1.5em 'OpenSansLight';
   font-weight: 900;
   color: #ffffff;
-  background-color: #427fed;
+  background-color: #22a301;
   border: 1px solid transparent;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -9141,7 +9141,7 @@ h1 {
 }
 
 .content .result-success h2.tx-status {
-  color: #22a301;
+  color: #427fed;
   background-color: #b8dba5;
 }
 
@@ -9342,7 +9342,7 @@ a.danger {
 .languageSelector .list a:hover {
   color: #ffffff;
   text-decoration: none;
-  background: #427fed;
+  background: #22a301;
 }
 
 .why {
@@ -9404,13 +9404,13 @@ rp-pie-chart * {
 }
 
 rp-pie-chart .main.xrp {
-  fill: #427fed;
-  stroke: #427fed;
+  fill: #22a301;
+  stroke: #22a301;
 }
 
 rp-pie-chart .sub.xrp {
-  fill: #114db8;
-  stroke: #114db8;
+  fill: #0d3e00;
+  stroke: #0d3e00;
 }
 
 rp-pie-chart .main.usd {
@@ -9732,7 +9732,7 @@ rp-pie-chart .sub.other {
 }
 
 #status .message.type-success {
-  color: #22a301;
+  color: #427fed;
   background-color: #b8dba5;
   border-color: #ccccca;
 }
@@ -10304,7 +10304,7 @@ rp-pie-chart .sub.other {
 #t-recover .strength.strong,
 #t-account .strength.strong,
 #t-migrate .strength.strong {
-  color: #22a301;
+  color: #427fed;
 }
 
 #t-register .text-error,
@@ -10519,13 +10519,13 @@ rp-pie-chart .sub.other {
 
 #t-balance .total .balance {
   font: 50px OpenSansRegular;
-  color: #22a301;
+  color: #427fed;
 }
 
 @media screen and (max-width: 360px) {
   #t-balance .total .balance {
     font: 38px OpenSansRegular;
-    color: #22a301;
+    color: #427fed;
   }
 }
 
@@ -10681,11 +10681,11 @@ rp-pie-chart .sub.other {
 }
 
 #t-balance .currency-summary .currency-xrp .lbl i {
-  color: #427fed;
+  color: #22a301;
 }
 
 #t-balance .currency-summary .currency-usd .lbl i {
-  color: #22a301;
+  color: #427fed;
 }
 
 #t-balance .currency-summary .currency-btc .lbl i {
@@ -11129,7 +11129,7 @@ rp-pie-chart .sub.other {
   float: right;
   padding: 8px 12px;
   margin: -8px -15px;
-  background: #427fed;
+  background: #22a301;
 }
 
 #t-history .type-filter label input {
@@ -11197,7 +11197,7 @@ rp-pie-chart .sub.other {
   display: block;
   width: 8px;
   margin: 0 0 0 -15px;
-  background: #427fed;
+  background: #22a301;
 }
 
 #t-history .transactions > ul > li.sent .type {
@@ -11615,7 +11615,7 @@ rp-pie-chart .sub.other {
 #t-security .settingPage a.active {
   color: #f3f3f3;
   text-decoration: none;
-  background: #427fed;
+  background: #22a301;
 }
 
 #t-security .notices {
@@ -11791,7 +11791,7 @@ rp-pie-chart .sub.other {
 #t-advanced .settingPage a.active {
   color: #f3f3f3;
   text-decoration: none;
-  background: #427fed;
+  background: #22a301;
 }
 
 #t-advanced #serverSettings {
@@ -11942,7 +11942,7 @@ rp-pie-chart .sub.other {
 }
 
 #t-trade ul.inline li .up {
-  color: #22a301;
+  color: #427fed;
 }
 
 #t-trade ul.inline li .down {
@@ -12098,7 +12098,7 @@ rp-pie-chart .sub.other {
 
 #t-trade .toggle {
   margin-left: 10px;
-  color: #427fed;
+  color: #22a301;
   cursor: pointer;
 }
 
@@ -12206,12 +12206,12 @@ rp-pie-chart .sub.other {
 
 #t-trade .orderbook .my {
   font-weight: bold;
-  color: #22a301;
+  color: #427fed;
 }
 
 #t-trade .orderbook .my .insig {
   font-weight: normal;
-  color: #22a301;
+  color: #427fed;
 }
 
 #t-trade .orderbook .my .delete {
@@ -12277,7 +12277,7 @@ header nav.navbar .open > .dropdown-menu {
 }
 
 .dropdown-menu > li > a {
-  color: #427fed;
+  color: #22a301;
 }
 
 html.t-trade header nav ul > li.active#nav-advanced > a:after {
@@ -12327,7 +12327,7 @@ html.t-trade header nav ul > li.active#nav-advanced > a:after {
 #t-withdraw .currencies a.active {
   color: #f3f3f3;
   text-decoration: none;
-  background: #427fed;
+  background: #22a301;
 }
 
 #t-fund .currency,
@@ -12490,7 +12490,7 @@ html.t-trade header nav ul > li.active#nav-advanced > a:after {
 #t-account .info a.active {
   color: #f3f3f3;
   text-decoration: none;
-  background: #427fed;
+  background: #22a301;
 }
 
 #t-account #open_name_change {
@@ -12545,8 +12545,8 @@ html.t-trade header nav ul > li.active#nav-advanced > a:after {
 
 #t-account #renameForm .form-group .input-group .input-group-addon:first-child {
   color: #ffffff;
-  background: #427fed;
-  border-color: #427fed;
+  background: #22a301;
+  border-color: #22a301;
 }
 
 #t-account .sessionUnlock {
