@@ -82,7 +82,7 @@ body {
     text-align: center;
     vertical-align: super;
     font-family: 'Lato', sans-serif;
-    color: white;
+    color: #427fed;
 }
 
 .text-demo h2 {
@@ -90,7 +90,7 @@ body {
     padding: 0;
     font-size: 3em;
     font-weight: 600;
-    text-shadow: black 0.1em 0.1em 0.2em;
+    text-shadow: black 0.05em 0.05em 0.1em;
 }
 
 
