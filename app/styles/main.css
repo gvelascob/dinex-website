@@ -482,7 +482,7 @@ iframe {
 
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px; 
-  border-radius: 5px; 
+  border-radius: 20px; 
 
   -moz-box-shadow: 4px 4px 14px #000; 
   -webkit-box-shadow: 4px 4px 14px #000; 
@@ -498,7 +498,7 @@ iframe {
 
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px; 
-  border-radius: 5px; 
+  border-radius: 10px; 
 
   -moz-box-shadow: 4px 4px 14px #000; 
   -webkit-box-shadow: 4px 4px 14px #000; 
