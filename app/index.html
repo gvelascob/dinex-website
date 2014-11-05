@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>DineX</title>
-    <meta name="description" content="DineX, la primera cuenta movil para el pago de transporte">
+    <meta name="description" content="DineX, la primera cuenta movil para el prepago de transporte">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -55,12 +55,12 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
             <!--<li>
                 <a href="#portfolio">Saber más</a>
             </li>-->
-            <li>
+            <!--li>
                 <a href="/web-buyer-dnx/#/login" target="_blank">Simulador pasajeros</a>
             </li>
             <li>
                 <a href="/web-seller-dnx/#/login" target="_blank">Simulador conductores</a>
-            </li>
+            </li-->
             <li>
                 <a href="/buyer.html">DineX para pasajeros</a>
             </li>
@@ -79,12 +79,12 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 	    <li>
                 <a href="#contact">Contacto</a>
             </li>
-	    <!--<li>
-	        <a href="/eula.html">Acuerdo de Licencia</a>
+	    <li>
+	        <a href="/about.html">Acerca nuestro</a>
 	    </li>
-            <li>
+            <!--li>
                 <a href="/privacy.html">Política de Privacidad</a>
-            </li>-->
+            </li-->
         </ul>
     </nav>
 
@@ -103,9 +103,15 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1>La cuenta de prepago móvil para el transporte</h1>
+                    <h1>La cuenta móvil de prepago para el transporte</h1>
 		    <h3>Sólo necesitas un Smartphone con acceso a internet para pagar y cobrar tus viajes en segundos, sin efectivo y con máxima seguridad.</h3>
 		    <h2>¡Olvida los cajeros automáticos!</h2>
+                </div>
+            </div>
+            <!-- /.row -->
+	    <div class="row">
+                <div class="col-lg-12 text-center">
+		  <iframe width="560" height="315" src="//www.youtube.com/embed/EmZaRYuJFSw?rel=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <!-- /.row -->
@@ -196,29 +202,27 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
     </aside>
 
 
-    <!-- Portfolio
+    <!-- Portfolio-->
     <section id="portfolio" class="portfolio">
-        <!--<div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>aca poner videos e info explicativa por cada caso de uso</h2>
+                    <h2>Ingresa a las cuentas de simulación para que lo veas en acción en segundos!</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="images/portfolio-1.jpg">
-                                </a>
+                            <div class="portfolio-item text-demo">
+			      <h2>Vista pasajeros</h2>
+                              <iframe src="/web-buyer-dnx/#/login" height="640" width="360" ></iframe>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="images/portfolio-2.jpg">
-                                </a>
+                            <div class="portfolio-item text-demo">
+			      <h2>Vista conductores</h2>
+			      <iframe src="/web-seller-dnx/#/login" height="640" width="360" ></iframe>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <!--div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="images/portfolio-3.jpg">
@@ -231,17 +235,18 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                                     <img class="img-portfolio img-responsive" src="images/portfolio-4.jpg">
                                 </a>
                             </div>
-                        </div>
+                        </div-->
                     </div>
-                    <!-- /.row (nested)
-                <!-- /.col-lg-10
+                    <!-- /.row (nested)-->
+		</div>
+                <!-- /.col-lg-10-->
             </div>
-            <!-- /.row
+            <!-- /.row-->
         </div>
-        <!-- /.container
+        <!-- /.container-->
     </section>
 
-  <!-- call to action demo-->
+  <!-- call to action demo
     <aside class="call-to-action-demo">
       <div class="container-fluid">
         <div class="row">
@@ -256,7 +261,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
           </div>
         </div>
       </div>
-    </aside>
+    </aside-->
 
     <!-- Call to Action: detectar user agent y redirigir a appstore adecuada!! http://stackoverflow.com/questions/21741841/detecting-ios-android-operating-system -->
     <aside class="call-to-action bg-primary">
