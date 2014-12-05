@@ -1,10 +1,10 @@
-DineX-webapp
+Website
 ============
 
-Website DineX.
+Main website DineX.
 
 master -> branch de publicación.
 
-dev -> branch desarrollo.
+develop -> branch desarrollo.
 
-demo -> branch site demo (para presentar en verde)
+Follow workflow: http://nvie.com/posts/a-successful-git-branching-model/
