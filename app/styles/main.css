@@ -13,9 +13,18 @@ body {
 }
 
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Regular";
+    color: #575f67;
+
 }
 
+h2, h3, h4, h5 {
+    font-family: "Semibold";
+}
+
+h1 {
+    font-family: "Boldest";
+}
 
 .text-vertical-center {
     display: table-cell;
@@ -104,9 +113,12 @@ body {
 /* Custom Button Styles */
 
 .btn-dark {
-    border-radius: 0px;
+    border-radius: 5px;
     color: #fff;
-    background-color: #edb042;
+    background-color: #1995cc;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: Regular;
 }
 
 .btn-dark:hover,
@@ -119,7 +131,7 @@ body {
 .btn-dark1 {
     border-radius: 0;
     color: #fff;
-    background-color: #333;
+    background-color: #575f67;
 }
 
 .btn-dark1:hover,
@@ -183,12 +195,12 @@ hr.small {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #427fed;
+    color: #1995cc;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #999;
+    color: #9a9fa3;
     background: rgba(255,255,255,0.2);
 }
 
@@ -204,11 +216,11 @@ hr.small {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #427fed;
+    color: #1995cc;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #999;
+    color: #9a9fa3;
     background: none;
 }
 
@@ -252,7 +264,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 10%;
-    color: #f1719f;
+    color: #1995cc;
     background: url(../images/santiago.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -267,7 +279,7 @@ hr.small {
 }
 
 .header2 a:hover,a:focus {
-  color: #f1719f;
+  color: #1995cc;
   text-decoration: none;
 }
 
@@ -277,7 +289,7 @@ hr.small {
   outline-offset: -2px;
 }
 
-    
+
 /* Error */
 
 .error {
@@ -285,7 +297,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    
+
     background: url(../images/404.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -322,19 +334,19 @@ hr.small {
 
 .service-item {
     margin-bottom: 30px;
-       
+
 }
 
 
 .service-item a {
-  color: #edb042;
+  color: white;
   text-decoration: none;
   font-weight: 600;
 }
 
 .service-item a:hover,a:focus {
-  color: #22a301;
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
 }
 .service-item a:focus {
   outline: thin dotted;
@@ -348,7 +360,7 @@ hr.small {
     display: table;
     width: 100%;
     height: 400px;
-    color: #ed427f;
+    color: #36aaea;
     text-shadow: black 0.1em 0.1em 0.2em;
     background: url(../images/clientes.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -379,7 +391,7 @@ hr.small {
 }
 
 .callout a:hover,a:focus {
-  color: #ed427f;
+  color: #36aaea;
   text-decoration: none;
 }
 
@@ -457,13 +469,13 @@ footer {
 
 
 .corporate a {
-  color: #38ac1a;
+  color: #36aaea;
   text-decoration: none;
   font-weight: 800;
 }
 
 .corporate a:hover,a:focus {
-  color: #22a301;
+  color: #1995cc;
   text-decoration: none;
 }
 
@@ -481,32 +493,179 @@ iframe {
   margin-bottom: 30px;
 
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; 
-  border-radius: 20px; 
+  -webkit-border-radius: 5px;
+  border-radius: 20px;
 
-  -moz-box-shadow: 4px 4px 14px #000; 
-  -webkit-box-shadow: 4px 4px 14px #000; 
-  box-shadow: 4px 4px 14px #000; 
- 
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
+
 }
 
 @media screen and (max-width: 360px) {
 iframe {
- 
+
   margin-top: 30px;
   margin-bottom: 30px;
 
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; 
-  border-radius: 10px; 
+  -webkit-border-radius: 5px;
+  border-radius: 10px;
 
-  -moz-box-shadow: 4px 4px 14px #000; 
-  -webkit-box-shadow: 4px 4px 14px #000; 
-  box-shadow: 4px 4px 14px #000; 
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
 
   width: 80%;
   height: 350px;
-
- 
+    }
 }
+
+/* Sections */
+
+
+.getdinex {
+    padding-top: 25px;
+    background-color: white;
+    min-height: 400px;
+    color: #575f67;
+    align-content: center;
+}
+
+.whydinex {
+    padding-top: 25px;
+    background-color: #36aaea;
+    min-height: 500px;
+    color: white;
+    align-content: center;
+}
+
+.bg-primary {
+    background-color: #36aaea !important;
+}
+
+.ahorro, .comodidad {
+    padding-top: 25px;
+    background-color: #36aaea;
+    min-height: 500px;
+    color: white;
+}
+
+.muevete, .seguridad {
+    padding-top: 25px;
+    background-color: #575f67;
+    min-height: 500px;
+    color: white;
+}
+/* Images */
+
+.images, .images4 {
+    width: 126px;
+    height: 126px;
+}
+
+.imagesE {
+    width: 166px;
+    height: 97px;
+
+}
+
+.imagesS {
+margin-top: -50px;
+
+}
+
+.image-containerE {
+    padding-bottom: 14px;
+    padding-top: 15px;
+}
+
+.image-container4 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: auto;
+
+}
+.content-container {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Fonts */
+
+
+@font-face {
+
+font-family: 'Regular';
+
+src: local ("Regular"),
+
+src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans_-Regular-webfont.eot');
+
+src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans_-Regular-webfont.eot?#iefix') format('eot'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Regular-webfont.woff') format('woff'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Regular-webfont.woff2') format('woff2'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/Neo_Sans.ttf') format('truetype'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans.svg#webfont') format('svg');
+
+font-weight: 400;
+
+font-style: normal;
+
+}
+
+@font-face {
+
+	font-family: 'Semibold';
+
+	src: local ("Semibold"),
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.eot');
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.eot?#iefix') format('eot'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.woff') format('woff'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.woff2') format('woff2'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.ttf') format('truetype'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Medium.svg#webfont') format('svg');
+
+	font-weight: 400;
+
+	font-style: normal;
+
+}
+
+@font-face {
+
+	font-family: 'Boldest';
+
+	src: local ("Boldest"),
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.eot');
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.eot?#iefix') format('eot'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.woff') format('woff'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.woff2') format('woff2'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.ttf') format('truetype'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold.svg#webfont') format('svg');
+
+	font-weight: 400;
+
+	font-style: normal;
+
+}
+
+a {
+  color: #36aaea;
 }
