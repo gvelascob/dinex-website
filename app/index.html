@@ -31,6 +31,19 @@
   <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("//assets.zendesk.com/embeddable_framework/main.js","dinex.zendesk.com");/*]]>*/</script>
 <!-- End of dinex Zendesk Widget script -->
 
+<!-- Fix widget language to Esp -->
+  <script>
+  zE(function() {
+    zE.setLocale('es');
+  });
+</script>
+	<script type="text/javascript">
+$zopim(function() {
+$zopim.livechat.setLanguage('es');
+}); </script>
+<!-- End of Fix widget language to Esp -->
+
+      
     <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
 for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
 mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
@@ -73,10 +86,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                 <a href="/seller.html">Dinex para transportistas</a>
             </li-->
             <li>
-                <a href="/pro">Dinex para Empresas</a>
+                <a href="/pro.html">Dinex para Empresas</a>
             </li>
             <li>
-                <a href="#join">Únete</a>
+                <a href="#descargar">Descargar</a>
             </li>
             <!--<li>
                 <a href="#backers">Nos apoyan</a>
@@ -98,21 +111,44 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-super">
-          <img id="logo" src="images/DINEX-W.png" alt="DINEX">
-          <h2>La aplicación para pagos móviles</h2>
-          <br><br><a href="#index-about" class="btn btn-dark btn-lg">Ver más</a>
-        </div>
+        
+            <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                      <div class="row">
+                        <div class="col-sm-6 col-centered">
+                                            <div class="header-container">
+                            <a href="/index.html"><img id="logo" src="images/DINEX-W.png" alt="DINEX"></a>
+                            <br><br><h3>Tu aplicación de pagos móviles</h3>
+                            <br><br><a href="#index-about" class="btn btn-dark btn-lg">Ver más</a><br><br>
+                        </div>
+                          </div>
+                        <div class="col-sm-6 col-centered hidden-xs">
+                            <div class="smartphone-container">
+                                <img id="smartphone" src="images/landing/templateS.png">
+                            </div>
+                            <div class="tablet-container">
+                                <img id="tablet" src="images/landing/templateT.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>    
     </header>
 
-    <!-- About -->
+    
+  <!-- About -->
     <section id="index-about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                   <h2>Dinex es el primer medio de pago digital para Smartphones.</h2><br>
                   <h3>Con Dinex pagas y recibes en segundos, sin efectivo y con máxima seguridad.</h3><br>
-                  <h3>Sólo necesitas un Smartphone o Tablet con conección a internet y estás listo para moverte sin efectivo.</h3>
+                  <h3>Sólo necesitas un Smartphone o Tablet con conección a internet y estás listo para moverte sin efectivo.</h3><br>
                 </div>
             </div>
             <!-- /.row -->
@@ -144,7 +180,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                                 <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
                             </div>
                                 <h4>
-                                    Es Gratis!
+                                    ¡Es Gratis!
                                 </h4>
                                 <p>Sin cobros ocultos <br> Carga y paga libre de costo <br> ¡Siempre!</p><br>
                                 <a href="#ahorro" class="btn btn-dark btn-lg">Ver más</a><br><br>
@@ -273,7 +309,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-	  <h1><a href="#price" target="_blank">Dinex es simple, seguro<br> y gratis!</a></h1>
+	  <h1><a href="#price" target="_blank">Dinex es simple, seguro<br> y ¡gratis!</a></h1>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
@@ -630,7 +666,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         
         
     <!-- Call to Action: detectar user agent y redirigir a appstore adecuada!! http://stackoverflow.com/questions/21741841/detecting-ios-android-operating-system -->
-    <aside class="call-to-action bg-primary">
+    <aside class="call-to-action bg-primary" id="descargar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -842,13 +878,13 @@ $( "#contact_form" ).submit(function( event ) {
                         </li>
                     </ul>-->
 		    <div class="corporate">
-		      <p><a href="/pro" target="_blank">Soluciones para empresas</a>
+		      <p><a href="/pro.html" >Soluciones para empresas</a>
 		    </div>
 		    <hr>
-		    <p><a href="http://help.dinex.cl/usuarios/legal/terminos-condiciones/">Términos y Condiciones de Uso</a>
-		    <p><a href="http://help.dinex.cl/usuarios/legal/privacidad/">Política de Privacidad</a>
-		    <p><a href="http://help.dinex.cl/usuarios/faq/FAQ-preguntas-generales/">Preguntas Frecuentes</a>
-        <p><a href="/about.html" target="_blank">Nosotros</a>
+		    <p><a href="http://help.dinex.cl/usuarios/legal/terminos-condiciones/"target="_blank">Términos y Condiciones de Uso</a>
+		    <p><a href="http://help.dinex.cl/usuarios/legal/privacidad/"target="_blank">Política de Privacidad</a>
+		    <p><a href="http://help.dinex.cl/usuarios/faq/FAQ-preguntas-generales/"target="_blank">Preguntas Frecuentes</a>
+        <p><a href="/about.html" >Nosotros</a>
         <hr>
         <p class="text-muted">Copyright &copy; <script language="javascript" type="text/javascript">
 var today = new Date()
