@@ -548,14 +548,15 @@ margin-top: -50px;
 }
 
 @media (max-width: 767px){
-    .content-container {
-        text-align: center !important;
-    }
+  .content-container {
+    text-align: center !important;
+  }
 
-    .content-container2 {
-        text-align: center !important; 
-    }
+  .content-container2 {
+    text-align: center !important;
+  }
 }
+
 /* Fonts */
 
 .content-container {
@@ -567,6 +568,7 @@ margin-top: -50px;
     text-align: left;
     font-size: 18px;
 }
+
 @font-face {
 
 font-family: 'Regular';
@@ -649,60 +651,73 @@ a {
 }
 
 @media (max-width: 600px) {
-#logo {
-   width:80% !important; 
+  #logo {
+    width:80% !important;
     height:auto;
-}
-        .header-container {
+  }
+
+  .header-container {
     padding-top: 5% !important;
-}
+  }
+
+  #youtube {
+    width: 90%;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 601px) {
-#logo {
-   width:70% !important; 
+
+  #logo {
+    width:70% !important;
     height:auto;
-}
-        .header-container {
+  }
+  .header-container {
     padding-top: 10% !important;
-}
+  }
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
-#logo {
-   width:80% !important; 
+  #logo {
+    width:80% !important;
     height:auto;
-}
-            .smartphone-container {
-            right: 250px !important;
-    }
-    .header-container {
+  }
+
+  .smartphone-container {
+    right: 250px !important;
+  }
+
+  .header-container {
     padding-top: 20% !important;
-}
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
-#logo {
-   width:80% !important; 
+  #logo {
+    width:80% !important;
     height:auto;
-}
-    .header-container {
+  }
+
+  .header-container {
     padding-top: 30% !important;
-}
+  }
 }
 
 @media screen and (min-width: 1201px) {
-    .header-container {
+
+  .header-container {
     padding-top: 20%;
-}
-    #logo {
-   width:80% !important; 
+  }
+
+  #logo {
+    width:80% !important;
     height:auto;
+  }
 }
-}
+
 #logo {
-   width:40%; 
-    height:auto;
+  width:40%;
+  height:auto;
 }
 
 .contact {
@@ -721,7 +736,7 @@ a {
     right: 350px;
     overflow: hidden;
     z-index: 2;
-        display: block;
+    display: block;
     position: absolute ;
     bottom: 
 }
@@ -730,7 +745,7 @@ a {
     top: 100px;
     z-index: 1;
     overflow: hidden;
-        display: block;
+    display: block;
     position: absolute;
 }
 
