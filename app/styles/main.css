@@ -531,7 +531,8 @@ footer {
 }
 
 .imagesS {
-margin-top: -50px;
+margin-top: -75px;
+    height: 450px;
 
 }
 
@@ -675,6 +676,8 @@ a {
   .header-container {
     padding-top: 10% !important;
   }
+    
+
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
@@ -684,9 +687,13 @@ a {
   }
 
   .smartphone-container {
-    right: 250px !important;
+    right: 200px !important;
   }
 
+.tablet-container {
+    right: 0px !important;
+  }
+    
   .header-container {
     padding-top: 20% !important;
   }
@@ -770,4 +777,21 @@ a {
 .header-container {
     color: white;
     font-family: semibold;
+}
+
+#side-tabs a.descargar {
+	background: url(../images/landing/descargar-tabr.png);
+	left: 0px;
+	top: 60%;
+	height: 108px;
+	width: 45px;
+	margin: 0;
+	padding-top: 0;
+	position: fixed;
+	z-index: 9999;
+	display:block;
+}
+
+#side-tabs a:hover.descargar {
+background: url(../images/landing/descargar-tab.png);
 }
