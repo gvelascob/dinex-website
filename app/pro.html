@@ -23,10 +23,15 @@
 	  <link href="http://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!--mailchimp-->
     <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+      
+    <link rel="stylesheet" href="styles/animations.css">
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+      
     <style type="text/css">
-      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+     #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
     </style>
 
+      
       <!-- Start of dinex Zendesk Widget script -->
   <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("//assets.zendesk.com/embeddable_framework/main.js","dinex.zendesk.com");/*]]>*/</script>
 <!-- End of dinex Zendesk Widget script -->
@@ -125,7 +130,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                                 <img id="smartphone" src="images/screenshots/template-s-1.png">
                             </div>
                             <div class="tablet-container">
-                                <img id="tablet" src="images/screenshots/template-t-0.png">
+                                <img id="tablet" src="images/screenshots/template-t-1.png">
                             </div>
                         </div>
                     </div>
@@ -162,10 +167,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/comodidad.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
+                                <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/comodidad.png">
+                                    </div>
                             </div>
                                 <h4>
                                     Comodidad
@@ -178,10 +182,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img  class="images" src="images/landing/flexibilidad.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i-->
+                                <div class="fadeIn">
+                                <img  class="images fadingInClass" src="images/landing/flexibilidad.png">
+                                    </div>
                             </div>
                                 <h4>
                                     Flexibilidad
@@ -192,10 +195,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/monitoreo.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-smile-o fa-stack-1x text-primary"></i-->
+                                <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/monitoreo.png">
+                                    </div>
                             </div>
                                 <h4>
                                     Monitoreo
@@ -207,10 +209,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/alternativa1.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-check-square-o fa-stack-1x text-primary"></i-->
+                                <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/alternativa1.png">
+                                    </div>
                             </div>
                                 <h4>
                                     Alternativa
@@ -288,19 +289,23 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         <!-- /.container -->
     </section>
 
-   <!-- Call to Action: detectar user agent y redirigir a appstore adecuada!! http://stackoverflow.com/questions/21741841/detecting-ios-android-operating-system -->
+    <!-- Call to Action: detectar user agent y redirigir a appstore adecuada!! http://stackoverflow.com/questions/21741841/detecting-ios-android-operating-system -->
     <aside class="call-to-action bg-primary" id="descargar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    <div class="floating">
+                        <div class="floatingClass">
 		  <h2>¡Agosto 2015!</h2>
 		  <h4>Descarga la aplicación y únete al mundo sin efectivo</h4><br>
 		  <p></p>
+                        </div>
+                    </div>
 		</div>
 	    </div>
 	    <div class="row">
 		  <div class="col-md-4 col-sm-4 col-centered">
-                      <!--a href=""-->
+              <!--a href=""-->
 			<img class="img-portfolio1 img-responsive" src="images/playstore.png">
 		      </a>
 		  </div>
@@ -310,9 +315,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 		      </a>
 		  </div>
 		  <div class="col-md-4 col-sm-4 col-centered">
-		      <!--a href=""-->
+	      <!--a href=""-->
 			<img class="img-portfolio1 img-responsive" src="images/appstore.svg">
-		      </a>
+        </div>
 		  </div>
             </div>
         </div>
@@ -491,8 +496,113 @@ document.write(year)
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-                  <div id="side-tabs">
-<a class="descargar" href="#descargar"></a>
-</div>                                    
+<div id="side-tabs">
+       <a class="descargar pulse pulseClass" href="#descargar"></a>
+</div> 
+
+<script>
+	$(window).scroll(function() {
+		$('.fadingInClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+    
+<script>
+	$(window).scroll(function() {
+		$('.hatchClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("hatch");
+			}
+		});
+	});
+</script>
+            
+<script>
+	$(window).scroll(function() {
+		$('.slideRightClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("slideRight");
+			}
+		});
+	});
+</script>           
+ 
+<script>
+	$(window).scroll(function() {
+		$('.slideLeftClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("slideLeft");
+			}
+		});
+	});
+</script>   
+
+<script>
+	$(window).scroll(function() {
+		$('.pullUpClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("pullUp");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.expandUpClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("expandUp");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.floatingClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("floating");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.pulseClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("pulse");
+			}
+		});
+	});
+</script>
+        
 </body>
 </html>

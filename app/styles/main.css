@@ -697,6 +697,15 @@ a {
   .header-container {
     padding-top: 20% !important;
   }
+    
+.imagesS2 {
+padding-left: 20px;
+}    
+
+    .imagesS3 {
+padding-left: 40px;
+}   
+    
 }
 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
@@ -795,3 +804,28 @@ a {
 #side-tabs a:hover.descargar {
 background: url(../images/landing/descargar-tab.png);
 }
+
+
+.fadingInClass {
+    	visibility: hidden;
+}
+
+.hatchClass {
+       	visibility: hidden;
+} 
+
+.slideLeftClass {
+       	visibility: hidden;
+} 
+
+.slideRightClass {
+       	visibility: hidden;
+} 
+
+.expandUpClass {
+       	visibility: hidden;
+} 
+
+.pullUpClass {
+       	visibility: hidden;
+} 
