@@ -2,8 +2,8 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>DineX</title>
-    <meta name="description" content="DineX, la primera cuenta movil para el prepago de transporte">
+    <title>Dinex</title>
+    <meta name="description" content="Dinex, tu aplicación para pagos móviles">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -23,17 +23,43 @@
     <link href="http://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!--mailchimp-->
     <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+      <link rel="stylesheet" href="styles/animations.css">
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
     <style type="text/css">
       #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
     </style>
 
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+
+      <!-- Start of dinex Zendesk Widget script -->
+  <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("//assets.zendesk.com/embeddable_framework/main.js","dinex.zendesk.com");/*]]>*/</script>
+<!-- End of dinex Zendesk Widget script -->
+
+<!-- Fix widget language to Esp -->
+  <script>
+  zE(function() {
+    zE.setLocale('es');
+  });
+</script>
+	<script type="text/javascript">
+$zopim(function() {
+$zopim.livechat.setLanguage('es');
+}); </script>
+<!-- End of Fix widget language to Esp -->
+
+      
     <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
 for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
 mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 
+      
 
   </head>
   <body>
+
     <!--[if lt IE 10]>
       <p class="browsehappy">Estas usando un navegador <strong>desactializado</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a> para mejorar tu experiencia.</p>
     <![endif]-->
@@ -44,7 +70,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top">DineX</a>
+                <a href="#top">Dinex</a>
             </li>
             <!--<li>
                 <a href="#top">Inicio</a>
@@ -61,17 +87,17 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
             <li>
                 <a href="/web-seller-dnx/#/login" target="_blank">Simulador conductores</a>
             </li-->
-            <li>
-                <a href="/buyer.html">DineX para pasajeros</a>
+            <!--li>
+                <a href="/buyer.html">Dinex para pasajeros</a>
             </li>
             <li>
-                <a href="/seller.html">DineX para transportistas</a>
+                <a href="/seller.html">Dinex para transportistas</a>
+            </li-->
+            <li>
+                <a href="/pro.html">Dinex para Empresas</a>
             </li>
             <li>
-                <a href="/corporate.html">DineX para empresas</a>
-            </li>
-            <li>
-                <a href="#join">Únete</a>
+                <a href="#descargar">Descargar</a>
             </li>
             <!--<li>
                 <a href="#backers">Nos apoyan</a>
@@ -80,39 +106,65 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                 <a href="#contact">Contacto</a>
             </li>
 	    <li>
-	        <a href="/about.html">Acerca nuestro</a>
+	        <a href="/about.html">Nosotros</a>
 	    </li>
             <!--li>
                 <a href="/privacy.html">Política de Privacidad</a>
             </li-->
+        <li>
+	        <a href="http://help.dinex.cl/" target="_blank">Centro de Soporte</a>
+	    </li>
         </ul>
     </nav>
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-super">
-            <h1>DINEX</h1>
-            <h2>muévete sin efectivo</h2>
-            <br>
-            <a href="#index-about" class="btn btn-dark btn-lg">MÁS</a>
-        </div>
+        
+            <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                      <div class="row">
+                        <div class="col-sm-6 col-centered">
+                                            <div class="header-container">
+                            <a href="/index.html"><img id="logo" src="images/dinex-w.png" alt="DINEX"></a>
+                            <br><br><h3>Tu aplicación de pagos móviles</h3>
+                            <br><br><a href="#index-about" class="btn btn-dark btn-lg">Ver más</a><br><br>
+                        </div>
+                          </div>
+                        <div class="col-sm-6 col-centered hidden-xs">
+                            <div class="smartphone-container">
+  
+                                <img id="smartphone" src="images/screenshots/template-s-1.png">
+                          </div>
+                            <div class="tablet-container">
+                                <img id="tablet" src="images/screenshots/template-t-1.png">
+                                </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>    
     </header>
 
-    <!-- About -->
+    
+  <!-- About -->
     <section id="index-about" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1>La cuenta móvil de prepago para el transporte</h1>
-		    <h3>Sólo necesitas un Smartphone con acceso a internet para pagar y cobrar tus viajes en segundos, sin efectivo y con máxima seguridad.</h3>
-		    <h2>¡Olvida los cajeros automáticos!</h2>
+                  <h2>Dinex es el primer medio de pago digital para Smartphones.</h2><br>
+                  <h3>Con Dinex pagas y recibes en segundos, sin efectivo y con máxima seguridad.</h3><br>
+                  <h3>Sólo necesitas un Smartphone o Tablet con conección a internet y estás listo para moverte sin efectivo.</h3><br>
                 </div>
             </div>
             <!-- /.row -->
-	    <div class="row">
-                <div class="col-lg-12 text-center">
-		  <iframe width="560" height="315" src="//www.youtube.com/embed/EmZaRYuJFSw?rel=0" frameborder="0" allowfullscreen></iframe>
-                </div>
+	         <div class="row">
+              <div class="col-lg-12 text-center">
+                <iframe id="youtube" width="560" height="315" src="//www.youtube.com/embed/EmZaRYuJFSw?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
             </div>
             <!-- /.row -->
         </div>
@@ -121,59 +173,68 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
+    <section id="services" class="whydinex">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>En sólo 4 pasos</h2>
+                    <h2>¿Porqué Dinex?</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i>
-                            </span>
+                                <div class="image-container">
+                                    <div class="fadeIn">
+                                        <img id="fadingIn" class="images fadingInClass" src="images/landing/ahorro.png">
+                                    </div>
+                                </div>
                                 <h4>
-                                    <strong>Descarga la aplicación</strong>
+                                    ¡Es Gratis!
                                 </h4>
-                                <p>Pronto estará disponible para Android, iOS y Windows Phone</p>
+                                <p>Sin cobros ocultos <br> Carga y paga libre de costo <br> ¡Siempre!</p><br>
+                                <a href="#ahorro" class="btn btn-dark btn-lg">Ver más</a><br><br>
+
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-check-square-o fa-stack-1x text-primary"></i>
-                            </span>
+                                <div class="image-container">
+                                    <div class="fadeIn">
+                                        <img id="fadingIn2" class="images fadingInClass" src="images/landing/movilidad.png">
+                                    </div>
+                                </div>
                                 <h4>
-                                    <strong>Crea tu cuenta</strong>
+                                    Movilidad
                                 </h4>
-                                <p>Ingresa tus datos y crea tu cuenta en segundos</p>
+                                <p>Transacciones rápidas y <br> seguras en todo Chile. <br> ¡No más maquinas y cajeros!</p><br>
+                                <a href="#muevete" class="btn btn-dark btn-lg">Ver más</a><br><br>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i>
-                            </span>
+                                <div class="image-container">
+                                        <div class="fadeIn">
+                                            <img  id="fadingIn3" class="images fadingInClass" src="images/landing/comodidad.png">
+                                        </div>
+                                </div>
                                 <h4>
-                                    <strong>Carga tu cuenta DineX</strong>
+                                    Comodidad
                                 </h4>
-                                <p>Mediante una transferencia bancaria</p>
+                                <p>Medio de pago electrónico <br> para todos. <br> ¡Sin tarjetas, sin efectivo!</p><br>
+                                <a href="#comodidad" class="btn btn-dark btn-lg">Ver más</a><br><br>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-smile-o fa-stack-1x text-primary"></i>
-                            </span>
+                                <div class="image-container">
+                                    <div class="fadeIn">
+                                        <img id="fadingIn4" class="images fadingInClass" src="images/landing/seguridad.png">
+                                    </div>
+                                </div>
                                 <h4>
-                                    <strong>Listo!</strong>
+                                    Seguridad
                                 </h4>
-                                <p>Paga en taxis, microbuses y colectivos asociados a la red DineX</p>
+                                <p>Transacciones 100% seguras y <br> auditables. Confiable <br> ¡y sin fraudes!</p><br>
+                                <a href="#seguridad" class="btn btn-dark btn-lg">Ver más</a><br><br>
                             </div>
                         </div>
                     </div>
@@ -186,23 +247,291 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         <!-- /.container -->
     </section>
 
+  <!-- Instalando Dinex -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="getdinex">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>¡Quiero Dinex!</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <div class="image-container">
+                                    <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/descargar-dinex3.png">
+
+                                    </div>
+                            </div>
+                                <h4>
+                                    <br>Descarga
+                                </h4>
+                                <p>Descarga la aplicación para tu Smartphone o Tablet</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <div class="image-container">
+                                    <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/crear-cuenta.png">
+                                    </div>
+                            </div>
+                                <h4>
+                                    <br>Crea
+                                </h4>   
+                                <p>Crea una cuenta Dinex y registra tu $DinexTag y ¡ya puedes recbir pagos!</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <div class="image-containerE">
+                                    <div class="fadeIn">
+                                <img class="imagesE fadingInClass" src="images/landing/cargar.png">
+                                    </div>
+                            </div>
+                                <h4>
+                                    <br>Carga
+                                </h4>
+                                <p>Carga saldo mediante transferencia bancaria desde la misma aplicación Dinex <br> o pídele a alguien que te envíe saldo y ¡listo, ya puedes hacer pagos con Dinex! </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
+                <div class="hatch">
+
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-	  <h1><a href="/buyer.html">Gratis para pasajeros</a></h1>
+        <div class="hatchClass">
+	  <h1><a href="#price" target="_blank">Dinex es simple, seguro<br> y ¡gratis!</a></h1></div>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-	  <h2><a href="/seller.html">costo mínimo para transportistas</a></h2>
+        </div>
+	  <!--  <h2><a href="/seller.html">costo mínimo para transportistas</a></h2> -->
         </div>
     </aside>
 
+<!-- Ahorro con Dinex -->
+    <section id="ahorro" class="ahorro">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Ahorra con Dinex</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-4">
+                                <div class="image-container4">
+                                <div class="fadeIn">
+                                <img class="images4 fadingInClass" src="images/landing/ahorro.png">
+                                    </div>
+                                <!-- i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <div class="content-container">
+                                    <p>  Ahorra tiempo <br><br>
+                                         Sin máquinas <br><br>
+                                         Sin cobros ocultos <br><br>
+                                         Carga y paga libre de costo, <h4>¡siempre!</h4> <br>
+                                         Cuentas lanzamiento <h4>¡gratis para siempre!</h4><br><br> </p>
+                            </div>
 
-    <!-- Portfolio-->
+                            </div>
+                        </div>
+                        <div class="col-sm-4 hidden-xs">
+                            <div class="service-item">
+                                <div class="image-containerS">
+                                <div class="SlideLeft">
+                                <img class="imagesS slideLeftClass" src="images//screenshots/ahorro-sample.png">
+                                    </div>
+
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+ <!-- Muévete con Dinex -->
+    <section id="muevete" class="muevete">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Muévete con Dinex</h2>
+                    <hr class="small">
+                    <div class="row">
+                        
+                         <div class="col-sm-2 col-sm-push-10 col-md-4 col-md-push-8">
+                                <div class="image-container4">
+                                <div class="fadeIn">
+                                <img class="images4 fadingInClass" src="images/landing/movilidad.png">
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-sm-push-2 col-md-4 col-md-push-0">
+                            <div class="service-item">
+                                <div class="content-container2">
+                                    <p>  Disponible en todo Chile <br><br>
+                                         Transacciones en segundos <br><br>
+                                         Confiabilidad máxima <br><br>
+                                         Cualquier Smartphone o Tablet <br>con acceso a internet <br><br>
+                                    </p>
+                            </div>
+
+                            </div>
+                        </div>
+                        
+                       <div class="col-sm-4 col-sm-pull-9 hidden-xs col-md-4 col-md-pull-8">
+                            <div class="service-item">
+                                <div class="image-containerS">
+                                <div class="slideRight">
+                                    <img class="imagesS imagesS2 slideRightClass" src="images/screenshots/muevete-sample.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+        
+ <!-- Comodidad con Dinex -->
+    <section id="comodidad" class="comodidad">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Comodidad con Dinex</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-4">
+                                <div class="image-container4">
+                                <div class="fadeIn">
+                                <img class="images4 fadingInClass" src="images/landing/comodidad.png">
+                                    </div>
+                                <!-- i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="service-item">
+                                <div class="content-container">
+                                    <p>  Sin vales <br><br>
+                                         Sin tarjetas <br><br>
+                                         Sin efectivo <br><br>
+                                         No más robos <br><br>
+                                         No más cajeros automáticos<br><br>
+                                         Recibe y transfiere instantáneamente<br><br>
+                                         Cualquier monto y sin costo<br><br>
+                                    </p>
+                            </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4 hidden-xs">
+                            <div class="service-item">
+                                <div class="image-containerS">
+                                <div class="slideLeft">
+                                <img class="imagesS slideLeftClass" src="images/screenshots/comodidad-sample.png">
+                                    </div>
+                                <!--i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-money fa-stack-1x text-primary"></i-->
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Seguridad con Dinex -->
+    <section id="seguridad" class="seguridad">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Seguridad con Dinex</h2>
+                    <hr class="small">
+                    <div class="row">
+                         <div class="col-sm-2 col-sm-push-10 col-md-4 col-md-push-8">
+                                <div class="image-container4">
+                                <div class="fadeIn">
+                                <img class="images4 fadinginClass" src="images/landing/seguridad.png">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-sm-push-2 col-md-4 col-md-push-0">
+                            <div class="service-item">
+                                <div class="content-container2">
+                                    <p>  Transacciones 100% seguras y auditables <br><br>
+                                         Reembolso de saldo garantizado <br><br>
+                                         Respaldo financiero <br><br>
+                                         Sin fraudes <br><br>
+                                         Si pierdes tu Smartphone no pierdes tu saldo <br><br>
+                                    </p>
+                            </div>
+
+                            </div>
+                        </div>
+                       <div class="col-sm-4 col-sm-pull-9 hidden-xs col-md-4 col-md-pull-8">
+                            <div class="service-item">
+                                <div class="image-containerS">
+                                <div class="slideRight">
+                                    <img class="imagesS imagesS3 slideRightClass" src="images/screenshots/seguridad-sample.png">
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+
+
+        <!-- Portfolio
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
@@ -235,16 +564,16 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                                     <img class="img-portfolio img-responsive" src="images/portfolio-4.jpg">
                                 </a>
                             </div>
-                        </div-->
+                        </div>
                     </div>
-                    <!-- /.row (nested)-->
+                    <!-- /.row (nested)>
 		</div>
-                <!-- /.col-lg-10-->
+                <!-- /.col-lg-10>
             </div>
-            <!-- /.row-->
+            <!-- /.row>
         </div>
-        <!-- /.container-->
-    </section>
+        <!-- /.container>
+    </section-->
 
   <!-- call to action demo
     <aside class="call-to-action-demo">
@@ -263,19 +592,115 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
       </div>
     </aside-->
 
+    <!-- Requerimientos -->
+    <section id="requirements" class="info">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Requerimientos</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-6 col-centered">
+                            <div class="service-item">
+                                <div class="image-container">
+                                    <div class="expandUp">
+                                        <img class="images expandUpClass" src="images/landing/dispositivos.png">
+                                    </div>
+                                </div>
+                                <h4>
+                                    <br>Dispositivo
+                                </h4>
+                                <p>Un Smartphone o Tablet con acceso a internet</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-centered">
+                            <div class="service-item">
+                                <div class="image-container">
+                                    <div class="expandUp">
+                                        <img class="images expandUpClass" src="images/landing/banco-blue.png">
+                                    </div>
+                                </div>
+                                <h4>
+                                    <br>Cuenta bancaria
+                                </h4>
+                                <p>Acceso a una cuenta bancaria personal o de un tercero</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+        
+ <!-- Requerimientos -->
+    <section id="price" class="info">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Precio</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-sm-6 col-centered">
+                            <div class="service-item">
+                                <div class="image-container">
+                                 <div class="expandUp">
+                                <img class="images expandUpClass" src="images/landing/usuario-blue.png">
+                                    </div>
+                            </div>
+                                <h4>
+                                    <br>Personas
+                                </h4>
+                                <p>Cuenta Lanzamiento <br> ¡gratis para siempre!</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-centered">
+                            <div class="service-item">
+                                <div class="image-container">
+                                 <div class="expandUp">
+                                <img class="images expandUpClass" src="images/landing/empresas.png">
+                                    </div>
+
+                                <!--i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-check-square-o fa-stack-1x text-primary"></i-->
+                            </div>
+                                <h4>
+                                    <br>Empresas
+                                </h4>
+                                <a href="/pro.html" class="btn btn-dark btn-lg">Dinex Pro</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+        
+        
     <!-- Call to Action: detectar user agent y redirigir a appstore adecuada!! http://stackoverflow.com/questions/21741841/detecting-ios-android-operating-system -->
-    <aside class="call-to-action bg-primary">
+    <aside class="call-to-action bg-primary" id="descargar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-		  <h3>Pronto!</h3>
-		  <h3>Descarga la aplicación y únete al mundo sin efectivo</h3>
+                    <div class="floating">
+                        <div class="floatingClass">
+		  <h2>¡Agosto 2015!</h2>
+		  <h4>Descarga la aplicación y únete al mundo sin efectivo</h4><br>
 		  <p></p>
+                        </div>
+                    </div>
 		</div>
 	    </div>
 	    <div class="row">
 		  <div class="col-md-4 col-sm-4 col-centered">
-                      <!--a href=""-->
+              <!--a href=""-->
 			<img class="img-portfolio1 img-responsive" src="images/playstore.png">
 		      </a>
 		  </div>
@@ -285,38 +710,38 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 		      </a>
 		  </div>
 		  <div class="col-md-4 col-sm-4 col-centered">
-		      <!--a href=""-->
+	      <!--a href=""-->
 			<img class="img-portfolio1 img-responsive" src="images/appstore.svg">
-		      </a>
+        </div>
 		  </div>
             </div>
         </div>
     </aside>
 
     <!-- join -->
-    <section id="join" class="join">
+    <!--section id="join" class="join">
       <div class="container">
-	<div class="row">
-	  <div class="col-lg-12 text-center">
-	    <h2>Suscríbete para ser el primero en usar DineX</h2>
-	    <div id="mc_embed_signup">
-	      <form action="//dinex.us9.list-manage.com/subscribe/post?u=5a7451be1238f5279e8bea7a4&amp;id=4199df2677" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-		<div id="mc_embed_signup_scroll">
-		  <input type="email" style="position: relative;left: 22%" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required>
-		  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-		  <div style="position: absolute; left: -5000px;"><input type="text" name="b_5a7451be1238f5279e8bea7a4_4199df2677" tabindex="-1" value=""></div>
-		  <div class="col-lg-12 text-center"><input type="submit" value="Sí!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-dark" style="border: 0px"></div>
-		</div>
-		</div>
-	      </form>
-	    </div>
-	  </div>
-	</div>
+       <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Suscríbete para ser el primero en usar Dinex</h2>
+          <div id="mc_embed_signup">
+            <form action="//dinex.us9.list-manage.com/subscribe/post?u=5a7451be1238f5279e8bea7a4&amp;id=4199df2677" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <input type="email" style="position: relative;left: 22%" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <!--div style="position: absolute; left: -5000px;"><input type="text" name="b_5a7451be1238f5279e8bea7a4_4199df2677" tabindex="-1" value=""></div>
+          <div class="col-lg-12 text-center"><input type="submit" value="¡Sí!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-dark" style="border: 0px"></div>
+        </div>
+        </div>
+            </form>
+          </div>
+        </div>
+        </div>
       </div>
-    </section>
+    </section-->
 
 
-      
+
       <!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
@@ -335,9 +760,13 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                     <div class="row">
                         <div class="col-md">
                             <div class="portfolio-item">
-                                <a href="https://developers.google.com/startups/" target="_blank">
-                                    <img class="img-portfolio1 img-responsive" src="images/googlelaunch.png">
+                                <a href="http://www.corfo.cl" target="_blank">
+                                    <img class="img-portfolio1 img-responsive " src="images/corfo2015.png">
                                 </a>
+                            <div class="portfolio-item">
+                                <a href="https://developers.google.com/startups/" target="_blank">
+                                    <img class="img-portfolio1 img-responsive " src="images/googlelaunch.png">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -345,7 +774,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                 </div>
             <!-- /.row -->
             </div>
-            <div class="row">
+            <!--div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>Hecho en</h2>
                     <hr class="small">
@@ -359,16 +788,106 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         </div>
                     </div>
                 <!-- /.col-lg-10 -->
-            </div>
+                </div>
             <!-- /.row -->
-        </div>
+            </div-->
 
         <!-- /.container -->
     </section>
-    <hr>
+
+<!-- contacto -->
+                
+<section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <h2><br>Contacto</h2>
+                </div>
+            </div>
+                    
+            <div id="form" class="col-md-9" role="main">
+
+<p><br></p>
+<p><meta name="description" content="Formulario de Contacto Dinex">
+<script type="text/javascript"
+        src="../solicitud.js"></script>        </p>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<div id='result'>
+<form id="contact_form" action="https://dinex.zendesk.com/requests/embedded/create/"; method="POST" onsubmit="return validateForm();" enctype="multipart/form-data" novalidate="novalidate">
+  <div class="rowsubmit">
+    <div class="col-sm-10">
+        <label class="required" for="name">Nombre:</label>
+        <input id="name" name="name" type="text" class="form-control" value="" size="30" />
+        <span id="name_validation" class="error"></span>
+    </div> 
+  </div><br>
+
+  <div class="rowsubmit">
+    <div class="col-sm-10">
+        <label class="required" for="email"><br>Correo electrónico:</label>
+        <input id="email" name="email" type="text" class="form-control" value="" size="30" />
+        <span id="email_validation" class="error"></span>
+    </div>
+  </div><br>
+
+   <div class="rowsubmit">
+    <div class="col-sm-10">
+        <label class="required" for="subject"><br>Asunto:</label>
+        <input id="subject" name="subject" type="text" class="form-control" value="" size="30" />
+        <span id="subject_validation" class="error"></span>
+    </div>
+  </div><br>
+
+  <div class="rowsubmit">
+    <div class="col-sm-10">
+        <label class="required" for="description"><br>Mensaje:</label>
+        <textarea id="description" name="description" class="form-control" rows="7" cols="30"></textarea>
+        <span id="description_validation" class="error"></span>
+    </div>
+  </div><br>
+
+  <div class="rowend">
+    <div class="col-sm-10">
+      <br>
+      <button id='submit' type='submit' class='btn btn-dark btn-lg'>Enviar</button><br><br>
+    </div>
+  </div>
+
+</form>
+</div>
+    </section>
+
+<!-- JQuery to handle zendesk response -->
+
+<script>
+// Attach a submit handler to the form
+$( "#contact_form" ).submit(function( event ) {
+
+  // Stop form from submitting normally
+  event.preventDefault();
+
+  // Get some values from elements on the page:
+  var $form = $( this ),
+    data = $( "#contact_form" ).serialize(),
+    url = $form.attr( "action" );
+
+  // Send the data using post
+  var posting = $.post( url, data );
+
+  // Put the results in a div
+  posting.done(function( data ) {
+    var content = data.message.toString().split(' ');
+    var response = "<b> Solicitud " + content[1] +  " fue creada exitosamente. </b> <br> <a href='/'>Volver</a>";
+    $( "#result" ).empty().append( response );
+
+  });
+});
+</script>
+<!-- /contacto -->
 
     <!-- Footer -->
-    <section id="contact">
+    <section id="footer">
     <footer>
         <div class="container">
             <div class="row">
@@ -383,18 +902,24 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         </li>
                     </ul>-->
 		    <div class="corporate">
-		      <p><a href="/corporate.html" target="_blank">Soluciones para empresas</a>
+		      <p><a href="/pro.html" >Soluciones para empresas</a>
 		    </div>
 		    <hr>
-		    <p><a href="/eula.html">Acuerdo de licencia</a>
-		    <p><a href="/privacy.html">Politica de privacidad</a>
-        <p><a href="/about.html" target="_blank">Acerca nuestro</a>
+		    <p><a href="http://help.dinex.cl/usuarios/legal/terminos-condiciones/"target="_blank">Términos y Condiciones de Uso</a>
+		    <p><a href="http://help.dinex.cl/usuarios/legal/privacidad/"target="_blank">Política de Privacidad</a>
+		    <p><a href="http://help.dinex.cl/usuarios/faq/FAQ-preguntas-generales/"target="_blank">Preguntas Frecuentes</a>
+        <p><a href="/about.html" >Nosotros</a>
         <hr>
-        <p class="text-muted">Copyright &copy; DineX SpA.</p>
-        <p><a href="http://dinex.cl">www.dinex.cl</a></p>
+        <p class="text-muted">Copyright &copy; <script language="javascript" type="text/javascript">
+var today = new Date()
+var year = today.getFullYear()
+document.write(year)
+</script> Dinex SpA. Todos los derechos reservados.
+</p>
+        <p><a href="https://dinex.cl">dinex.cl</a></p>
+        
         <ul class="list-inline">
             <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:info@dinex.cl">info@dinex.cl</a></li>
-            <li><i class="fa fa-road fa-fw"></i>  <a href="http://blog.dinex.cl" target="_blank">Blog</a></li>
         </ul>
         <br>
 
@@ -446,5 +971,120 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-</body>
+
+<div id="side-tabs">
+       <a class="descargar pulse pulseClass" href="#descargar"></a>
+</div>
+            
+<script>
+	$(window).scroll(function() {
+		$('.fadingInClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+    
+<script>
+	$(window).scroll(function() {
+		$('.hatchClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("hatch");
+			}
+		});
+	});
+</script>
+            
+<script>
+	$(window).scroll(function() {
+		$('.slideRightClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("slideRight");
+			}
+		});
+	});
+</script>           
+ 
+<script>
+	$(window).scroll(function() {
+		$('.slideLeftClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("slideLeft");
+			}
+		});
+	});
+</script>   
+
+<script>
+	$(window).scroll(function() {
+		$('.pullUpClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("pullUp");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.expandUpClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("expandUp");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.floatingClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("floating");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.pulseClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("pulse");
+			}
+		});
+	});
+</script>
+            
+<script>      
+	$('#animatedElement').click(function() {
+		$(this).addClass("slideUp");
+	});
+</script>
+
+            </body>
 </html>

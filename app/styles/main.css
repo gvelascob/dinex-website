@@ -13,9 +13,18 @@ body {
 }
 
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Regular";
+    color: #575f67;
+
 }
 
+h2, h3, h4, h5 {
+    font-family: "Semibold";
+}
+
+h1 {
+    font-family: "Boldest";
+}
 
 .text-vertical-center {
     display: table-cell;
@@ -104,9 +113,12 @@ body {
 /* Custom Button Styles */
 
 .btn-dark {
-    border-radius: 0px;
+    border-radius: 5px;
     color: #fff;
-    background-color: #edb042;
+    background-color: #1995cc;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: Semibold;
 }
 
 .btn-dark:hover,
@@ -119,7 +131,7 @@ body {
 .btn-dark1 {
     border-radius: 0;
     color: #fff;
-    background-color: #333;
+    background-color: #575f67;
 }
 
 .btn-dark1:hover,
@@ -159,10 +171,6 @@ hr.small {
     margin-right: -250px;
     overflow-y: auto;
     background: #fff;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
 
@@ -183,12 +191,12 @@ hr.small {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #427fed;
+    color: #1995cc;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #999;
+    color: #9a9fa3;
     background: rgba(255,255,255,0.2);
 }
 
@@ -204,11 +212,11 @@ hr.small {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #427fed;
+    color: #1995cc;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #999;
+    color: #9a9fa3;
     background: none;
 }
 
@@ -222,10 +230,6 @@ hr.small {
 #sidebar-wrapper.active {
     right: 250px;
     width: 250px;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
 
@@ -241,10 +245,9 @@ hr.small {
     width: 100%;
     height: 100%;
     background: url(../images/santiago.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    opacity: 1;
 }
 
 .header2 {
@@ -252,10 +255,8 @@ hr.small {
     position: relative;
     width: 100%;
     height: 10%;
-    color: #f1719f;
+    color: #1995cc;
     background: url(../images/santiago.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
@@ -267,7 +268,7 @@ hr.small {
 }
 
 .header2 a:hover,a:focus {
-  color: #f1719f;
+  color: #1995cc;
   text-decoration: none;
 }
 
@@ -277,7 +278,7 @@ hr.small {
   outline-offset: -2px;
 }
 
-    
+
 /* Error */
 
 .error {
@@ -285,10 +286,8 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    
+
     background: url(../images/404.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
@@ -322,19 +321,19 @@ hr.small {
 
 .service-item {
     margin-bottom: 30px;
-       
+
 }
 
 
 .service-item a {
-  color: #edb042;
+  color: white;
   text-decoration: none;
   font-weight: 600;
 }
 
 .service-item a:hover,a:focus {
-  color: #22a301;
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
 }
 .service-item a:focus {
   outline: thin dotted;
@@ -348,11 +347,9 @@ hr.small {
     display: table;
     width: 100%;
     height: 400px;
-    color: #ed427f;
+    color: #36aaea;
     text-shadow: black 0.1em 0.1em 0.2em;
     background: url(../images/clientes.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
@@ -365,8 +362,6 @@ hr.small {
     height: 400px;
     color: #ed427f;
     background: url(../images/clientes-small.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
@@ -379,7 +374,7 @@ hr.small {
 }
 
 .callout a:hover,a:focus {
-  color: #ed427f;
+  color: #36aaea;
   text-decoration: none;
 }
 
@@ -409,7 +404,7 @@ hr.small {
 
 .img-portfolio1 {
     margin: 0 auto;
-    padding:5%;
+    padding: 25px;
 }
 
 .img-portfolio1:hover {
@@ -457,13 +452,13 @@ footer {
 
 
 .corporate a {
-  color: #38ac1a;
+  color: #36aaea;
   text-decoration: none;
   font-weight: 800;
 }
 
 .corporate a:hover,a:focus {
-  color: #22a301;
+  color: #1995cc;
   text-decoration: none;
 }
 
@@ -473,40 +468,364 @@ footer {
   outline-offset: -2px;
 }
 
-/*demo*/
+/* Sections */
 
 
-iframe {
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; 
-  border-radius: 20px; 
-
-  -moz-box-shadow: 4px 4px 14px #000; 
-  -webkit-box-shadow: 4px 4px 14px #000; 
-  box-shadow: 4px 4px 14px #000; 
- 
+.getdinex {
+    padding-top: 30px;
+    background-color: white;
+    min-height: 400px;
+    color: #575f67;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
 }
 
-@media screen and (max-width: 360px) {
-iframe {
- 
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; 
-  border-radius: 10px; 
-
-  -moz-box-shadow: 4px 4px 14px #000; 
-  -webkit-box-shadow: 4px 4px 14px #000; 
-  box-shadow: 4px 4px 14px #000; 
-
-  width: 80%;
-  height: 350px;
-
- 
+.getdinexE {
+    padding-top: 25px;
+    background-color: white;
+    min-height: 300px;
+    color: #575f67;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
 }
+.whydinex {
+    padding-top: 25px;
+    background-color: #36aaea;
+    min-height: 500px;
+    color: white;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
 }
+
+.bg-primary {
+    background-color: #36aaea !important;
+}
+
+.ahorro, .comodidad {
+    padding-top: 25px;
+    background-color: #36aaea;
+    min-height: 500px;
+    color: white;
+}
+
+.muevete, .seguridad {
+    padding-top: 25px;
+    background: url(../images/striped.png);
+    min-height: 500px;
+    color: white;
+}
+/* Images */
+
+.images, .images4 {
+    width: 126px;
+    height: 126px;
+}
+
+.imagesE {
+    width: 166px;
+    height: 97px;
+
+}
+
+.imagesS {
+margin-top: -75px;
+    height: 450px;
+
+}
+
+.image-containerE {
+    padding-bottom: 14px;
+    padding-top: 15px;
+}
+
+.image-container4 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: auto;
+
+}
+
+@media (max-width: 767px){
+  .content-container {
+    text-align: center !important;
+  }
+
+  .content-container2 {
+    text-align: center !important;
+  }
+}
+
+/* Fonts */
+
+.content-container {
+    text-align: right;
+    font-size: 18px;
+}
+
+.content-container2 {
+    text-align: left;
+    font-size: 18px;
+}
+
+@font-face {
+
+font-family: 'Regular';
+
+src: local ("Regular"),
+
+src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans_-Regular-webfont.eot');
+
+src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans_-Regular-webfont.eot?#iefix') format('eot'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Regular-webfont.woff') format('woff'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Regular-webfont.woff2') format('woff2'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/Neo_Sans.ttf') format('truetype'),
+
+url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans.svg#webfont') format('svg');
+
+font-weight: 400;
+
+font-style: normal;
+
+}
+
+@font-face {
+
+	font-family: 'Semibold';
+
+	src: local ("Semibold"),
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.eot');
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.eot?#iefix') format('eot'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.woff') format('woff'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.woff2') format('woff2'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Semibold-webfont.ttf') format('truetype'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Medium.svg#webfont') format('svg');
+
+	font-weight: 400;
+
+	font-style: normal;
+
+}
+
+@font-face {
+
+	font-family: 'Boldest';
+
+	src: local ("Boldest"),
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.eot');
+
+	src: url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.eot?#iefix') format('eot'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.woff') format('woff'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.woff2') format('woff2'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold-webfont.ttf') format('truetype'),
+
+	url('//dinex.zendesk.com/hc/theme_assets/729509/200098478/NeoSans-Bold.svg#webfont') format('svg');
+
+	font-weight: 400;
+
+	font-style: normal;
+
+}
+
+a {
+  color: #36aaea;
+}
+
+.info {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+  #logo {
+    width:80% !important;
+    height:auto;
+  }
+
+  .header-container {
+    padding-top: 5% !important;
+  }
+
+  #youtube {
+    width: 90%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 601px) {
+
+  #logo {
+    width:70% !important;
+    height:auto;
+  }
+  .header-container {
+    padding-top: 10% !important;
+  }
+    
+
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  #logo {
+    width:80% !important;
+    height:auto;
+  }
+
+  .smartphone-container {
+    right: 200px !important;
+  }
+
+.tablet-container {
+    right: 0px !important;
+  }
+    
+  .header-container {
+    padding-top: 20% !important;
+  }
+    
+.imagesS2 {
+padding-left: 20px;
+}    
+
+    .imagesS3 {
+padding-left: 40px;
+}   
+    
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  #logo {
+    width:80% !important;
+    height:auto;
+  }
+
+  .header-container {
+    padding-top: 30% !important;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+
+  .header-container {
+    padding-top: 20%;
+  }
+
+  #logo {
+    width:80% !important;
+    height:auto;
+  }
+}
+
+#logo {
+  width:40%;
+  height:auto;
+}
+
+.contact {
+    background: url(../images/striped.png);
+    color: white;
+}
+
+.contactE {
+    background: url(../images/striped.png);
+    color: white;
+    text-align: center;
+}
+
+.smartphone-container {
+    top: 200px;
+    right: 350px;
+    overflow: hidden;
+    z-index: 2;
+    display: block;
+    position: absolute ;
+    bottom: 
+}
+
+.tablet-container {
+    top: 100px;
+    z-index: 1;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+}
+
+@media screen and (min-height: 0px) and (max-height: 380px) {
+    .smartphone-container {
+        visibility: hidden;
+    }
+    .tablet-container {
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-height: 381px) and (max-height: 480px) {
+    .smartphone-container {
+        top: 120px !important;
+    }
+    .tablet-container {
+        top: 10px !important;
+    }
+}
+
+.header-container {
+    color: white;
+    font-family: semibold;
+}
+
+#side-tabs a.descargar {
+	background: url(../images/landing/descargar-tabr.png);
+	left: 0px;
+	top: 60%;
+	height: 108px;
+	width: 45px;
+	margin: 0;
+	padding-top: 0;
+	position: fixed;
+	z-index: 9999;
+	display:block;
+}
+
+#side-tabs a:hover.descargar {
+background: url(../images/landing/descargar-tab.png);
+}
+
+
+.fadingInClass {
+    	visibility: hidden;
+}
+
+.hatchClass {
+       	visibility: hidden;
+} 
+
+.slideLeftClass {
+       	visibility: hidden;
+} 
+
+.slideRightClass {
+       	visibility: hidden;
+} 
+
+.expandUpClass {
+       	visibility: hidden;
+} 
+
+.pullUpClass {
+       	visibility: hidden;
+} 
