@@ -23,6 +23,10 @@
     <link href="http://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!--mailchimp-->
     <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+      <link rel="stylesheet" href="styles/animations.css">
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
     <style type="text/css">
       #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
     </style>
@@ -129,11 +133,12 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                           </div>
                         <div class="col-sm-6 col-centered hidden-xs">
                             <div class="smartphone-container">
+  
                                 <img id="smartphone" src="images/screenshots/template-s-1.png">
-                            </div>
+                          </div>
                             <div class="tablet-container">
-                                <img id="tablet" src="images/screenshots/template-t-0.png">
-                            </div>
+                                <img id="tablet" src="images/screenshots/template-t-1.png">
+                                </div>
                         </div>
                     </div>
                     <!-- /.row (nested) -->
@@ -178,11 +183,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/ahorro.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
-                            </div>
+                                    <div class="fadeIn">
+                                        <img id="fadingIn" class="images fadingInClass" src="images/landing/ahorro.png">
+                                    </div>
+                                </div>
                                 <h4>
                                     ¡Es Gratis!
                                 </h4>
@@ -194,11 +198,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/movilidad.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-check-square-o fa-stack-1x text-primary"></i-->
-                            </div>
+                                    <div class="fadeIn">
+                                        <img id="fadingIn2" class="images fadingInClass" src="images/landing/movilidad.png">
+                                    </div>
+                                </div>
                                 <h4>
                                     Movilidad
                                 </h4>
@@ -209,11 +212,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img  class="images" src="images/landing/comodidad.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i-->
-                            </div>
+                                        <div class="fadeIn">
+                                            <img  id="fadingIn3" class="images fadingInClass" src="images/landing/comodidad.png">
+                                        </div>
+                                </div>
                                 <h4>
                                     Comodidad
                                 </h4>
@@ -224,11 +226,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/seguridad.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-smile-o fa-stack-1x text-primary"></i-->
-                            </div>
+                                    <div class="fadeIn">
+                                        <img id="fadingIn4" class="images fadingInClass" src="images/landing/seguridad.png">
+                                    </div>
+                                </div>
                                 <h4>
                                     Seguridad
                                 </h4>
@@ -258,10 +259,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-4">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/descargar-dinex3.png">
+                                    <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/descargar-dinex3.png">
 
-                                <!-- i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
+                                    </div>
                             </div>
                                 <h4>
                                     <br>Descarga
@@ -272,10 +273,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-4">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/crear-cuenta.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-check-square-o fa-stack-1x text-primary"></i-->
+                                    <div class="fadeIn">
+                                <img class="images fadingInClass" src="images/landing/crear-cuenta.png">
+                                    </div>
                             </div>
                                 <h4>
                                     <br>Crea
@@ -286,10 +286,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-4">
                             <div class="service-item">
                                 <div class="image-containerE">
-                                <img class="imagesE" src="images/landing/cargar.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i-->
+                                    <div class="fadeIn">
+                                <img class="imagesE fadingInClass" src="images/landing/cargar.png">
+                                    </div>
                             </div>
                                 <h4>
                                     <br>Carga
@@ -310,13 +309,17 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
+                <div class="hatch">
+
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-	  <h1><a href="#price" target="_blank">Dinex es simple, seguro<br> y ¡gratis!</a></h1>
+        <div class="hatchClass">
+	  <h1><a href="#price" target="_blank">Dinex es simple, seguro<br> y ¡gratis!</a></h1></div>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
+        </div>
 	  <!--  <h2><a href="/seller.html">costo mínimo para transportistas</a></h2> -->
         </div>
     </aside>
@@ -331,8 +334,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                     <div class="row">
                         <div class="col-sm-4">
                                 <div class="image-container4">
-                                <img class="images4" src="images/landing/ahorro.png">
-
+                                <div class="fadeIn">
+                                <img class="images4 fadingInClass" src="images/landing/ahorro.png">
+                                    </div>
                                 <!-- i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
                             </div>
@@ -352,10 +356,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-4 hidden-xs">
                             <div class="service-item">
                                 <div class="image-containerS">
-                                <img class="imagesS" src="images//screenshots/ahorro-sample-1.png">
+                                <div class="SlideLeft">
+                                <img class="imagesS slideLeftClass" src="images//screenshots/ahorro-sample.png">
+                                    </div>
 
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i-->
                             </div>
 
                             </div>
@@ -381,9 +385,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         
                          <div class="col-sm-2 col-sm-push-10 col-md-4 col-md-push-8">
                                 <div class="image-container4">
-                                <img class="images4" src="images/landing/movilidad.png">
-                                <!-- i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
+                                <div class="fadeIn">
+                                <img class="images4 fadingInClass" src="images/landing/movilidad.png">
+                                    </div>
                             </div>
                         </div>
 
@@ -403,7 +407,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                        <div class="col-sm-4 col-sm-pull-9 hidden-xs col-md-4 col-md-pull-8">
                             <div class="service-item">
                                 <div class="image-containerS">
-                                    <img class="imagesS" src="images/screenshots/muevete-sample-1.png">
+                                <div class="slideRight">
+                                    <img class="imagesS imagesS2 slideRightClass" src="images/screenshots/muevete-sample.png">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -430,8 +436,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                     <div class="row">
                         <div class="col-sm-4">
                                 <div class="image-container4">
-                                <img class="images4" src="images/landing/comodidad.png">
-
+                                <div class="fadeIn">
+                                <img class="images4 fadingInClass" src="images/landing/comodidad.png">
+                                    </div>
                                 <!-- i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
                             </div>
@@ -454,8 +461,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-4 hidden-xs">
                             <div class="service-item">
                                 <div class="image-containerS">
-                                <img class="imagesS" src="images/screenshots/comodidad-sample-1.png">
-
+                                <div class="slideLeft">
+                                <img class="imagesS slideLeftClass" src="images/screenshots/comodidad-sample.png">
+                                    </div>
                                 <!--i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-money fa-stack-1x text-primary"></i-->
                             </div>
@@ -482,9 +490,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                     <div class="row">
                          <div class="col-sm-2 col-sm-push-10 col-md-4 col-md-push-8">
                                 <div class="image-container4">
-                                <img class="images4" src="images/landing/seguridad.png">
-                                <!-- i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i-->
+                                <div class="fadeIn">
+                                <img class="images4 fadinginClass" src="images/landing/seguridad.png">
+                                    </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-sm-push-2 col-md-4 col-md-push-0">
@@ -503,8 +511,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                        <div class="col-sm-4 col-sm-pull-9 hidden-xs col-md-4 col-md-pull-8">
                             <div class="service-item">
                                 <div class="image-containerS">
-                                    <img class="imagesS" src="images/screenshots/seguridad-sample-1.png">
-                                </div>
+                                <div class="slideRight">
+                                    <img class="imagesS imagesS3 slideRightClass" src="images/screenshots/seguridad-sample.png">
+                                    </div>
+                                    </div>
                             </div>
                         </div>
 
@@ -593,8 +603,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-6 col-centered">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/dispositivos.png">
-                            </div>
+                                    <div class="expandUp">
+                                        <img class="images expandUpClass" src="images/landing/dispositivos.png">
+                                    </div>
+                                </div>
                                 <h4>
                                     <br>Dispositivo
                                 </h4>
@@ -604,11 +616,10 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-6 col-centered">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/banco-blue.png">
-
-                                <!--i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-check-square-o fa-stack-1x text-primary"></i-->
-                            </div>
+                                    <div class="expandUp">
+                                        <img class="images expandUpClass" src="images/landing/banco-blue.png">
+                                    </div>
+                                </div>
                                 <h4>
                                     <br>Cuenta bancaria
                                 </h4>
@@ -636,7 +647,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-6 col-centered">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/usuario-blue.png">
+                                 <div class="expandUp">
+                                <img class="images expandUpClass" src="images/landing/usuario-blue.png">
+                                    </div>
                             </div>
                                 <h4>
                                     <br>Personas
@@ -647,7 +660,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-sm-6 col-centered">
                             <div class="service-item">
                                 <div class="image-container">
-                                <img class="images" src="images/landing/empresas.png">
+                                 <div class="expandUp">
+                                <img class="images expandUpClass" src="images/landing/empresas.png">
+                                    </div>
 
                                 <!--i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-check-square-o fa-stack-1x text-primary"></i-->
@@ -655,7 +670,7 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                                 <h4>
                                     <br>Empresas
                                 </h4>
-                                <a href="/pro" class="btn btn-dark btn-lg">Dinex Pro</a>
+                                <a href="/pro.html" class="btn btn-dark btn-lg">Dinex Pro</a>
                             </div>
                         </div>
                     </div>
@@ -674,14 +689,18 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    <div class="floating">
+                        <div class="floatingClass">
 		  <h2>¡Agosto 2015!</h2>
 		  <h4>Descarga la aplicación y únete al mundo sin efectivo</h4><br>
 		  <p></p>
+                        </div>
+                    </div>
 		</div>
 	    </div>
 	    <div class="row">
 		  <div class="col-md-4 col-sm-4 col-centered">
-                      <!--a href=""-->
+              <!--a href=""-->
 			<img class="img-portfolio1 img-responsive" src="images/playstore.png">
 		      </a>
 		  </div>
@@ -691,9 +710,9 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
 		      </a>
 		  </div>
 		  <div class="col-md-4 col-sm-4 col-centered">
-		      <!--a href=""-->
+	      <!--a href=""-->
 			<img class="img-portfolio1 img-responsive" src="images/appstore.svg">
-		      </a>
+        </div>
 		  </div>
             </div>
         </div>
@@ -742,11 +761,12 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                         <div class="col-md">
                             <div class="portfolio-item">
                                 <a href="http://www.corfo.cl" target="_blank">
-                                    <img class="img-portfolio1 img-responsive" src="images/corfo2015.png">
+                                    <img class="img-portfolio1 img-responsive " src="images/corfo2015.png">
+                                </a>
                             <div class="portfolio-item">
                                 <a href="https://developers.google.com/startups/" target="_blank">
-                                    <img class="img-portfolio1 img-responsive" src="images/googlelaunch.png">
-                                </a>
+                                    <img class="img-portfolio1 img-responsive " src="images/googlelaunch.png">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -952,9 +972,119 @@ document.write(year)
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 
-                  <div id="side-tabs">
-<a class="descargar" href="#descargar"></a>
+<div id="side-tabs">
+       <a class="descargar pulse pulseClass" href="#descargar"></a>
 </div>
             
-</body>
+<script>
+	$(window).scroll(function() {
+		$('.fadingInClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+    
+<script>
+	$(window).scroll(function() {
+		$('.hatchClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("hatch");
+			}
+		});
+	});
+</script>
+            
+<script>
+	$(window).scroll(function() {
+		$('.slideRightClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("slideRight");
+			}
+		});
+	});
+</script>           
+ 
+<script>
+	$(window).scroll(function() {
+		$('.slideLeftClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("slideLeft");
+			}
+		});
+	});
+</script>   
+
+<script>
+	$(window).scroll(function() {
+		$('.pullUpClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("pullUp");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.expandUpClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("expandUp");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.floatingClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("floating");
+			}
+		});
+	});
+</script>   
+
+<script>  
+	$(window).scroll(function() {
+		$('.pulseClass').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("pulse");
+			}
+		});
+	});
+</script>
+            
+<script>      
+	$('#animatedElement').click(function() {
+		$(this).addClass("slideUp");
+	});
+</script>
+
+            </body>
 </html>
