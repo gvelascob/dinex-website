@@ -262,7 +262,7 @@ hr.large-w {
     display: table;
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     background: url(../images/new/velo.png) no-repeat center center scroll, url(../images/new/portada.jpg) no-repeat center center scroll;
     background-size: cover;
     -o-background-size: cover;
@@ -284,7 +284,7 @@ hr.large-w {
     display: table;
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     background: url(../images/new/velo.png) no-repeat center center scroll, url(../images/new/santiago-nocturno.jpg) no-repeat center center scroll;
     background-size: cover;
     -o-background-size: cover;
