@@ -1353,8 +1353,3 @@ a:hover,a:focus {
     width: 75px;
     height: auto;
 }
-
-@media (min-width: 768px)
-.col-sm-push-9 {
-    left: 85% !important;
-}
