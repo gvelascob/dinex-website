@@ -583,6 +583,8 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
             <br>
             <div class="col-lg-12 ">
               <div class="col-sm-3 text-left">
+                <hr class="small-full">
+                <br>
                 <p>Para comunicarte con nosotros, completa el formulario o envíanos un correo a: <br><a href="mailto:info@dinex.cl">info@dinex.cl</a>.</p>
               </div>
               <div class="col-sm-9">
@@ -660,7 +662,7 @@ $( "#contact_form" ).submit(function( event ) {
   // Put the results in a div
   posting.done(function( data ) {
     var content = data.message.toString().split(' ');
-    var response = "<b> Solicitud " + content[1] +  " fue creada exitosamente. </b> <br> <a href='/'>Volver</a>";
+    var response = "<b> Solicitud " + content[1] +  " creada exitosamente. </b> <br> <p>Gracias por contactarnos</p>";
     $( "#result" ).empty().append( response );
 
   });
