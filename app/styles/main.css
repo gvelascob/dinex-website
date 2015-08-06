@@ -26,9 +26,14 @@ h1 {
     font-family: "Boldest";
 }
 
+h3 {
+    margin-bottom: 5px;
+}
+
+
 .text-vertical-center {
     display: table-cell;
-    text-align: center;
+    text-align: center; 
     vertical-align: middle;
 }
 
@@ -115,17 +120,17 @@ h1 {
 .btn-dark {
     border-radius: 5px;
     color: #fff;
-    background-color: #1995cc;
+    background-color: #36aaea;
     font-size: 16px;
     line-height: 19px;
-    font-family: Semibold;
+    font-family: Regular;
 }
 
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active {
     color: #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color: #1995cc;
 }
 
 .btn-dark1 {
@@ -158,6 +163,20 @@ h1 {
 
 hr.small {
     max-width: 100px;
+}
+
+hr.small {
+    width: 100%;
+}
+
+hr.large {
+    max-width: 150px;
+    border-top: 3px solid #36aaea !important;
+}
+
+hr.large-w {
+    max-width: 150px;
+    border-top: 3px solid white !important;
 }
 
 /* Side Menu */
@@ -243,22 +262,38 @@ hr.small {
     display: table;
     position: relative;
     width: 100%;
-    height: 100%;
-    background: url(../images/santiago.jpg) no-repeat center center scroll;
+    height: auto;
+    background: url(../images/new/velo.png) no-repeat center center scroll, url(../images/new/portada.jpg) no-repeat center center scroll;
     background-size: cover;
     -o-background-size: cover;
     opacity: 1;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.logo {
+    width: 300px;
+    height: auto;
+
+}
+    
 .header2 {
     display: table;
     position: relative;
     width: 100%;
-    height: 10%;
-    color: #1995cc;
-    background: url(../images/santiago.jpg) no-repeat center center scroll;
+    height: auto;
+    background: url(../images/new/velo.png) no-repeat center center scroll, url(../images/new/santiago-nocturno.jpg) no-repeat center center scroll;
     background-size: cover;
     -o-background-size: cover;
+    opacity: 1;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header2 a {
@@ -346,13 +381,19 @@ hr.small {
 .callout {
     display: table;
     width: 100%;
-    height: 400px;
-    color: #36aaea;
-    text-shadow: black 0.1em 0.1em 0.2em;
-    background: url(../images/clientes.jpg) no-repeat center center scroll;
+    height: auto;
+    min-height: 400px;
+    color: white;
+    background: url(../images/new/velo.png) no-repeat center center scroll, url(../images/new/call-out.jpg) no-repeat center center scroll;
     background-size: cover;
     -o-background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 @media screen and (max-width: 360px) {
 
@@ -360,8 +401,8 @@ hr.small {
     display: table;
     width: 100%;
     height: 400px;
-    color: #ed427f;
-    background: url(../images/clientes-small.jpg) no-repeat center center scroll;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/new/call-out.jpg) no-repeat center center scroll;
     background-size: cover;
     -o-background-size: cover;
 }
@@ -419,7 +460,21 @@ hr.small {
 
 .call-to-action {
     padding: 50px 0;
-}
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    color: white;
+    background-image: url(../images/new/velo.png), url(../images/new/santiago-nocturno2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+}  
 
 .call-to-action .btn {
     margin: 10px;
@@ -445,7 +500,8 @@ hr.small {
 /* Footer */
 
 footer {
-    padding: 100px 0;
+    padding: 50px 0;
+    background-color: #f2f2f2;
 }
 
 /*corporate*/
@@ -472,13 +528,40 @@ footer {
 
 
 .getdinex {
-    padding-top: 30px;
-    background-color: white;
-    min-height: 400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f4f4f4;
+    min-height: 500px;
     color: #575f67;
     -webkit-align-content: center;
         -ms-flex-line-pack: center;
             align-content: center;
+}
+
+.beneficios {
+    display: table;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    color: white !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/new/movil-cafe.jpg) no-repeat center center scroll;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beneficios-empresas {
+    background-color: #e2e3e8;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 .getdinexE {
@@ -499,6 +582,56 @@ footer {
         -ms-flex-line-pack: center;
             align-content: center;
 }
+
+.requirements {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f4f4f4;
+    min-height: 500px;
+    color: #575f67;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+}    
+
+.security {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f4f4f4;
+    min-height: 400px;
+    color: #575f67;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+}    
+
+.price {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #36aaea;
+    min-height: 500px;
+    color: white;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+}
+
+.price h3 {
+    color: white;
+}
+
+.social {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f4f4f4;
+    min-height: 200px;
+    color: #575f67;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+}    
+
+
 
 .bg-primary {
     background-color: #36aaea !important;
@@ -652,10 +785,6 @@ a {
 }
 
 @media (max-width: 600px) {
-  #logo {
-    width:80% !important;
-    height:auto;
-  }
 
   .header-container {
     padding-top: 5% !important;
@@ -669,10 +798,7 @@ a {
 
 @media screen and (max-width: 767px) and (min-width: 601px) {
 
-  #logo {
-    width:70% !important;
-    height:auto;
-  }
+
   .header-container {
     padding-top: 10% !important;
   }
@@ -681,10 +807,7 @@ a {
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  #logo {
-    width:80% !important;
-    height:auto;
-  }
+
 
   .smartphone-container {
     right: 200px !important;
@@ -695,7 +818,7 @@ a {
   }
     
   .header-container {
-    padding-top: 20% !important;
+    padding-top: 10% !important;
   }
     
 .imagesS2 {
@@ -709,36 +832,38 @@ padding-left: 40px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
-  #logo {
-    width:80% !important;
-    height:auto;
-  }
 
   .header-container {
-    padding-top: 30% !important;
+    padding-top: 10% !important;
   }
 }
 
 @media screen and (min-width: 1201px) {
 
   .header-container {
-    padding-top: 20%;
-  }
-
-  #logo {
-    width:80% !important;
-    height:auto;
+    padding-top: 10%;
   }
 }
 
-#logo {
-  width:40%;
-  height:auto;
+
+@media screen and (min-width: 992px) {
+
+    .beneficios, .beneficios-empresas, .getdinex, .about, .requirements, .security, .price {
+        padding-bottom: 100px !important;
+    }
+    
+
 }
+
 
 .contact {
-    background: url(../images/striped.png);
-    color: white;
+    background: white;
+    color: #575f67;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 500px;
+        text-align: left;
+
 }
 
 .contactE {
@@ -749,7 +874,7 @@ padding-left: 40px;
 
 .smartphone-container {
     top: 200px;
-    right: 350px;
+    right: 500px;
     overflow: hidden;
     z-index: 2;
     display: block;
@@ -829,3 +954,407 @@ background: url(../images/landing/descargar-tab.png);
 .pullUpClass {
        	visibility: hidden;
 } 
+
+
+/* color changing */
+
+.intro {
+    color: #36aaea;
+}
+
+/* text changing */
+
+.regularizing {
+    font-family: "Regular";
+}
+
+.semibolding {
+    font-family: "Semibold";
+}
+
+.bolding {
+    font-family: "Boldest" !important;
+}
+
+
+/* icon alignment update */
+
+.image-container {
+    padding: 0px;
+}
+
+.image-container-l {
+    padding: 0px;
+}
+
+.image-container-p {
+    padding: 0px;
+    padding-top: 30px;
+}
+
+.intro-icon {
+    height: 75px;
+    width: auto;
+    margin-top: 30px;
+}
+
+.support-icon {
+    height: 50px;
+    width: auto;
+    margin-top: 30px;
+}
+
+.intro-icon-s {
+    height: 200px;
+    width: auto;
+    padding: 0px;
+    margin-top: -25px;
+}
+
+.info-icon {
+    height: 125px;
+    width: auto;
+    margin-top: 20px;
+}
+
+.intro-icon-p {
+    height: 400px;
+    width: auto;
+    padding-top: 0px;
+    object-fit: cover;
+    padding: 0px;
+}
+
+
+.check-icon {
+     height: 20px;
+    width: auto;   
+    align: left;
+}
+
+.quote {
+    height: 40px;
+    width: auto;   
+    align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Text alignment update */
+
+@media (max-width: 368px) {
+    .text-container {
+    float: left;
+    position: relative;
+    left: 20% !important;
+    }
+    
+.intro2 {
+    padding-left: 25% !important;
+}   
+    
+.logo {
+    width: 250px;
+    height: auto;
+
+}
+    
+}
+
+@media (max-width: 767px) {
+    .fake-pad {
+    padding-top: 0px !important;
+}
+    .intro-icon-s {
+    margin-top: 0px !important;
+}
+    
+    .image-container-p {
+    padding: 0px !important;
+}
+ 
+    .text-container {
+    float: left;
+    position: relative;
+    left: 35%;
+    }
+    
+.intro2 {
+    padding-left: 35%;
+}        
+    
+.next {
+	background: url(../images/new/next-vertical.svg) no-repeat !important;
+    height: 75px;
+    width: 75px !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+}
+
+    
+@media (min-width: 768px)
+    and (max-width: 991px) {
+    .text-left-not-sm, .text-center-not-sm, .text-right-not-sm, .text-justify-not-sm {
+        text-align: inherit;
+    }
+    .text-left-sm {
+        text-align: left;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+    .text-right-sm {
+        text-align: right;
+    }
+    .text-justify-sm {
+        text-align: justify;
+    }
+    .container{
+        width: 100%;
+    }
+    .content-container-right {
+        padding-left: 20%;
+        padding-right: 0px !important;
+    }       
+    .content-container-left {
+    padding-left: 0px;
+    padding-right: 20% !important;
+    
+    }
+.image-container-l {
+    margin-left: -10px;
+    }
+
+    .text-container {
+    float: left;
+    position: relative;
+    left: 25%;
+}
+        
+    .fake-pad2 {
+    padding-top: 40px;
+}        
+.intro2 {
+    padding-left: 25%;
+}        
+.intro-icon-d {
+    margin-left: -15%;
+}
+    .intro-icon-r {
+    margin-left: 20%;    
+    }
+ 
+    .intro-icon-l {
+    margin-left: -25%;    
+    }        
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-left-not-md, .text-center-not-md, .text-right-not-md, .text-justify-not-md {
+        text-align: inherit;
+    }
+    .text-left-md {
+        text-align: left;
+    }
+    .text-center-md {
+        text-align: center;
+    }
+    .text-right-md {
+        text-align: right;
+    }
+    .text-justify-md {
+        text-align: justify;
+    }
+    .content-container-right {
+        padding-right: 0px !important;
+    }       
+    .content-container-left {
+    margin-left: 0px !important;
+    }
+    
+    .intro-icon-d {
+        margin-left: -35%;
+    }
+    .intro-icon-r {
+    margin-left: -40%;    
+    }
+ 
+    .intro-icon-l {
+    margin-left: 30%;    
+    }
+}
+@media (min-width: 1200px) {
+    .text-left-not-lg, .text-center-not-lg, .text-right-not-lg, .text-justify-not-lg {
+        text-align: inherit;
+    }
+    .text-left-lg {
+        text-align: left;
+    }
+    .text-center-lg {
+        text-align: center;
+    }
+    .text-right-lg {
+        text-align: right;
+    }
+    .text-justify-lg {
+        text-align: justify;
+    }
+    .content-container-right {
+        padding-right: 5px !important;
+    }       
+    .content-container-left {
+    padding-left: 5px !important;
+    }
+    
+   .intro-icon-d {
+    margin-left: -45%;
+    }
+    
+    .intro-icon-r {
+    margin-left: -50%;    
+    }
+ 
+    .intro-icon-l {
+    margin-left: 40%;    
+    }
+    
+    .intro-iconz {
+    margin-left: 0% !important;    
+    }
+        
+    
+}
+
+@media (min-height: 620px) and (max-height: 800px) {
+    .header2 {
+        height: 100% !important;
+    }
+}
+
+@media (min-height: 801px) {
+      .header2 {
+        min-height: 800px !important;
+    }
+}
+  
+    
+
+.fake-pad {
+    padding-top: 50px;
+}
+
+
+.fake-pad1 {
+    padding-top: 25px;
+}
+
+.larger {
+    font-family: boldest;
+    font-size: 40px;
+}
+
+.row {
+    max-width: 1024px;
+    align-content: center;
+}
+
+.row-margin {
+    margin: auto;
+}
+
+
+.downscroll {
+	width: 60px !important;
+	height: auto !important;
+    margin-top: -25px !important;
+    margin-bottom: 10px !important;
+    }
+
+#a-store a.astore {
+	background: url(../images/new/android.svg) no-repeat;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	width: 150px;
+    margin: auto;
+	padding-top: 0;
+	position: relative;
+	display:block;
+}
+
+#a-store a:hover.astore  {
+	background: url(../images/new/android-on.svg) no-repeat;  
+}
+
+#i-store a.istore {
+	background: url(../images/new/apple.svg) no-repeat;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	width: 150px;
+	margin: auto;
+	padding-top: 0;
+	position: relative;
+	display:block;
+}
+
+#i-store a:hover.istore  {
+	background: url(../images/new/apple-on.svg) no-repeat;  
+}
+
+#w-store a.wstore {
+	background: url(../images/new/windows.svg) no-repeat;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	width: 150px;
+	margin: auto;
+	padding-top: 0;
+	position: relative;
+	display:block;
+}
+
+#w-store a:hover.wstore  {
+	background: url(../images/new/windows-on.svg) no-repeat;  
+}
+
+.next {
+	background: url(../images/new/next.svg) no-repeat;
+    height: 75px;
+    width: auto;
+    margin-top: 30px;
+}
+
+#dinex-pro a.dinexpro {
+	background: url(../images/new/dinexpro.svg) no-repeat;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	width: 150px;
+	margin: auto;
+	padding-top: 0;
+	position: relative;
+	display: block;
+    
+}
+
+#dinex-pro a:hover.dinexpro {
+	background: url(../images/new/dinexpro-on.svg) no-repeat;
+}
+
+a:hover,a:focus {
+  color: #1995cc;
+}
+
+.footer-logo {
+    width: 75px;
+    height: auto;
+}
+
+@media (min-width: 768px)
+.col-sm-push-9 {
+    left: 85% !important;
+}
