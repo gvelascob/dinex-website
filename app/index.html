@@ -641,32 +641,34 @@ mixpanel.init("8861910423a0da1a99ee7f650ce5268c");</script><!-- end Mixpanel -->
                 </div>
               </div>
             </div>
-            </section>
-          <!-- JQuery to handle zendesk response -->
+          </div>
+        </div>
+      </section>
 
+      <!-- JQuery to handle zendesk response -->
 <script>
-// Attach a submit handler to the form
-$( "#contact_form" ).submit(function( event ) {
+  // Attach a submit handler to the form
+  $( "#contact_form" ).submit(function( event ) {
 
-  // Stop form from submitting normally
-  event.preventDefault();
+    // Stop form from submitting normally
+    event.preventDefault();
 
-  // Get some values from elements on the page:
-  var $form = $( this ),
-    data = $( "#contact_form" ).serialize(),
-    url = $form.attr( "action" );
+    // Get some values from elements on the page:
+    var $form = $( this ),
+      data = $( "#contact_form" ).serialize(),
+      url = $form.attr( "action" );
 
-  // Send the data using post
-  var posting = $.post( url, data );
+    // Send the data using post
+    var posting = $.post( url, data );
 
-  // Put the results in a div
-  posting.done(function( data ) {
-    var content = data.message.toString().split(' ');
-    var response = "<b> Solicitud " + content[1] +  " creada exitosamente. </b> <br> <p>Gracias por contactarnos</p>";
-    $( "#result" ).empty().append( response );
+    // Put the results in a div
+    posting.done(function( data ) {
+      var content = data.message.toString().split(' ');
+      var response = "<b> Solicitud " + content[1] +  " creada exitosamente. </b> <br> <p>Gracias por contactarnos</p>";
+      $( "#result" ).empty().append( response );
 
+    });
   });
-});
 </script>
     
  <!-- /Social media links
@@ -683,43 +685,40 @@ $( "#contact_form" ).submit(function( event ) {
                     
  /End of social media links -->
    
-<!-- /contacto -->
+      <!-- /contacto -->
 
-    <!-- Footer -->
-    <section id="footer">
-    <footer>
-        <div class="container">
+      <!-- Footer -->
+      <section id="footer">
+        <footer>
+          <div class="container">
             <div class="row row-margin text-center">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-
-                    <!--<ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>-->
-		    <p><a href="http://help.dinex.cl/usuarios/legal/terminos-condiciones/"target="_blank">Términos y Condiciones de Uso</a>
-		    <p><a href="http://help.dinex.cl/usuarios/legal/privacidad/"target="_blank">Política de Privacidad</a>
-		    <p><a href="http://help.dinex.cl/usuarios/faq/FAQ-preguntas-generales/"target="_blank">Preguntas Frecuentes</a><br><br>
-        <p class="text-muted">Copyright &copy; <script language="javascript" type="text/javascript">
-var today = new Date()
-var year = today.getFullYear()
-document.write(year)
-</script> Dinex SpA. Todos los derechos reservados.
-</p>
-       <br> 
-                                <a href="https://dinex.cl">
-                                    <img class="footer-logo" src="images/new/dinex-solo.png">
-                                </a>   
-
-
-                </div>
+              <div class="col-lg-10 col-lg-offset-1 text-center">
+                <!--ul class="list-inline">
+                  <li>
+                    <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                  </li>
+                </ul-->
+                <p><a href="http://help.dinex.cl/usuarios/legal/terminos-condiciones/"target="_blank">Términos y Condiciones de Uso</a></p>
+                <p><a href="http://help.dinex.cl/usuarios/legal/privacidad/"target="_blank">Política de Privacidad</a></p>
+                <p><a href="http://help.dinex.cl/usuarios/faq/FAQ-preguntas-generales/"target="_blank">Preguntas Frecuentes</a></p>
+                <br>
+                <br>
+                <p class="text-muted">Copyright &copy;
+                  <script language="javascript" type="text/javascript">var today = new Date(); var year = today.getFullYear(); document.write(year);</script> Dinex SpA. Todos los derechos reservados.
+                </p>
+                <br>
+                <a href="https://dinex.cl">
+                  <img class="footer-logo" src="images/new/dinex-solo.png">
+                </a>
+              </div>
             </div>
-        </div>
-    </footer>
-    </section>
+          </div>
+        </footer>
+      </section>
+      <!-- /Footer -->
 
 
     <!-- build:js(.) scripts/vendor.js -->
