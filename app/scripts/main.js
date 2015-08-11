@@ -40,7 +40,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('fadeIn');
 			}
 		});
@@ -52,7 +52,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('hatch');
 			}
 		});
@@ -64,7 +64,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('slideRight');
 			}
 		});
@@ -76,7 +76,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('slideLeft');
 			}
 		});
@@ -88,7 +88,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('pullUp');
 			}
 		});
@@ -100,7 +100,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('expandUp');
 			}
 		});
@@ -112,7 +112,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('floating');
 			}
 		});
@@ -124,7 +124,7 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+500) {
+			if (imagePos < topOfWindow+600) {
 				$(this).addClass('pulse');
 			}
 		});
@@ -134,3 +134,64 @@
     'use strict';
 		$(this).addClass('slideUp');
 	});
+
+function smoothBackgroundScroll(imgsrc) {
+	function loadImageHeight(url, width) {
+		var img = new Image();
+		img.src = url;
+		if (width) {
+			img.width = width;
+		}
+		return img.height;
+	}
+
+	var dh, wh, ih, st, posy, backh, backw;
+	if (!this._smoothBackgroundScroll) {
+		var bcksize = $(document.body).css('background-size');
+		var bmatch = /(\w+)\s*(\w+)/.exec(bcksize);
+		if (!bmatch || bmatch.length < 3) {
+			backh = loadImageHeight(imgsrc)
+		} else {
+			backh = parseInt(bmatch[2]);
+			if (isNaN(backh)) {
+				backw = parseInt(bmatch[1]);
+				backh = loadImageHeight(imgsrc, parseInt(backw));
+			}
+		}
+		this._smoothBackgroundScroll = {
+			dh: $(document).height()
+			, wh: $(window).height()
+			, ih: backh
+		}
+	}
+	dh = this._smoothBackgroundScroll.dh;
+	wh = this._smoothBackgroundScroll.wh
+	ih = this._smoothBackgroundScroll.ih;
+	st = $(document).scrollTop();
+	posy = (dh - ih) * st / (dh - wh);
+	document.body.style.backgroundPosition = 'center ' + posy + 'px';
+}
+
+$(window).on('scroll', function() {
+	smoothBackgroundScroll("../images/new/call-out.jpg");
+});
+
+$(window).on('scroll', function() {
+	smoothBackgroundScroll("../images/new/santiago-nocturno.jpg");
+}); 
+
+$(window).on('scroll', function() {
+	smoothBackgroundScroll("../images/new/portada.jpg");
+}); 
+
+$(window).on('scroll', function() {
+	smoothBackgroundScroll("../images/new/portada-dinexpro.jpg");
+}); 
+
+$(window).on('scroll', function() {
+	smoothBackgroundScroll("../images/new/portada-nosotros.jpg");
+}); 
+
+$(window).on('scroll', function() {
+	smoothBackgroundScroll("../images/new/callout-dinexpro.jpg");
+});
